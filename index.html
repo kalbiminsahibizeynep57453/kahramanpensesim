@@ -8,11 +8,11 @@
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; }
   :root { --pink:#ff69b4; --rose:#ff1493; --gold:#ffd700; --lavender:#e8b4f8; }
-  html, body { overflow:hidden; height:100%; width:100%; position:fixed; inset:0; background:#0a0015; }
+  html, body { overflow:hidden; height:100%; min-height: -webkit-fill-available; width:100%; position:fixed; inset:0; background:#0a0015; }
   * { -webkit-tap-highlight-color: transparent; }
   body { background:#0a0015; font-family:'Lato',sans-serif; }
 
-  #world { position:relative; width:100%; height:100%; overflow:hidden; }
+  #world { position:relative; width:100%; height:100%; min-height: -webkit-fill-available; overflow:hidden; }
   #stars-canvas, #bg-canvas, #fx-canvas { position:absolute; left:0; top:0; z-index:0; pointer-events:none; }
   #fx-canvas { z-index:2; }
 
@@ -2134,6 +2134,16 @@ function startGame(){
     else { hint.style.opacity=''; hint.style.transition=''; }
   });
 })();
+
+// Ekran boyutu değişince canvas'ları güncelle
+function resizeCanvases(){
+  sc.width = window.innerWidth;
+  sc.height = window.innerHeight;
+  fc.width = window.innerWidth;
+  fc.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvases);
+window.addEventListener('orientationchange', resizeCanvases);
 
 requestAnimationFrame(ts=>{ lastT=ts; gameLoop(ts); });
 </script>
