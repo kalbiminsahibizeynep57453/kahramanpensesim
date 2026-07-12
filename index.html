@@ -8,11 +8,11 @@
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; }
   :root { --pink:#ff69b4; --rose:#ff1493; --gold:#ffd700; --lavender:#e8b4f8; }
-  html, body { overflow:hidden; height:100%; width:100%; position:fixed; inset:0; background:#1e4010; }
+  html, body { overflow:hidden; height:100%; width:100%; position:fixed; inset:0; background:#1a3d0a; }
   * { -webkit-tap-highlight-color: transparent; }
   body { background:#0a0015; font-family:'Lato',sans-serif; }
 
-  #world { position:relative; width:100%; height:100%; overflow:hidden; }
+  #world { position:relative; width:100%; height:100%; overflow:hidden; background:#1a3d0a; }
   #stars-canvas, #bg-canvas, #fx-canvas { position:absolute; left:0; top:0; z-index:0; pointer-events:none; }
   #fx-canvas { z-index:2; }
 
@@ -1211,7 +1211,7 @@ function ensureGroundEl(){
   if(document.getElementById('ground-el')) return;
   const el=document.createElement('div');
   el.id='ground-el';
-  el.style.cssText=`position:absolute;left:0;top:${GROUND_Y}px;width:${VW}px;height:${WORLD_H}px;
+  el.style.cssText=`position:absolute;left:0;top:${GROUND_Y}px;width:${VW}px;height:80px;
     background:linear-gradient(180deg, rgba(30,80,15,.95), rgba(15,40,8,.98));
     border-top:3px solid rgba(120,220,90,.6);
     box-shadow:0 -6px 20px rgba(100,200,80,.25);
