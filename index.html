@@ -410,6 +410,13 @@
   #info-hint { text-align:center; color:rgba(255,200,230,.45); font-size:11px; margin-top:18px; font-style:italic; }
   .ctrl-key { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.18); border-radius:7px; color:rgba(255,200,230,.65); font-size:12px; padding:5px 12px; }
   #mobile-controls { position:fixed; bottom:18px; left:50%; transform:translateX(-50%); z-index:100; display:none; gap:18px; }
+  /* Mobil adres çubuğu boşluğunu kapat */
+  #bottom-fill {
+    position:fixed; bottom:0; left:0; right:0;
+    height:120px; z-index:5;
+    background:linear-gradient(180deg, transparent 0%, #3a3a42 40%);
+    pointer-events:none;
+  }
 
   /* ── TWIN-STICK ARENA CONTROLS ── */
   #twin-stick-ui { position:fixed; bottom:0; left:0; right:0; height:140px; z-index:150; display:none; pointer-events:none; }
@@ -480,6 +487,7 @@
   <button id="start-btn" onclick="startGame()"></button>
 </div>
 
+<div id="bottom-fill"></div>
 <div id="world">
   <canvas id="stars-canvas"></canvas>
   <canvas id="bg-canvas"></canvas>
