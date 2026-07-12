@@ -8,7 +8,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; }
   :root { --pink:#ff69b4; --rose:#ff1493; --gold:#ffd700; --lavender:#e8b4f8; }
-  html, body { overflow:hidden; height:100dvh; width:100%; position:fixed; inset:0; background:#0a0015; }
+  html, body { overflow:hidden; height:100dvh; width:100%; position:fixed; inset:0; background:#3a3a42; }
   * { -webkit-tap-highlight-color: transparent; }
   body { background:#0a0015; font-family:'Lato',sans-serif; }
 
@@ -1069,7 +1069,7 @@ const QUIZZES=[
 // (with current PLAT_W, STEP_GAP and physics, horizontal reach ≈ 160px)
 let steps = [];
 let LAST_STEP_X = VW/2, LAST_STEP_Y = 0;
-const GROUND_Y = WORLD_H - 60; // top surface of the ground platform
+const GROUND_Y = WORLD_H - 20; // top surface of the ground platform
 const ARENA_STEPS_REMOVED = 5; // last N steps replaced by solid arena floor
 const CLIMB_STEPS = NUM_STEPS - ARENA_STEPS_REMOVED; // actual climbable steps
 let ARENA_Y = 0; // top surface of the arena floor (set in buildSteps)
