@@ -16,26 +16,26 @@
   #fx-canvas { z-index:2; }
 
   .bg-poem {
-position:absolute; font-family:'PlayfairDisplay',serif; font-style:italic;
-color:rgba(255,200,255,0.13); font-size:clamp(14px,2.5vw,30px);
-white-space:nowrap; pointer-events:none; text-align:center; width:100%; letter-spacing:2px;
+    position:absolute; font-family:'Playfair Display',serif; font-style:italic;
+    color:rgba(255,200,255,0.13); font-size:clamp(14px,2.5vw,30px);
+    white-space:nowrap; pointer-events:none; text-align:center; width:100%; letter-spacing:2px;
   }
 
   /* ---- PLATFORMS (smaller, no star icon) ---- */
   .platform {
-position:absolute; border-radius:8px; z-index:10;
+    position:absolute; border-radius:8px; z-index:10;
   }
   .platform.normal {
     background:linear-gradient(135deg,rgba(255,105,180,.65),rgba(180,60,120,.85));
-    border:2px solidrgba(255,150,200,.8);
+    border:2px solid rgba(255,150,200,.8);
     box-shadow:0 0 14px rgba(255,105,180,.45),inset 0 1px 0 rgba(255,255,255,.25);
   }
   .platform.quiz {
     background:linear-gradient(135deg,rgba(255,215,0,.5),rgba(180,140,0,.75));
-    border:2px solidrgba(255,220,80,.9);
+    border:2px solid rgba(255,220,80,.9);
     box-shadow:0 0 20px rgba(255,215,0,.7);
-animation:quizPulse 1.8s ease-in-outinfinite;
-display:flex; align-items:center; justify-content:center;
+    animation:quizPulse 1.8s ease-in-out infinite;
+    display:flex; align-items:center; justify-content:center;
   }
   @keyframes quizPulse { 0%,100%{box-shadow:0 0 18px rgba(255,215,0,.6);} 50%{box-shadow:0 0 38px rgba(255,215,0,1);} }
   .platform-emoji { font-size:16px; }
@@ -43,33 +43,33 @@ display:flex; align-items:center; justify-content:center;
   /* ---- CSS CHARACTER ---- */
   #player { position:absolute; width:34px; height:58px; z-index:20; filter:drop-shadow(0 0 9px rgba(255,150,200,.9)); }
   #player-svg { width:34px; height:50px; display:block; }
-  #player-name-tag { font-size:9px; color:var(--lavender); font-family:'PlayfairDisplay',serif; white-space:nowrap; text-align:center; text-shadow:0 0 6px rgba(232,180,248,.8); }
+  #player-name-tag { font-size:9px; color:var(--lavender); font-family:'Playfair Display',serif; white-space:nowrap; text-align:center; text-shadow:0 0 6px rgba(232,180,248,.8); }
 
   /* ---- GIRL ---- */
   /* ---- CAGED PRINCE ---- */
   #boy-char { position:absolute; z-index:20; display:flex; flex-direction:column; align-items:center; }
-  #cage-svg { width:52px; height:64px; display:block; filter:drop-shadow(0 0 12px rgba(120,150,255,.8)); animation:cageSway 3s ease-in-outinfinite; }
+  #cage-svg { width:52px; height:64px; display:block; filter:drop-shadow(0 0 12px rgba(120,150,255,.8)); animation:cageSway 3s ease-in-out infinite; }
   @keyframes cageSway { 0%,100%{transform:rotate(-1.5deg);} 50%{transform:rotate(1.5deg);} }
-  #boy-name-tag { font-size:10px; color:#a8c4ff; font-family:'PlayfairDisplay',serif; font-style:italic; white-space:nowrap; text-shadow:0 0 8px rgba(120,150,255,.9); }
+  #boy-name-tag { font-size:10px; color:#a8c4ff; font-family:'Playfair Display',serif; font-style:italic; white-space:nowrap; text-shadow:0 0 8px rgba(120,150,255,.9); }
   #boy-char.freed #cage-svg { animation:none; }
 
   /* ---- DRAGON BOSS ---- */
   #dragon-char { position:absolute; z-index:18; display:flex; flex-direction:column; align-items:center; display:none; }
   #dragon-char.active { display:flex; }
-  #dragon-svg { width:100px; height:75px; display:block; filter:drop-shadow(0 0 16px rgba(60,200,100,.6)); animation:dragonFloat 2.2s ease-in-outinfinite; }
+  #dragon-svg { width:100px; height:75px; display:block; filter:drop-shadow(0 0 16px rgba(60,200,100,.6)); animation:dragonFloat 2.2s ease-in-out infinite; }
   @keyframes dragonFloat { 0%,100%{transform:translateY(0) scaleX(-1);} 50%{transform:translateY(-10px) scaleX(-1);} }
   #dragon-svg.hit { animation:dragonHit .3s ease; }
   @keyframes dragonHit { 0%,100%{filter:drop-shadow(0 0 16px rgba(60,200,100,.6));} 50%{filter:drop-shadow(0 0 24px rgba(255,60,60,1)) brightness(1.8);} }
-  #dragon-name-tag { font-size:10px; color:#9effb0; font-family:'PlayfairDisplay',serif; font-style:italic; white-space:nowrap; text-shadow:0 0 8px rgba(60,200,100,.9); margin-top:2px; }
-  #dragon-hp-wrap { width:90px; height:8px; background:rgba(0,0,0,.5); border:1px solidrgba(255,255,255,.3); border-radius:5px; overflow:hidden; margin-top:4px; }
+  #dragon-name-tag { font-size:10px; color:#9effb0; font-family:'Playfair Display',serif; font-style:italic; white-space:nowrap; text-shadow:0 0 8px rgba(60,200,100,.9); margin-top:2px; }
+  #dragon-hp-wrap { width:90px; height:8px; background:rgba(0,0,0,.5); border:1px solid rgba(255,255,255,.3); border-radius:5px; overflow:hidden; margin-top:4px; }
   #dragon-hp-fill { width:100%; height:100%; background:linear-gradient(90deg,#ff3b3b,#ff8a3b); transition:width .3s; }
 
   /* ---- FLOATING HEART BALLOONS ---- */
   .floating-heart {
-position:absolute; z-index:15; pointer-events:none;
-display:flex; flex-direction:column; align-items:center;
+    position:absolute; z-index:15; pointer-events:none;
+    display:flex; flex-direction:column; align-items:center;
   }
-  .balloon-emoji { font-size:30px; animation:balloonFloat 3s ease-in-outinfinite; filter:drop-shadow(0 0 8px rgba(255,20,147,.85)); }
+  .balloon-emoji { font-size:30px; animation:balloonFloat 3s ease-in-out infinite; filter:drop-shadow(0 0 8px rgba(255,20,147,.85)); }
   .balloon-string { width:1px; height:18px; background:rgba(255,200,220,.5); margin-top:-2px; }
   @keyframes balloonFloat {
     0%{transform:translateY(0) rotate(-4deg);}
@@ -79,24 +79,24 @@ display:flex; flex-direction:column; align-items:center;
 
   /* ---- FIREBALLS ---- */
   .fireball {
-position:absolute; z-index:16; font-size:30px; pointer-events:none;
-filter: drop-shadow(0 0 10px rgba(255,100,0,.9)) drop-shadow(0 0 18px rgba(255,50,0,.6));
+    position:absolute; z-index:16; font-size:30px; pointer-events:none;
+    filter: drop-shadow(0 0 10px rgba(255,100,0,.9)) drop-shadow(0 0 18px rgba(255,50,0,.6));
   }
   .fireball-trail { position:absolute; border-radius:50%; pointer-events:none; z-index:14; }
 
   /* ---- HUD ---- */
   #heart-counter {
-position:fixed; top:16px; right:16px; z-index:100;
-background:rgba(10,0,21,.85); border:1px solidrgba(255,105,180,.5);
+    position:fixed; top:16px; right:16px; z-index:100;
+    background:rgba(10,0,21,.85); border:1px solid rgba(255,105,180,.5);
     border-radius:30px; padding:7px 16px; display:flex; align-items:center; gap:7px;
     box-shadow:0 0 18px rgba(255,20,147,.25);
   }
-  #heart-count { font-family:'PlayfairDisplay',serif; color:var(--pink); font-size:19px; font-weight:700; }
+  #heart-count { font-family:'Playfair Display',serif; color:var(--pink); font-size:19px; font-weight:700; }
   #heart-counter-label { color:rgba(255,200,230,.7); font-size:11px; }
 
   #lives-counter {
-position:fixed; top:64px; right:16px; z-index:100;
-background:rgba(10,0,21,.85); border:1px solidrgba(255,80,80,.4);
+    position:fixed; top:64px; right:16px; z-index:100;
+    background:rgba(10,0,21,.85); border:1px solid rgba(255,80,80,.4);
     border-radius:30px; padding:6px 16px; display:flex; align-items:center; gap:6px;
     box-shadow:0 0 14px rgba(255,60,60,.2); font-size:18px;
   }
@@ -105,40 +105,40 @@ background:rgba(10,0,21,.85); border:1px solidrgba(255,80,80,.4);
 
   /* ── STORY SCREEN ── */
   #story-screen {
-position:fixed; inset:0; z-index:500;
-background:radial-gradient(ellipse at 30% 40%, #1a0035 0%, #05000f 60%, #000005 100%);
-display:flex; flex-direction:column; align-items:center; justify-content:center;
-transition:opacity 1.2s;
-overflow:hidden;
+    position:fixed; inset:0; z-index:500;
+    background:radial-gradient(ellipse at 30% 40%, #1a0035 0%, #05000f 60%, #000005 100%);
+    display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
+    overflow-y:auto; padding:20px 0 30px;
+    transition:opacity 1.2s;
   }
   #story-screen.hidden { opacity:0; pointer-events:none; display:none; }
 
   /* yıldız arka plan efekti */
   #story-screen::before {
-content:''; position:absolute; inset:0;
+    content:''; position:absolute; inset:0;
     background-image:
-radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,.7) 0%, transparent 100%),
-radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,.5) 0%, transparent 100%),
-radial-gradient(1.5px 1.5px at 45% 10%, rgba(255,255,255,.8) 0%, transparent 100%),
-radial-gradient(1px 1px at 60% 55%, rgba(255,255,255,.6) 0%, transparent 100%),
-radial-gradient(1px 1px at 75% 20%, rgba(255,255,255,.5) 0%, transparent 100%),
-radial-gradient(1.5px 1.5px at 85% 70%, rgba(255,255,255,.7) 0%, transparent 100%),
-radial-gradient(1px 1px at 92% 35%, rgba(255,255,255,.4) 0%, transparent 100%),
-radial-gradient(1px 1px at 35% 75%, rgba(255,255,255,.5) 0%, transparent 100%),
-radial-gradient(1.5px 1.5px at 55% 85%, rgba(255,255,255,.6) 0%, transparent 100%),
-radial-gradient(1px 1px at 15% 60%, rgba(255,255,255,.4) 0%, transparent 100%);
-pointer-events:none;
+      radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,.5) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 45% 10%, rgba(255,255,255,.8) 0%, transparent 100%),
+      radial-gradient(1px 1px at 60% 55%, rgba(255,255,255,.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 75% 20%, rgba(255,255,255,.5) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 85% 70%, rgba(255,255,255,.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 92% 35%, rgba(255,255,255,.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 35% 75%, rgba(255,255,255,.5) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 55% 85%, rgba(255,255,255,.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 15% 60%, rgba(255,255,255,.4) 0%, transparent 100%);
+    pointer-events:none;
   }
 
   #story-content {
-position:relative; z-index:1;
+    position:relative; z-index:1;
     max-width:480px; width:90%; display:flex; flex-direction:column; align-items:center;
   }
 
   #story-icon {
-    font-size:52px; margin-bottom:18px;
-animation:storyIconFloat 3s ease-in-outinfinite;
-filter:drop-shadow(0 0 20px rgba(255,100,200,.8));
+    font-size:42px; margin-bottom:10px;
+    animation:storyIconFloat 3s ease-in-out infinite;
+    filter:drop-shadow(0 0 20px rgba(255,100,200,.8));
   }
   @keyframes storyIconFloat {
     0%,100%{transform:translateY(0) rotate(-3deg);}
@@ -146,57 +146,57 @@ filter:drop-shadow(0 0 20px rgba(255,100,200,.8));
   }
 
   #story-title {
-font-family:'PlayfairDisplay',serif;
-color:var(--lavender);
-font-size:clamp(18px,5vw,28px);
-text-align:center; line-height:1.3;
-    margin-bottom:22px;
+    font-family:'Playfair Display',serif;
+    color:var(--lavender);
+    font-size:clamp(18px,5vw,28px);
+    text-align:center; line-height:1.3;
+    margin-bottom:12px;
     text-shadow:0 0 30px rgba(232,180,248,.7);
     letter-spacing:1px;
   }
 
   #story-scroll-box {
-    width:100%; max-height:42vh; overflow-y:auto;
-    padding:20px 22px; margin-bottom:22px;
-background:rgba(255,255,255,.04);
-    border:1px solidrgba(255,105,180,.25);
+    width:100%; max-height:35vh; overflow-y:auto;
+    padding:14px 16px; margin-bottom:14px;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,105,180,.25);
     border-radius:16px;
-box-shadow:inset 0 0 30px rgba(180,50,255,.05);
-scrollbar-width:thin; scrollbar-color:rgba(255,105,180,.3) transparent;
+    box-shadow:inset 0 0 30px rgba(180,50,255,.05);
+    scrollbar-width:thin; scrollbar-color:rgba(255,105,180,.3) transparent;
   }
   #story-scroll-box::-webkit-scrollbar { width:4px; }
   #story-scroll-box::-webkit-scrollbar-thumb { background:rgba(255,105,180,.35); border-radius:2px; }
 
   #story-text {
-font-family:'PlayfairDisplay',serif;
-color:rgba(255,215,235,.88);
-font-size:clamp(13px,2.5vw,15px);
+    font-family:'Playfair Display',serif;
+    color:rgba(255,215,235,.88);
+    font-size:clamp(13px,2.5vw,15px);
     line-height:1.95; text-align:left;
-font-style:italic;
+    font-style:italic;
   }
   #story-text p { margin-bottom:14px; }
   #story-text p:last-child { margin-bottom:0; }
   #story-text .story-em {
-color:var(--lavender); font-style:normal; font-weight:700;
+    color:var(--lavender); font-style:normal; font-weight:700;
   }
   #story-text .story-dark {
-color:rgba(255,100,100,.85); font-style:normal;
+    color:rgba(255,100,100,.85); font-style:normal;
   }
 
   #story-divider {
-color:rgba(255,105,180,.4); font-size:14px; letter-spacing:6px;
-    margin-bottom:10px; text-align:center;
+    color:rgba(255,105,180,.4); font-size:13px; letter-spacing:5px;
+    margin-bottom:8px; text-align:center;
   }
 
   #story-next-btn {
-background:linear-gradient(135deg,#8b0059,var(--rose),#ff69b4);
-    background-size:200% 200%; animation:btnShimmer 3s easeinfinite;
-color:#fff; border:none; border-radius:40px;
+    background:linear-gradient(135deg,#8b0059,var(--rose),#ff69b4);
+    background-size:200% 200%; animation:btnShimmer 3s ease infinite;
+    color:#fff; border:none; border-radius:40px;
     padding:14px 42px; font-size:16px;
-font-family:'PlayfairDisplay',serif;
-cursor:pointer; letter-spacing:1px;
+    font-family:'Playfair Display',serif;
+    cursor:pointer; letter-spacing:1px;
     box-shadow:0 0 30px rgba(255,20,147,.5);
-transition:transform .2s, box-shadow .2s;
+    transition:transform .2s, box-shadow .2s;
   }
   @keyframes btnShimmer {
     0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%}
@@ -205,206 +205,206 @@ transition:transform .2s, box-shadow .2s;
 
   #story-scroll-hint {
     font-size:11px; color:rgba(255,200,230,.3);
-font-style:italic; margin-top:8px; text-align:center;
-animation:fadeInOut 2s ease-in-outinfinite;
+    font-style:italic; margin-top:8px; text-align:center;
+    animation:fadeInOut 2s ease-in-out infinite;
   }
   @keyframes fadeInOut { 0%,100%{opacity:.3} 50%{opacity:.7} }
   /* ── DIARY BUTTON & PANEL ── */
   #diary-btn {
-position:fixed; top:16px; left:16px; z-index:9999;
+    position:fixed; top:16px; left:16px; z-index:9999;
     width:46px; height:46px; border-radius:50%;
-background:rgba(255,105,180,.22); border:2px solidrgba(255,105,180,.55);
-color:#ffd9ec; font-size:20px;
-display:flex; align-items:center; justify-content:center;
-cursor:pointer; box-shadow:0 0 16px rgba(255,20,147,.3);
-transition:transform .2s, box-shadow .2s;
+    background:rgba(255,105,180,.22); border:2px solid rgba(255,105,180,.55);
+    color:#ffd9ec; font-size:20px;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; box-shadow:0 0 16px rgba(255,20,147,.3);
+    transition:transform .2s, box-shadow .2s;
     -webkit-tap-highlight-color:transparent;
   }
   #diary-btn:hover { transform:scale(1.08); box-shadow:0 0 26px rgba(255,20,147,.6); }
   #diary-badge {
-position:absolute; top:-4px; right:-4px; width:18px; height:18px;
-background:var(--rose); border-radius:50%; font-size:10px;
-color:#fff; display:none; align-items:center; justify-content:center;
-font-family:'Lato',sans-serif; font-weight:700;
+    position:absolute; top:-4px; right:-4px; width:18px; height:18px;
+    background:var(--rose); border-radius:50%; font-size:10px;
+    color:#fff; display:none; align-items:center; justify-content:center;
+    font-family:'Lato',sans-serif; font-weight:700;
   }
   #diary-badge.show { display:flex; }
 
   #diary-overlay {
-position:fixed; inset:0; z-index:500;
-background:rgba(5,0,15,.80); backdrop-filter:blur(4px);
-display:flex; align-items:center; justify-content:center;
+    position:fixed; inset:0; z-index:500;
+    background:rgba(5,0,15,.80); backdrop-filter:blur(4px);
+    display:flex; align-items:center; justify-content:center;
     opacity:0; pointer-events:none; transition:opacity .3s;
   }
   #diary-overlay.show { opacity:1; pointer-events:all; }
 
   #diary-panel {
     background:linear-gradient(135deg,rgba(18,5,38,.97),rgba(30,8,52,.97));
-    border:1px solidrgba(255,105,180,.45);
+    border:1px solid rgba(255,105,180,.45);
     border-radius:22px; padding:0; max-width:420px; width:92%;
     max-height:80vh; display:flex; flex-direction:column;
     box-shadow:0 0 55px rgba(255,20,147,.28);
-transform:scale(.9); transition:transform .3s;
-overflow:hidden;
+    transform:scale(.9); transition:transform .3s;
+    overflow:hidden;
   }
   #diary-overlay.show #diary-panel { transform:scale(1); }
 
   #diary-header {
     padding:20px 24px 0;
-font-family:'PlayfairDisplay',serif; color:var(--lavender);
+    font-family:'Playfair Display',serif; color:var(--lavender);
     font-size:19px; text-align:center;
-    border-bottom:1px solidrgba(255,105,180,.2);
+    border-bottom:1px solid rgba(255,105,180,.2);
     padding-bottom:14px; flex-shrink:0;
   }
 
   #diary-tabs {
-display:flex; flex-shrink:0;
-    border-bottom:1px solidrgba(255,105,180,.15);
+    display:flex; flex-shrink:0;
+    border-bottom:1px solid rgba(255,105,180,.15);
   }
   .diary-tab {
     flex:1; padding:12px 8px; cursor:pointer;
-font-family:'PlayfairDisplay',serif; font-size:14px;
-color:rgba(255,200,230,.55); text-align:center;
-transition:color .2s, border-bottom .2s;
-    border-bottom:2px solidtransparent;
+    font-family:'Playfair Display',serif; font-size:14px;
+    color:rgba(255,200,230,.55); text-align:center;
+    transition:color .2s, border-bottom .2s;
+    border-bottom:2px solid transparent;
   }
   .diary-tab.active {
-color:var(--pink); border-bottom:2px solid var(--pink);
+    color:var(--pink); border-bottom:2px solid var(--pink);
   }
 
   #diary-body { flex:1; overflow-y:auto; padding:16px 20px 20px; }
 
   .diary-entry {
-display:flex; gap:12px; align-items:flex-start;
-    padding:12px 0; border-bottom:1px solidrgba(255,105,180,.1);
+    display:flex; gap:12px; align-items:flex-start;
+    padding:12px 0; border-bottom:1px solid rgba(255,105,180,.1);
   }
   .diary-entry:last-child { border-bottom:none; }
   .diary-entry-emoji { font-size:26px; flex-shrink:0; }
   .diary-entry-content {}
   .diary-entry-title {
-font-family:'PlayfairDisplay',serif; color:var(--lavender);
+    font-family:'Playfair Display',serif; color:var(--lavender);
     font-size:14px; margin-bottom:4px;
   }
   .diary-entry-text {
-color:rgba(255,200,230,.8); font-size:12px; line-height:1.6;
+    color:rgba(255,200,230,.8); font-size:12px; line-height:1.6;
   }
   .diary-empty {
-text-align:center; color:rgba(255,200,230,.35);
-font-family:'PlayfairDisplay',serif; font-style:italic;
+    text-align:center; color:rgba(255,200,230,.35);
+    font-family:'Playfair Display',serif; font-style:italic;
     font-size:13px; padding:30px 0;
   }
   #diary-close-hint {
-text-align:center; color:rgba(255,200,230,.3);
+    text-align:center; color:rgba(255,200,230,.3);
     font-size:11px; padding:10px; flex-shrink:0;
-font-style:italic;
+    font-style:italic;
   }
   #progress-wrap { position:fixed; left:16px; top:50%; transform:translateY(-50%); z-index:100; display:flex; flex-direction:column; align-items:center; gap:5px; }
-  #progress-bar-outer { width:6px; height:200px; background:rgba(255,255,255,.1); border-radius:3px; overflow:hidden; border:1px solidrgba(255,105,180,.3); display:flex; flex-direction:column-reverse; }
-  #progress-bar-fill { width:100%; background:linear-gradient(totop,var(--rose),var(--pink),var(--lavender)); border-radius:3px; transition:height .4s ease; height:0%; box-shadow:0 0 8px rgba(255,20,147,.8); }
+  #progress-bar-outer { width:6px; height:200px; background:rgba(255,255,255,.1); border-radius:3px; overflow:hidden; border:1px solid rgba(255,105,180,.3); display:flex; flex-direction:column-reverse; }
+  #progress-bar-fill { width:100%; background:linear-gradient(to top,var(--rose),var(--pink),var(--lavender)); border-radius:3px; transition:height .4s ease; height:0%; box-shadow:0 0 8px rgba(255,20,147,.8); }
   #progress-label { color:rgba(255,200,230,.55); font-size:9px; writing-mode:vertical-lr; text-orientation:mixed; transform:rotate(180deg); letter-spacing:1px; }
-  #step-counter { position:fixed; left:16px; bottom:16px; z-index:100; color:rgba(255,200,230,.55); font-size:11px; background:rgba(10,0,21,.7); padding:5px 10px; border-radius:8px; border:1px solidrgba(255,105,180,.25); }
+  #step-counter { position:fixed; left:16px; bottom:16px; z-index:100; color:rgba(255,200,230,.55); font-size:11px; background:rgba(10,0,21,.7); padding:5px 10px; border-radius:8px; border:1px solid rgba(255,105,180,.25); }
 
   /* ---- POPUPS ---- */
   #popup, #quiz-popup, #death-popup {
-position:fixed; top:50%; left:50%; transform:translate(-50%,-50%) scale(.85);
+    position:fixed; top:50%; left:50%; transform:translate(-50%,-50%) scale(.85);
     z-index:200; border-radius:20px; padding:32px 36px; max-width:420px; width:92%; text-align:center;
     opacity:0; pointer-events:none; transition:opacity .35s, transform .35s;
   }
-  #popup { background:linear-gradient(135deg,rgba(15,5,35,.97),rgba(30,5,50,.97)); border:1px solidrgba(255,105,180,.5); box-shadow:0 0 55px rgba(255,20,147,.35); }
-  #quiz-popup { background:linear-gradient(135deg,rgba(15,5,35,.97),rgba(20,10,40,.97)); border:1px solidrgba(255,215,0,.5); box-shadow:0 0 55px rgba(255,215,0,.25); }
-  #death-popup { background:linear-gradient(135deg,rgba(35,5,10,.97),rgba(50,5,5,.97)); border:1px solidrgba(255,80,50,.5); box-shadow:0 0 55px rgba(255,60,30,.3); }
+  #popup { background:linear-gradient(135deg,rgba(15,5,35,.97),rgba(30,5,50,.97)); border:1px solid rgba(255,105,180,.5); box-shadow:0 0 55px rgba(255,20,147,.35); }
+  #quiz-popup { background:linear-gradient(135deg,rgba(15,5,35,.97),rgba(20,10,40,.97)); border:1px solid rgba(255,215,0,.5); box-shadow:0 0 55px rgba(255,215,0,.25); }
+  #death-popup { background:linear-gradient(135deg,rgba(35,5,10,.97),rgba(50,5,5,.97)); border:1px solid rgba(255,80,50,.5); box-shadow:0 0 55px rgba(255,60,30,.3); }
   #popup.show, #quiz-popup.show, #death-popup.show { opacity:1; pointer-events:all; transform:translate(-50%,-50%) scale(1); }
 
   #popup-emoji, #death-emoji { font-size:46px; margin-bottom:10px; display:block; }
-  #popup-title, #death-title { font-family:'PlayfairDisplay',serif; color:var(--lavender); font-size:21px; margin-bottom:9px; line-height:1.3; }
+  #popup-title, #death-title { font-family:'Playfair Display',serif; color:var(--lavender); font-size:21px; margin-bottom:9px; line-height:1.3; }
   #death-title { color:#ff9e80; }
   #popup-text, #death-text { color:rgba(255,200,230,.85); font-size:14px; line-height:1.7; margin-bottom:22px; }
   #popup-btn, #death-btn {
-background:linear-gradient(135deg,var(--rose),var(--pink)); color:#fff; border:none;
-    border-radius:30px; padding:11px 30px; font-size:14px; font-family:'PlayfairDisplay',serif;
-cursor:pointer; box-shadow:0 0 18px rgba(255,20,147,.45); transition:transform .2s;
+    background:linear-gradient(135deg,var(--rose),var(--pink)); color:#fff; border:none;
+    border-radius:30px; padding:11px 30px; font-size:14px; font-family:'Playfair Display',serif;
+    cursor:pointer; box-shadow:0 0 18px rgba(255,20,147,.45); transition:transform .2s;
   }
   #death-btn { background:linear-gradient(135deg,#c0392b,#e74c3c); box-shadow:0 0 18px rgba(231,76,60,.45); }
   #popup-btn:hover, #death-btn:hover { transform:scale(1.05); }
 
   #quiz-question-emoji { font-size:38px; display:block; margin-bottom:10px; }
-  #quiz-question { font-family:'PlayfairDisplay',serif; color:var(--gold); font-size:18px; margin-bottom:20px; line-height:1.5; }
-  .quiz-option { display:block; width:100%; background:rgba(255,215,0,.08); border:1px solidrgba(255,215,0,.3); border-radius:11px; padding:11px 18px; margin-bottom:9px; color:rgba(255,240,200,.9); font-size:13px; cursor:pointer; transition:background .2s,border-color .2s,transform .1s; font-family:'Lato',sans-serif; text-align:left; }
+  #quiz-question { font-family:'Playfair Display',serif; color:var(--gold); font-size:18px; margin-bottom:20px; line-height:1.5; }
+  .quiz-option { display:block; width:100%; background:rgba(255,215,0,.08); border:1px solid rgba(255,215,0,.3); border-radius:11px; padding:11px 18px; margin-bottom:9px; color:rgba(255,240,200,.9); font-size:13px; cursor:pointer; transition:background .2s,border-color .2s,transform .1s; font-family:'Lato',sans-serif; text-align:left; }
   .quiz-option:hover { background:rgba(255,215,0,.2); border-color:rgba(255,215,0,.7); transform:translateX(4px); }
   .quiz-option.correct { background:rgba(0,200,100,.2); border-color:#00c864; color:#90ffcc; }
   .quiz-option.wrong { background:rgba(255,50,50,.15); border-color:rgba(255,100,100,.5); color:rgba(255,150,150,.8); }
-  #quiz-feedback { margin-top:12px; font-size:13px; min-height:18px; font-family:'PlayfairDisplay',serif; font-style:italic; }
-  #quiz-continue-btn { display:none; margin-top:14px; background:linear-gradient(135deg,#b8860b,#ffd700); color:#1a0505; border:none; border-radius:30px; padding:11px 30px; font-size:14px; font-family:'PlayfairDisplay',serif; font-weight:700; cursor:pointer; box-shadow:0 0 18px rgba(255,215,0,.35); transition:transform .2s; }
+  #quiz-feedback { margin-top:12px; font-size:13px; min-height:18px; font-family:'Playfair Display',serif; font-style:italic; }
+  #quiz-continue-btn { display:none; margin-top:14px; background:linear-gradient(135deg,#b8860b,#ffd700); color:#1a0505; border:none; border-radius:30px; padding:11px 30px; font-size:14px; font-family:'Playfair Display',serif; font-weight:700; cursor:pointer; box-shadow:0 0 18px rgba(255,215,0,.35); transition:transform .2s; }
   #quiz-continue-btn:hover { transform:scale(1.05); }
 
   /* ---- FINAL SCENE ---- */
   #final-scene { position:fixed; inset:0; z-index:300; background:radial-gradient(ellipse at center,#1a0035 0%,#000005 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity 1.5s; }
   #final-scene.show { opacity:1; pointer-events:all; }
-  #final-couple { font-size:72px; margin-bottom:20px; animation:coupleFloat 3s ease-in-outinfinite; filter:drop-shadow(0 0 28px rgba(255,100,200,1)); }
+  #final-couple { font-size:72px; margin-bottom:20px; animation:coupleFloat 3s ease-in-out infinite; filter:drop-shadow(0 0 28px rgba(255,100,200,1)); }
   @keyframes coupleFloat { 0%,100%{transform:translateY(0) scale(1);} 50%{transform:translateY(-14px) scale(1.04);} }
-  #final-message { font-family:'PlayfairDisplay',serif; color:var(--lavender); font-size:clamp(20px,4vw,40px); text-align:center; line-height:1.5; max-width:580px; padding:0 20px; text-shadow:0 0 28px rgba(232,180,248,.6); animation:fadeInUp 2s ease .5s both; }
+  #final-message { font-family:'Playfair Display',serif; color:var(--lavender); font-size:clamp(20px,4vw,40px); text-align:center; line-height:1.5; max-width:580px; padding:0 20px; text-shadow:0 0 28px rgba(232,180,248,.6); animation:fadeInUp 2s ease .5s both; }
   #final-sub { color:rgba(255,180,220,.8); font-size:clamp(13px,2vw,17px); text-align:center; margin-top:14px; font-style:italic; animation:fadeInUp 2s ease 1.2s both; }
   @keyframes fadeInUp { from{opacity:0;transform:translateY(28px);} to{opacity:1;transform:translateY(0);} }
 
-  .particle { position:fixed; pointer-events:none; z-index:250; font-size:18px; animation:particleFly 1.4s ease-outforwards; }
+  .particle { position:fixed; pointer-events:none; z-index:250; font-size:18px; animation:particleFly 1.4s ease-out forwards; }
   @keyframes particleFly { 0%{opacity:1;transform:translate(0,0) scale(1);} 100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.2);} }
 
   /* ---- TITLE SCREEN ---- */
   #title-screen { display:none !important; }
   #title-screen.hidden { opacity:0; pointer-events:none; }
-  #title-main { font-family:'PlayfairDisplay',serif; color:var(--lavender); font-size:clamp(22px,5vw,52px); text-align:center; line-height:1.3; margin-bottom:10px; text-shadow:0 0 35px rgba(232,180,248,.7); animation:titleGlow 2s ease-in-outinfinitealternate; }
+  #title-main { font-family:'Playfair Display',serif; color:var(--lavender); font-size:clamp(22px,5vw,52px); text-align:center; line-height:1.3; margin-bottom:10px; text-shadow:0 0 35px rgba(232,180,248,.7); animation:titleGlow 2s ease-in-out infinite alternate; }
   @keyframes titleGlow { from{text-shadow:0 0 25px rgba(232,180,248,.5);} to{text-shadow:0 0 55px rgba(232,180,248,1),0 0 75px rgba(255,105,180,.45);} }
   #title-sub { font-family:'Lato',sans-serif; color:rgba(255,200,230,.7); font-size:clamp(12px,2vw,17px); text-align:center; margin-bottom:30px; font-style:italic; letter-spacing:1px; }
   #title-warning { color:rgba(255,180,140,.65); font-size:12px; margin-bottom:28px; max-width:340px; text-align:center; line-height:1.6; }
-  #title-hearts { font-size:30px; margin-bottom:22px; animation:heartBob 1.5s ease-in-outinfinite; letter-spacing:8px; }
+  #title-hearts { font-size:30px; margin-bottom:22px; animation:heartBob 1.5s ease-in-out infinite; letter-spacing:8px; }
   @keyframes heartBob { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
-  #start-btn { background:linear-gradient(135deg,var(--rose),#c0005a); color:#fff; border:none; border-radius:40px; padding:15px 46px; font-size:17px; font-family:'PlayfairDisplay',serif; cursor:pointer; box-shadow:0 0 28px rgba(255,20,147,.55); transition:transform .2s,box-shadow .2s; letter-spacing:1px; }
+  #start-btn { background:linear-gradient(135deg,var(--rose),#c0005a); color:#fff; border:none; border-radius:40px; padding:15px 46px; font-size:17px; font-family:'Playfair Display',serif; cursor:pointer; box-shadow:0 0 28px rgba(255,20,147,.55); transition:transform .2s,box-shadow .2s; letter-spacing:1px; }
   #start-btn:hover { transform:scale(1.06); box-shadow:0 0 46px rgba(255,20,147,.9); }
 
   #controls-hint { position:fixed; bottom:18px; left:50%; transform:translateX(-50%); z-index:100; display:flex; gap:10px; align-items:center; }
 
   /* ---- INFO BUTTON & OVERLAY ---- */
   #info-btn {
-position:fixed !important; bottom:18px !important; right:18px !important;
-top:auto !important; left:auto !important;
+    position:fixed !important; bottom:18px !important; right:18px !important;
+    top:auto !important; left:auto !important;
     z-index:9999;
     width:46px; height:46px; border-radius:50%;
-background:rgba(255,105,180,.22); border:2px solidrgba(255,105,180,.55);
-color:#ffd9ec; font-size:20px; font-family:'PlayfairDisplay',serif; font-style:italic;
-display:flex; align-items:center; justify-content:center;
-cursor:pointer; box-shadow:0 0 16px rgba(255,20,147,.3);
-transition:transform .2s, box-shadow .2s;
+    background:rgba(255,105,180,.22); border:2px solid rgba(255,105,180,.55);
+    color:#ffd9ec; font-size:20px; font-family:'Playfair Display',serif; font-style:italic;
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; box-shadow:0 0 16px rgba(255,20,147,.3);
+    transition:transform .2s, box-shadow .2s;
     -webkit-tap-highlight-color:transparent;
     margin:0; transform:none;
   }
   #info-btn:hover { transform:scale(1.08) !important; box-shadow:0 0 26px rgba(255,20,147,.55); }
 
   #info-overlay {
-position:fixed; inset:0; z-index:500;
-background:rgba(5,0,15,.78); backdrop-filter:blur(3px);
-display:flex; align-items:center; justify-content:center;
+    position:fixed; inset:0; z-index:500;
+    background:rgba(5,0,15,.78); backdrop-filter:blur(3px);
+    display:flex; align-items:center; justify-content:center;
     opacity:0; pointer-events:none; transition:opacity .3s;
   }
   #info-overlay.show { opacity:1; pointer-events:all; }
 
   #info-card {
     background:linear-gradient(135deg,rgba(20,5,40,.97),rgba(35,8,55,.97));
-    border:1px solidrgba(255,105,180,.5);
+    border:1px solid rgba(255,105,180,.5);
     border-radius:20px; padding:24px 26px; max-width:420px; width:88%;
     max-height:82vh; display:flex; flex-direction:column; overflow:hidden;
     box-shadow:0 0 50px rgba(255,20,147,.3);
-transform:scale(.9); transition:transform .3s;
+    transform:scale(.9); transition:transform .3s;
   }
   #info-overlay.show #info-card { transform:scale(1); }
 
   #info-title {
-font-family:'PlayfairDisplay',serif; color:var(--lavender); font-size:21px;
+    font-family:'Playfair Display',serif; color:var(--lavender); font-size:21px;
     margin-bottom:16px; text-align:center;
   }
   #info-body { color:rgba(255,220,235,.9); font-size:13px; line-height:1.75; overflow-y:auto; flex:1; }
   #info-body p { margin-bottom:12px; }
   #info-body b { color:#ffd9ec; }
   #info-hint { text-align:center; color:rgba(255,200,230,.45); font-size:11px; margin-top:18px; font-style:italic; }
-  .ctrl-key { background:rgba(255,255,255,.07); border:1px solidrgba(255,255,255,.18); border-radius:7px; color:rgba(255,200,230,.65); font-size:12px; padding:5px 12px; }
+  .ctrl-key { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.18); border-radius:7px; color:rgba(255,200,230,.65); font-size:12px; padding:5px 12px; }
   #mobile-controls { position:fixed; bottom:18px; left:50%; transform:translateX(-50%); z-index:100; display:none; gap:18px; }
 
   /* ── TWIN-STICK ARENA CONTROLS ── */
@@ -413,25 +413,25 @@ font-family:'PlayfairDisplay',serif; color:var(--lavender); font-size:21px;
   .stick-wrap { position:absolute; bottom:18px; width:110px; height:110px; pointer-events:all; touch-action:none; }
   #left-stick-wrap  { left:18px; }
   #right-stick-wrap { right:18px; }
-  .stick-base { width:110px; height:110px; border-radius:50%; background:rgba(255,105,180,.15); border:2px solidrgba(255,105,180,.4); position:relative; }
-  .stick-knob { width:44px; height:44px; border-radius:50%; background:rgba(255,105,180,.7); border:2px solidrgba(255,150,200,.9); position:absolute; top:33px; left:33px; box-shadow:0 0 14px rgba(255,20,147,.6); }
+  .stick-base { width:110px; height:110px; border-radius:50%; background:rgba(255,105,180,.15); border:2px solid rgba(255,105,180,.4); position:relative; }
+  .stick-knob { width:44px; height:44px; border-radius:50%; background:rgba(255,105,180,.7); border:2px solid rgba(255,150,200,.9); position:absolute; top:33px; left:33px; box-shadow:0 0 14px rgba(255,20,147,.6); }
   #right-stick-label { position:absolute; top:-22px; left:50%; transform:translateX(-50%); font-size:18px; pointer-events:none; }
-  #jump-btn { position:absolute; bottom:40px; left:50%; transform:translateX(-50%); width:58px; height:58px; border-radius:50%; background:rgba(100,180,255,.22); border:2px solidrgba(120,200,255,.55); color:#fff; font-size:22px; cursor:pointer; display:flex; align-items:center; justify-content:center; pointer-events:all; -webkit-tap-highlight-color:transparent; box-shadow:0 0 12px rgba(100,180,255,.4); }
+  #jump-btn { position:absolute; bottom:40px; left:50%; transform:translateX(-50%); width:58px; height:58px; border-radius:50%; background:rgba(100,180,255,.22); border:2px solid rgba(120,200,255,.55); color:#fff; font-size:22px; cursor:pointer; display:flex; align-items:center; justify-content:center; pointer-events:all; -webkit-tap-highlight-color:transparent; box-shadow:0 0 12px rgba(100,180,255,.4); }
 
   /* ── CAGE: sağ alt köşe ── */
   #boy-char { position:fixed !important; bottom:90px; right:24px; z-index:20; display:none; flex-direction:column; align-items:center; }
   #boy-char.in-world { position:absolute !important; bottom:auto; right:auto; }
   #attack-hint {
-position:fixed; top:16px; left:50%; transform:translateX(-50%) translateY(-20px);
-    z-index:101; background:rgba(20,5,35,.9); border:1px solidrgba(180,150,255,.5);
+    position:fixed; top:16px; left:50%; transform:translateX(-50%) translateY(-20px);
+    z-index:101; background:rgba(20,5,35,.9); border:1px solid rgba(180,150,255,.5);
     border-radius:14px; padding:8px 18px; color:#e8d8ff; font-size:12px;
-font-family:'PlayfairDisplay',serif; font-style:italic;
+    font-family:'Playfair Display',serif; font-style:italic;
     box-shadow:0 0 18px rgba(150,100,255,.3);
     opacity:0; pointer-events:none; transition:opacity .4s, transform .4s;
   }
   #attack-hint.show { opacity:1; transform:translateX(-50%) translateY(0); }
   @media(max-width:600px){ #mobile-controls{display:flex;} #controls-hint{display:none;} }
-  .mob-btn { width:58px; height:58px; border-radius:50%; background:rgba(255,105,180,.2); border:2px solidrgba(255,105,180,.5); color:#fff; font-size:22px; cursor:pointer; display:flex; align-items:center; justify-content:center; -webkit-tap-highlight-color:transparent; }
+  .mob-btn { width:58px; height:58px; border-radius:50%; background:rgba(255,105,180,.2); border:2px solid rgba(255,105,180,.5); color:#fff; font-size:22px; cursor:pointer; display:flex; align-items:center; justify-content:center; -webkit-tap-highlight-color:transparent; }
   .mob-btn:active { transform:scale(.9); background:rgba(255,105,180,.4); }
 </style>
 </head>
@@ -443,7 +443,7 @@ font-family:'PlayfairDisplay',serif; font-style:italic;
 <div id="story-screen">
 <div id="story-content">
 
-<div id="story-icon">❤️🔥</div>
+<div id="story-icon">❤️🔥+</div>
 
 <div id="story-title">Bir AŞKIN Başlangıcı <br>MEHMET ve ZEYEBİN hikayesi</div>
 
@@ -451,10 +451,9 @@ font-family:'PlayfairDisplay',serif; font-style:italic;
 <div id="story-text">
 
 <p>Zeynebimmmm</p>
-<p>Her şey küçücük bir Instagram isteğiyle başladı ve hayatımın en güzel hikayesine dönüştü. Benim hayatımın yönünü değiştiren ilk adımdı. İkimiz de o günün bizi bugünlere getireceğini bilmiyorduk. Kim bilebilirdi ki, Bir mesajın saatlere, saatlerin gecelere, gecelerin alışkanlıklara dönüşeceğini. Fark etmeden birbirimizin en güzel alışkanlığı olduk. Alışkanlıklar ise kocaman bir aşka dönüştü. Birbirimize günaydın demeden güne başlayamaz olduk, iyi geceler demeden uyuyamaz olduk. Sevdiğimiz her şeyi önce birbirimize anlatmak ister olduk. Mutlu olduğumuzda ilk birbirimizi aradık. Üzüldüğümüzde yine birbirimize sığındık. Sadece bir kez birbirimizi görebildik. Belki o an düşündüğümüz kadar uzun sürmedi. Ama o kısa zaman bile bana bir ömre yetecek kadar güzel hatıra bıraktı. İşte o gün anladım. Bazı insanlar birbirine yakın olduğu için değil, birbirine ait olduğu için sever. Ayrı kaldığımız zamanın içine neler sığdırmadık ki. Binlerce Seni seviyorum. Yüzlerce Seni özledim. Sayısını hatırlamadığım 
-        kadar çok gülüş. Birlikte kurduğumuz sayısız hayal. Ve bazen de birbirimizi sadece sessizce dinlediğimiz uzun geceler. Aramızda kilometreler vardı. Bazen tek dokunabildiğimiz şey telefon ekranıydı. Sarılmak istediğimiz anlarda sadece fotoğraflara bakabildik. Aynı gökyüzüne bakıp farklı şehirlerde uyuduk. Birlikte yürümek isterken aynı kaldırımı bile paylaşamadık. Birlikte kahve içmek isterken aynı masaya oturamadık. Bazen sadece birkaç saniyelik bir sarılmanın değerini, yüzlerce kilometre uzakta olunca anlıyor insan. Belki sen farkında bile değilsin. Ama sen, hayatıma girdiğin günden beri beni defalarca kurtardın. Kötü geçen bir günümü sen güzelleştirdin. Umutsuz olduğum zamanlarda bana yeniden umut oldun. Gülmeyi unuttuğum günlerde beni güldürdün. Yalnız hissettiğim gecelerde bana yalnız olmadığımı hissettirdin. Kalbimdeki bütün karanlıkları sessizce yok ettin. Başıma kötü bir şey geldi ve beni sadece sen kurtarabilirsin Benim en çok şu an sana ihtiyacım var. Umarım bu mektubu okur ve gelip beni
-        kurtarırsın. Ben sana güveniyorum. Sen beni asla yolda bırakmazsın. Ne olursa olsun gelirsin. Karanlık ve sisli bir gecede, senin özlemin ile yanıp tutuşurken tek başıma yürüyüşe çıktım. Seni öylesine derin düşünüyordum ki nereye gittiğime bile dikkat etmedim. Bir ses duydum. Karanlıktan gelen bir sesti. Bu kadar büyük bir aşka izin vermem dedi bir kadın sesi. O an kafamı kaldırdım, etrafıma baktım. Burası neresi? dedim kendi kendime. Ağaçlık bir yere gelmiştim. Aynı ses bir daha geldi. İrkildim. Hızlı adımlarla oradan uzaklaşmaya çalışıyordum ki birdenbire karşıma bir cadı çıktı. Gözünü hiç kırpmadan gözümün içine bakıyordu. Bana ürkütücü bir ses tonuyla seslendi: Bu kadar güzel ve büyük bir aşk mı? Olmaz! İzin vermem. Asla kavuşamayacaksınız! deyip yüksek ve korkutucu bir kahkaha attı. Kahkaha ile çığlık arası bir şeydi. Ben korkup kaçmaya yeltendim ama sihir ile elimi kolumu bağladı ve beni bir kafese koydu. Beni, gökyüzünde neredeyse güneşin yok olduğu karanlık bir yere hapsetti. 
-        Sonsuza kadar burada kalacaksın. dedi. Başıma bir ejderha dikti ve gitti. Bize çocukken anlatılan masalları biliyorsun. Her zaman zor durumda olan bir prenses olurdu ve kahraman bir prens gelip onu kurtarırdı. Hiçbir zaman bir prensesin prensi kurtardığı bir masal anlatılmadı. Çünkü bir prensesin kahraman olabileceğine inanmıyorlardı. Ama ben buna katılmıyorum. Sen benim prensesim olarak benim hayatımı çoğu zaman kurtardın. Beni birçok kötülükten uzak tuttun. Benim en karanlık zamanlarımda bana ışık oldun. Şu anda bir kahraman gibi gelip prensini o ejderhanın pençesinden kurtaracağını biliyorum. Ve bütün dünyaya kadınların da kahraman olabileceğini, kadınların da sevdiği erkekler için gerekirse savaşabilecek kadar güçlü olduğunu kanıtlayacaksın. Gel aşkım. Gel, kurtar artık beni. Bir an önce kavuşalım.</span></p>
+<p>Her şey küçücük bir Instagram isteğiyle başladı ve hayatımın en güzel hikayesine dönüştü. Benim hayatımın yönünü değiştiren ilk adımdı. İkimiz de o günün bizi bugünlere getireceğini bilmiyorduk. Kim bilebilirdi ki, Bir mesajın saatlere, saatlerin gecelere, gecelerin alışkanlıklara dönüşeceğini. Fark etmeden birbirimizin en güzel alışkanlığı olduk. Alışkanlıklar ise kocaman bir aşka dönüştü. Birbirimize günaydın demeden güne başlayamaz olduk, iyi geceler demeden uyuyamaz olduk. Sevdiğimiz her şeyi önce birbirimize anlatmak ister olduk. Mutlu olduğumuzda ilk birbirimizi aradık. Üzüldüğümüzde yine birbirimize sığındık. Sadece bir kez birbirimizi görebildik. Belki o an düşündüğümüz kadar uzun sürmedi. Ama o kısa zaman bile bana bir ömre yetecek kadar güzel hatıra bıraktı. İşte o gün anladım. Bazı insanlar birbirine yakın olduğu için değil, birbirine ait olduğu için sever. Ayrı kaldığımız zamanın içine neler sığdırdığımızı biliyorum. Binlerce Seni seviyorum. Yüzlerce Seni özledim. Sayısını hatırlamadığım 
+        kadar çok gülüş. Birlikte kurduğumuz sayısız hayal. Ve bazen de birbirimizi sadece sessizce dinlediğimiz uzun geceler. Aramızda kilometreler vardı. Bazen tek dokunabildiğimiz şey telefon ekranıydı. Sarılmak istediğimiz anlarda sadece fotoğraflara bakabildik. Aynı gökyüzüne bakıp farklı şehirlerde uyuduk. Birlikte yürümek isterken aynı kaldırımı bile paylaşamadık. Birlikte kahve içmek isterken aynı masaya oturamadık. Bazen sadece birkaç santimetrelik bir sarılmanın değerini, yüzlerce kilometre uzakta olunca anlıyor insan. Belki sen farkında bile değilsin. Ama sen, hayatıma girdiğin günden beri beni defalarca kurtardın. Kötü geçen bir günümü sadece sesinle güzelleştirdin. Umutsuz olduğum zamanlarda bana yeniden umut oldun. Gülmeyi unuttuğum günlerde beni güldürdün. Yalnız hissettiğim gecelerde bana yalnız olmadığımı hissettirdin. Kalbimdeki bütün karanlıkları sessizce yok ettin. Başıma kötü bir şey geldi ve beni sadece sen kurtarabilir misin? Benim en çok şu an sana ihtiyacım var. Umarım bu mektubu okur         ve gelip beni kurtarırsın. Ben sana güveniyorum. Sen beni asla yolda bırakmazsın. Ne olursa olsun gelirsin. Karanlık ve sisli bir gecede, senin özlemin ile yanıp tutuşurken tek başıma yürüyüşe çıktım. Seni öylesine derin düşünüyordum ki nereye gittiğime bile dikkat etmedim. Bir ses duydum. Karanlıktan gelen bir sesti. Bu kadar büyük bir aşka izin vermem dedi bir kadın sesi. O an kafamı kaldırdım, etrafıma baktım. Burası neresi?dedim kendi kendime. Ağaçlık bir yere gelmiştim. Aynı ses bir daha geldi. İrkildim. Hızlı adımlarla oradan uzaklaşmaya çalışıyordum ki birdenbire karşıma bir cadı çıktı. Gözünü hiç kırpmadan gözümün içine bakıyordu. Bana ürkütücü bir ses tonuyla seslendi: Bu kadar güzel ve büyük bir aşk mı? Olmaz! İzin vermem. Asla kavuşamayacaksınız! deyip yüksek ve korkutucu bir kahkaha attı. Kahkaha ile çığlık arası bir şeydi. Ben korkup kaçmaya yeltendim ama sihir ile elimi kolumu bağladı ve beni bir kafese koydu. Beni, gökyüzünde neredeyse güneşin yok olduğu karanlık bir yere hapsetti. 
+        Sonsuza kadar burada kalacaksın. dedi. Başıma bir ejderha dikti ve gitti. Bize çocukken anlatılan masalları biliyorsun. Her zaman zor durumda olan bir prenses olurdu ve kahraman bir prens gelip onu kurtarırdı. Hiçbir zaman bir prensesin prensi kurtardığı bir masal anlatılmadı. Çünkü bir prensesin kahraman olabileceğini sanmıyorlar. Ama ben buna katılmıyorum. Sen benim prensesim olarak benim hayatımı çoğu zaman kurtardın. Beni birçok kötülükten uzak tuttun. Benim en karanlık zamanlarımda bana ışık oldun. Şu anda bir kahraman gibi gelip prensini o ejderhanın pençesinden kurtaracağını biliyorum. Ve bütün dünyaya kadınların da kahraman olabileceğini, kadınların da sevdiği erkekler için gerekirse savaşabilecek kadar güçlü olduğunu kanıtlayacaksın. Gel aşkım. Gel, kurtar artık beni. Bir an önce kavuşalım.</span></p>
 
 <p style="text-align:center; font-size:1.15em; color:var(--lavender); font-style:normal; letter-spacing:1px;">SENİ ÇOK SEVİYORUM. 💗</p>
 
@@ -463,7 +462,7 @@ font-family:'PlayfairDisplay',serif; font-style:italic;
 
 <div id="story-scroll-hint">↓ aşağı kaydır</div>
 <div id="story-divider">✦✦✦</div>
-<buttonid="story-next-btn" onclick="storyToGame()">Hadi Başlayalım ✨</button>
+<button id="story-next-btn" onclick="storyToGame()">Hadi Başlayalım ✨</button>
 
 </div>
 </div>
@@ -473,30 +472,30 @@ font-family:'PlayfairDisplay',serif; font-style:italic;
 <div id="title-main"></div>
 <div id="title-sub"></div>
 <div id="title-warning"></div>
-<buttonid="start-btn" onclick="startGame()"></button>
+<button id="start-btn" onclick="startGame()"></button>
 </div>
 
 <div id="world">
-<canvasid="stars-canvas"></canvas>
-<canvasid="bg-canvas"></canvas>
-<canvasid="fx-canvas"></canvas>
+<canvas id="stars-canvas"></canvas>
+<canvas id="bg-canvas"></canvas>
+<canvas id="fx-canvas"></canvas>
 
 <div id="player">
-<svgid="player-svg" viewBox="0 0 40 58" xmlns="http://www.w3.org/2000/svg"></svg>
+<svg id="player-svg" viewBox="0 0 40 58" xmlns="http://www.w3.org/2000/svg"></svg>
 <div id="player-name-tag">Zeynep</div>
 </div>
 
-<!-- Dragon bossguardingthecage -->
+<!-- Dragon boss guarding the cage -->
 <div id="dragon-char">
-<svgid="dragon-svg" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
+<svg id="dragon-svg" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg">
 <!-- tail -->
 <path d="M10 70 Q-5 55 8 40 Q14 48 20 55" fill="none" stroke="#2a6b3a" stroke-width="9" stroke-linecap="round"/>
-<!-- backwing -->
+<!-- back wing -->
 <path d="M55 35 Q80 5 100 20 Q85 30 75 45 Q65 38 55 35 Z" fill="#1f5a2e" opacity=".85"/>
 <!-- body -->
 <ellipse cx="55" cy="55" rx="32" ry="22" fill="#2e8b4a"/>
 <ellipse cx="55" cy="58" rx="26" ry="14" fill="#4caf6e" opacity=".6"/>
-<!-- frontwing -->
+<!-- front wing -->
 <path d="M50 30 Q75 -2 98 14 Q80 24 70 42 Q58 34 50 30 Z" fill="#379955"/>
 <!-- spikes -->
 <path d="M40 35 L36 24 L44 30 L42 18 L50 28 L50 16 L58 28 Z" fill="#1f5a2e"/>
@@ -516,17 +515,17 @@ font-family:'PlayfairDisplay',serif; font-style:italic;
 <!-- snout + teeth -->
 <path d="M112 48 Q120 49 117 54 Q112 54 110 51 Z" fill="#246b3e"/>
 <path d="M113 51 L114 54 M116 51 L117 54" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/>
-<!-- bellyglow -->
+<!-- belly glow -->
 <ellipse cx="55" cy="62" rx="14" ry="8" fill="#ffd700" opacity=".25"/>
 </svg>
 <div id="dragon-name-tag">Kötü Ejderha</div>
 <div id="dragon-hp-wrap"><div id="dragon-hp-fill"></div></div>
 </div>
 
-<!-- Cagedprincewaiting at the top -->
+<!-- Caged prince waiting at the top -->
 <div id="boy-char">
-<svgid="cage-svg" viewBox="0 0 56 70" xmlns="http://www.w3.org/2000/svg">
-<!-- cagebars (behind) -->
+<svg id="cage-svg" viewBox="0 0 56 70" xmlns="http://www.w3.org/2000/svg">
+<!-- cage bars (behind) -->
 <g stroke="#8a8a9a" stroke-width="2.4" stroke-linecap="round" opacity=".9">
 <line x1="4" y1="8" x2="4" y2="64"/>
 <line x1="14" y1="6" x2="14" y2="66"/>
@@ -548,7 +547,7 @@ font-family:'PlayfairDisplay',serif; font-style:italic;
 <line x1="24" y1="56" x2="22" y2="66" stroke="#2a3a6d" stroke-width="3.2" stroke-linecap="round"/>
 <line x1="32" y1="56" x2="34" y2="66" stroke="#2a3a6d" stroke-width="3.2" stroke-linecap="round"/>
 </g>
-<!-- cagebars (front) -->
+<!-- cage bars (front) -->
 <g stroke="#9a9aac" stroke-width="2" stroke-linecap="round" opacity=".75">
 <line x1="9" y1="7" x2="9" y2="65"/>
 <line x1="19" y1="5.5" x2="19" y2="66.5"/>
@@ -567,7 +566,7 @@ font-family:'PlayfairDisplay',serif; font-style:italic;
 </div>
 
 
-<!-- Diarybutton (sol üst) -->
+<!-- Diary button (sol üst) -->
 <div id="diary-btn" onclick="openDiary()">
 📖
 <div id="diary-badge"></div>
@@ -578,7 +577,7 @@ font-family:'PlayfairDisplay',serif; font-style:italic;
 <div id="diary-panel">
 <div id="diary-header">BUCİ'nin Defteri</div>
 <div id="diary-tabs">
-<div class="diary-tabactive" id="tab-hearts" onclick="switchTab('hearts')">💗 Mesajlar</div>
+<div class="diary-tab active" id="tab-hearts" onclick="switchTab('hearts')">💗 Mesajları</div>
 <div class="diary-tab" id="tab-quizzes" onclick="switchTab('quizzes')">🔮 Sorular</div>
 </div>
 <div id="diary-body">
@@ -590,28 +589,28 @@ font-family:'PlayfairDisplay',serif; font-style:italic;
 </div>
 
 <div id="heart-counter">
-<spanstyle="font-size:20px">❤️</span>
-<spanid="heart-count">0</span>
-<spanid="heart-counter-label">kalp toplandı</span>
+<span style="font-size:20px">❤️</span>
+<span id="heart-count">0</span>
+<span id="heart-counter-label">kalp toplandı</span>
 </div>
 <div id="lives-counter">
-<spanid="lives-display">💙💙💙</span>
+<span id="lives-display">💙💙💙</span>
 </div>
 <div id="progress-wrap">
 <div id="progress-bar-outer"><div id="progress-bar-fill"></div></div>
-<div id="progress-label">Yükselme mesafesi</div>
+<div id="progress-label">Tırmanma Çizgisi</div>
 </div>
-<div id="step-counter">Basamak: <spanid="step-num">0</span> / <spanid="step-total">195</span></div>
+<div id="step-counter">Basamak: <span id="step-num">0</span> / <span id="step-total">195</span></div>
 <div id="controls-hint">
-<spanclass="ctrl-key">← → Hareket</span>
-<spanclass="ctrl-key">↑ / Boşluk Zıpla</span>
-<spanclass="ctrl-key">X Kalp Fırlat</span>
+<span class="ctrl-key">← → Hareket</span>
+<span class="ctrl-key">↑ / Boşluk Zıpla</span>
+<span class="ctrl-key">X Kalp Fırlat</span>
 </div>
 <div id="mobile-controls">
-<buttonclass="mob-btn" id="mob-left">◀</button>
-<buttonclass="mob-btn" id="mob-jump">▲</button>
-<buttonclass="mob-btn" id="mob-right">▶</button>
-<buttonclass="mob-btn" id="mob-attack" style="display:none">💗</button>
+<button class="mob-btn" id="mob-left">◀</button>
+<button class="mob-btn" id="mob-jump">▲</button>
+<button class="mob-btn" id="mob-right">▶</button>
+<button class="mob-btn" id="mob-attack" style="display:none">💗</button>
 </div>
 <div id="attack-hint">Hadi Aşkım Sana İnanıyorum Yen Ejderhayı Kurtar Beni</div>
 
@@ -624,7 +623,7 @@ font-family:'PlayfairDisplay',serif; font-style:italic;
 </div>
 </div>
 <!-- Orta: zıplama -->
-<buttonid="jump-btn">▲</button>
+<button id="jump-btn">▲</button>
 <!-- Sağ joystick: kalp yönü -->
 <div class="stick-wrap" id="right-stick-wrap">
 <div class="stick-base" id="right-stick-base">
@@ -634,7 +633,7 @@ font-family:'PlayfairDisplay',serif; font-style:italic;
 </div>
 </div>
 
-<buttonid="info-btn" onclick="openInfo()" aria-label="Oyun hakkında bilgi">i</button>
+<button id="info-btn" onclick="openInfo()" aria-label="Oyun hakkında bilgi">i</button>
 <div id="info-overlay" onclick="if(event.target===this) closeInfo()">
 <div id="info-card">
 <div id="info-title">Hoş Geldin HAYATIM SENİ ÇOK SEVİYORUM 💫</div>
@@ -647,25 +646,25 @@ font-family:'PlayfairDisplay',serif; font-style:italic;
 </div>
 
 <div id="popup">
-<spanid="popup-emoji"></span>
+<span id="popup-emoji"></span>
 <div id="popup-title"></div>
 <div id="popup-text"></div>
-<buttonid="popup-btn" onclick="closePopup()">Devam Et AŞKIM</button>
+<button id="popup-btn" onclick="closePopup()">Devam Et AŞKIM</button>
 </div>
 
 <div id="quiz-popup">
-<spanid="quiz-question-emoji"></span>
+<span id="quiz-question-emoji"></span>
 <div id="quiz-question"></div>
 <div id="quiz-options"></div>
 <div id="quiz-feedback"></div>
-<buttonid="quiz-continue-btn" onclick="quizSuccess()">Süpersin AŞKIM</button>
+<button id="quiz-continue-btn" onclick="quizSuccess()">Süpersin AŞKIM</button>
 </div>
 
 <div id="death-popup">
-<spanid="death-emoji">🔥</span>
+<span id="death-emoji">🔥</span>
 <div id="death-title">Ateş Topu Çarptı!</div>
 <div id="death-text">Üzülme sevgilim ne olursa olsun bana ulaşacağını biliyorum sen efsanesin benim güzel prensesim 💗</div>
-<buttonid="death-btn" onclick="closeDeath()">Tekrar Dene 💪</button>
+<button id="death-btn" onclick="closeDeath()">Tekrar Dene 💪</button>
 </div>
 
 <div id="final-scene">
@@ -676,23 +675,23 @@ font-family:'PlayfairDisplay',serif; font-style:italic;
 
 <script>
 
-functionshowTitleScreen(){} // artık kullanılmıyor
+function showTitleScreen(){} // artık kullanılmıyor
 
-functionstoryToGame(){
-document.getElementById('story-screen').classList.add('hidden');
-gameStarted=true;
-initGame();
+function storyToGame(){
+  document.getElementById('story-screen').classList.add('hidden');
+  gameStarted=true;
+  initGame();
   // Odağı oyuna ver — klavye ve dokunmatik çalışsın
-document.body.focus();
+  document.body.focus();
   // Mobil butonları aktif et
-document.getElementById('mobile-controls').style.display = '';
+  document.getElementById('mobile-controls').style.display = '';
 }
 window.addEventListener('error', function(e){
-try{
-constbox=document.createElement('div');
+  try{
+    const box=document.createElement('div');
     box.style.cssText='position:fixed;top:8px;left:8px;right:8px;z-index:99999;background:#400;color:#fff;padding:10px;border-radius:8px;font-size:11px;font-family:monospace;white-space:pre-wrap;max-height:40vh;overflow:auto;';
-box.textContent = 'Hata: '+e.message+' @ '+(e.filename||'')+':'+e.lineno;
-document.body.appendChild(box);
+    box.textContent = 'Hata: '+e.message+' @ '+(e.filename||'')+':'+e.lineno;
+    document.body.appendChild(box);
   }catch(_){}
 });
 
@@ -702,272 +701,272 @@ document.body.appendChild(box);
 const VW = window.innerWidth;
 const VH = window.innerHeight;
 const NUM_STEPS = 200;
-const STEP_GAP  = 105;                  // verticalpxbetweensteps (tighter ->harder)
+const STEP_GAP  = 105;                  // vertical px between steps (tighter -> harder)
 const WORLD_H   = NUM_STEPS * STEP_GAP + VH * 1.4;
 const PLAT_W    = 78;                   // smaller platform = harder
 const PLAT_H    = 16;
 const PLAYER_W  = 34;
 const PLAYER_H  = 58;
 const GRAVITY   = 0.62;
-const JUMP_VEL  = -14.2;                // tunedsomaxjump ≈ 1.05*STEP_GAP
+const JUMP_VEL  = -14.2;                // tuned so max jump ≈ 1.05*STEP_GAP
 const MOVE_SPD  = 4.6;
 const MAX_LIVES = 3;
 
 // ════════════════════════════════════════════════════════════
-// STAR CANVAS (fixedviewportsparkleoverlay)
+// STAR CANVAS (fixed viewport sparkle overlay)
 // ════════════════════════════════════════════════════════════
-constsc = document.getElementById('stars-canvas');
-constsx = sc.getContext('2d');
+const sc = document.getElementById('stars-canvas');
+const sx = sc.getContext('2d');
 sc.width = VW; sc.height = VH;
 const STARS = Array.from({length:160},()=>({x:Math.random()*VW,y:Math.random()*VH,r:Math.random()*1.6+.3,a:Math.random()*.6+.25,tw:Math.random()*Math.PI*2}));
-functiondrawStars(dt){
-sx.clearRect(0,0,VW,VH);
-STARS.forEach(s=>{
+function drawStars(dt){
+  sx.clearRect(0,0,VW,VH);
+  STARS.forEach(s=>{
     s.tw+=dt*.0015;
-const a=s.a*(.5+.5*Math.sin(s.tw));
-sx.beginPath(); sx.arc(s.x,s.y,s.r,0,Math.PI*2);
-sx.fillStyle=`rgba(255,230,255,${a})`; sx.fill();
+    const a=s.a*(.5+.5*Math.sin(s.tw));
+    sx.beginPath(); sx.arc(s.x,s.y,s.r,0,Math.PI*2);
+    sx.fillStyle=`rgba(255,230,255,${a})`; sx.fill();
   });
 }
 
 // ════════════════════════════════════════════════════════════
-// FX CANVAS (viewport-relative — fireballs, screenshakeflash)
+// FX CANVAS (viewport-relative — fireballs, screen shake flash)
 // ════════════════════════════════════════════════════════════
-constfc = document.getElementById('fx-canvas');
-constfx = fc.getContext('2d');
+const fc = document.getElementById('fx-canvas');
+const fx = fc.getContext('2d');
 fc.width = VW; fc.height = VH;
 
 // ════════════════════════════════════════════════════════════
-// BIG SCENE CANVAS — forest ->sky ->clouds ->space
+// BIG SCENE CANVAS — forest -> sky -> clouds -> space
 // ════════════════════════════════════════════════════════════
-constbgC = document.getElementById('bg-canvas');
-constbgX = bgC.getContext('2d');
-bgC.width = VW; bgC.height = VH; // viewport-sized, redrawneachframewithcamYprogress
+const bgC = document.getElementById('bg-canvas');
+const bgX = bgC.getContext('2d');
+bgC.width = VW; bgC.height = VH; // viewport-sized, redrawn each frame with camY progress
 
-functiondrawPlanet(x,y,r,c1,c2,c3){
-const gr=bgX.createRadialGradient(x-r*.35,y-r*.35,r*.05,x,y,r);
-gr.addColorStop(0,c3||c2); gr.addColorStop(0.6,c2); gr.addColorStop(1,c1);
-bgX.beginPath(); bgX.arc(x,y,r,0,Math.PI*2); bgX.fillStyle=gr; bgX.fill();
-bgX.save(); bgX.globalAlpha=.3;
-bgX.beginPath(); bgX.ellipse(x,y,r*1.75,r*.38,-.28,0,Math.PI*2);
-bgX.strokeStyle=c2; bgX.lineWidth=3.5; bgX.stroke(); bgX.restore();
+function drawPlanet(x,y,r,c1,c2,c3){
+  const gr=bgX.createRadialGradient(x-r*.35,y-r*.35,r*.05,x,y,r);
+  gr.addColorStop(0,c3||c2); gr.addColorStop(0.6,c2); gr.addColorStop(1,c1);
+  bgX.beginPath(); bgX.arc(x,y,r,0,Math.PI*2); bgX.fillStyle=gr; bgX.fill();
+  bgX.save(); bgX.globalAlpha=.3;
+  bgX.beginPath(); bgX.ellipse(x,y,r*1.75,r*.38,-.28,0,Math.PI*2);
+  bgX.strokeStyle=c2; bgX.lineWidth=3.5; bgX.stroke(); bgX.restore();
 }
 
-functiondrawBgCanvas(scrollCamY){
+function drawBgCanvas(scrollCamY){
   // sp: 0 = player at ground (bottom of world), 1 = player at top (arena/space)
-  // pygoesfrom GROUND_Y (bottom) downto ~0 (top), soweinvert it
-constplayerY = (typeofpy !== 'undefined') ? py : WORLD_H;
-constsp = Math.max(0, Math.min(1, 1 - (playerY / WORLD_H)));
-const W=VW, H=VH;
-bgX.clearRect(0,0,W,H);
+  // py goes from GROUND_Y (bottom) down to ~0 (top), so we invert it
+  const playerY = (typeof py !== 'undefined') ? py : WORLD_H;
+  const sp = Math.max(0, Math.min(1, 1 - (playerY / WORLD_H)));
+  const W=VW, H=VH;
+  bgX.clearRect(0,0,W,H);
 
   // ── 1. SKY: gündüz mavi → gün batımı turuncu → gece moru → derin uzay ──
-constsky = bgX.createLinearGradient(0,H,0,0);
-if(sp< 0.25){
-const t=sp/0.25;
-sky.addColorStop(0, `rgb(${140+50*t|0},${198-40*t|0},${232-80*t|0})`);
+  const sky = bgX.createLinearGradient(0,H,0,0);
+  if(sp < 0.25){
+    const t=sp/0.25;
+    sky.addColorStop(0, `rgb(${140+50*t|0},${198-40*t|0},${232-80*t|0})`);
     sky.addColorStop(0.5,`rgb(${100+80*t|0},${160-40*t|0},${220-90*t|0})`);
-sky.addColorStop(1, `rgb(${80+30*t|0},${140-30*t|0},${200-70*t|0})`);
-  } else if(sp< 0.50){
-const t=(sp-0.25)/0.25;
-sky.addColorStop(0, `rgb(${190+30*t|0},${158-80*t|0},${152-100*t|0})`);
+    sky.addColorStop(1, `rgb(${80+30*t|0},${140-30*t|0},${200-70*t|0})`);
+  } else if(sp < 0.50){
+    const t=(sp-0.25)/0.25;
+    sky.addColorStop(0, `rgb(${190+30*t|0},${158-80*t|0},${152-100*t|0})`);
     sky.addColorStop(0.5,`rgb(${180+40*t|0},${120-80*t|0},${130-90*t|0})`);
-sky.addColorStop(1, `rgb(${110+30*t|0},${70-40*t|0},${52-30*t|0})`);
-  } else if(sp< 0.75){
-const t=(sp-0.50)/0.25;
-sky.addColorStop(0, `rgb(${80-65*t|0},${15-10*t|0},${22-10*t|0})`);
+    sky.addColorStop(1, `rgb(${110+30*t|0},${70-40*t|0},${52-30*t|0})`);
+  } else if(sp < 0.75){
+    const t=(sp-0.50)/0.25;
+    sky.addColorStop(0, `rgb(${80-65*t|0},${15-10*t|0},${22-10*t|0})`);
     sky.addColorStop(0.5,`rgb(${46-36*t|0},${10-6*t|0},${40-25*t|0})`);
-sky.addColorStop(1, `rgb(${30-24*t|0},${8-5*t|0},${50-42*t|0})`);
+    sky.addColorStop(1, `rgb(${30-24*t|0},${8-5*t|0},${50-42*t|0})`);
   } else {
-const t=(sp-0.75)/0.25;
-sky.addColorStop(0, `rgb(${8-6*t|0},${2-1*t|0},${24-16*t|0})`);
-sky.addColorStop(0.5,`rgb(${4-2*t|0},${1|0},${12-8*t|0})`);
-sky.addColorStop(1, `rgb(${2|0},${0},${8-6*t|0})`);
+    const t=(sp-0.75)/0.25;
+    sky.addColorStop(0, `rgb(${8-6*t|0},${2-1*t|0},${24-16*t|0})`);
+    sky.addColorStop(0.5,`rgb(${4-2*t|0},${1|0},${12-8*t|0})`);
+    sky.addColorStop(1, `rgb(${2|0},${0},${8-6*t|0})`);
   }
-bgX.fillStyle=sky; bgX.fillRect(0,0,W,H);
+  bgX.fillStyle=sky; bgX.fillRect(0,0,W,H);
 
   // ── 2. GÜNEŞ (gündüz + gün batımı) ──
-if(sp< 0.52){
-constsa = sp< 0.35 ? 1 : 1-(sp-0.35)/0.17;
-constsunX=W*.72, sunY=H*0.16;
-bgX.save(); bgX.globalAlpha=sa;
-constsg=bgX.createRadialGradient(sunX,sunY,0,sunX,sunY,88);
-sg.addColorStop(0,'rgba(255,255,210,1)'); sg.addColorStop(0.3,'rgba(255,220,100,.85)');
-sg.addColorStop(0.7,'rgba(255,170,50,.35)'); sg.addColorStop(1,'rgba(255,140,30,0)');
-bgX.fillStyle=sg; bgX.fillRect(0,0,W,H);
-bgX.beginPath(); bgX.arc(sunX,sunY,30,0,Math.PI*2);
-bgX.fillStyle='rgba(255,252,210,0.97)';
-bgX.shadowColor='rgba(255,220,80,0.9)'; bgX.shadowBlur=36; bgX.fill();
-bgX.restore();
+  if(sp < 0.52){
+    const sa = sp < 0.35 ? 1 : 1-(sp-0.35)/0.17;
+    const sunX=W*.72, sunY=H*0.16;
+    bgX.save(); bgX.globalAlpha=sa;
+    const sg=bgX.createRadialGradient(sunX,sunY,0,sunX,sunY,88);
+    sg.addColorStop(0,'rgba(255,255,210,1)'); sg.addColorStop(0.3,'rgba(255,220,100,.85)');
+    sg.addColorStop(0.7,'rgba(255,170,50,.35)'); sg.addColorStop(1,'rgba(255,140,30,0)');
+    bgX.fillStyle=sg; bgX.fillRect(0,0,W,H);
+    bgX.beginPath(); bgX.arc(sunX,sunY,30,0,Math.PI*2);
+    bgX.fillStyle='rgba(255,252,210,0.97)';
+    bgX.shadowColor='rgba(255,220,80,0.9)'; bgX.shadowBlur=36; bgX.fill();
+    bgX.restore();
   }
 
   // ── 3. GÜN BATIMI TURUNCU HUZME ──
-if(sp> 0.18 &&sp< 0.60){
-constga = sp<0.30?(sp-0.18)/0.12 : sp>0.50?1-(sp-0.50)/0.10 : 1;
-bgX.save(); bgX.globalAlpha=ga*0.28;
-consthaze=bgX.createLinearGradient(0,H,0,H*0.35);
-haze.addColorStop(0,'rgba(255,120,40,.6)'); haze.addColorStop(1,'rgba(255,120,40,0)');
-bgX.fillStyle=haze; bgX.fillRect(0,0,W,H);
-bgX.restore();
+  if(sp > 0.18 && sp < 0.60){
+    const ga = sp<0.30?(sp-0.18)/0.12 : sp>0.50?1-(sp-0.50)/0.10 : 1;
+    bgX.save(); bgX.globalAlpha=ga*0.28;
+    const haze=bgX.createLinearGradient(0,H,0,H*0.35);
+    haze.addColorStop(0,'rgba(255,120,40,.6)'); haze.addColorStop(1,'rgba(255,120,40,0)');
+    bgX.fillStyle=haze; bgX.fillRect(0,0,W,H);
+    bgX.restore();
   }
 
   // ── 4. AY ──
-if(sp> 0.32){
-constma=Math.min(1,(sp-0.32)/0.18);
-const mx=W*.20, my=H*0.20;
-bgX.save(); bgX.globalAlpha=ma;
-const mg=bgX.createRadialGradient(mx,my,0,mx,my,60);
-mg.addColorStop(0,'rgba(220,225,255,.32)'); mg.addColorStop(1,'rgba(220,225,255,0)');
-bgX.fillStyle=mg; bgX.beginPath(); bgX.arc(mx,my,60,0,Math.PI*2); bgX.fill();
-bgX.beginPath(); bgX.arc(mx,my,20,0,Math.PI*2);
-bgX.fillStyle='#f0eef8'; bgX.shadowColor='rgba(220,220,255,.9)'; bgX.shadowBlur=18; bgX.fill();
-bgX.globalAlpha=ma*0.18; bgX.fillStyle='#9aa0c0';
+  if(sp > 0.32){
+    const ma=Math.min(1,(sp-0.32)/0.18);
+    const mx=W*.20, my=H*0.20;
+    bgX.save(); bgX.globalAlpha=ma;
+    const mg=bgX.createRadialGradient(mx,my,0,mx,my,60);
+    mg.addColorStop(0,'rgba(220,225,255,.32)'); mg.addColorStop(1,'rgba(220,225,255,0)');
+    bgX.fillStyle=mg; bgX.beginPath(); bgX.arc(mx,my,60,0,Math.PI*2); bgX.fill();
+    bgX.beginPath(); bgX.arc(mx,my,20,0,Math.PI*2);
+    bgX.fillStyle='#f0eef8'; bgX.shadowColor='rgba(220,220,255,.9)'; bgX.shadowBlur=18; bgX.fill();
+    bgX.globalAlpha=ma*0.18; bgX.fillStyle='#9aa0c0';
     [[-6,-4,5],[7,5,4],[2,-8,3]].forEach(([dx,dy,r])=>{bgX.beginPath();bgX.arc(mx+dx,my+dy,r,0,Math.PI*2);bgX.fill();});
-bgX.restore();
+    bgX.restore();
   }
 
   // ── 5. YILDIZLAR ──
-if(sp> 0.42){
-constsa=Math.min(1,(sp-0.42)/0.22);
-bgX.save(); bgX.globalAlpha=sa;
-for(let i=0;i<160;i++){
-constsx=((Math.sin(i*127.1+3.14)*0.5+0.5)*W)|0;
-constsy=((Math.sin(i*311.7+1.62)*0.5+0.5)*H*0.78)|0;
-constsr=0.35+((Math.sin(i*73.3)*0.5+0.5)*1.4);
-consttwinkle=0.5+0.5*Math.sin(i*2.3+(Date.now()*0.001));
-bgX.beginPath(); bgX.arc(sx,sy,sr,0,Math.PI*2);
-bgX.fillStyle=`rgba(255,240,255,${0.6+0.4*twinkle})`; bgX.fill();
+  if(sp > 0.42){
+    const sa=Math.min(1,(sp-0.42)/0.22);
+    bgX.save(); bgX.globalAlpha=sa;
+    for(let i=0;i<160;i++){
+      const sx=((Math.sin(i*127.1+3.14)*0.5+0.5)*W)|0;
+      const sy=((Math.sin(i*311.7+1.62)*0.5+0.5)*H*0.78)|0;
+      const sr=0.35+((Math.sin(i*73.3)*0.5+0.5)*1.4);
+      const twinkle=0.5+0.5*Math.sin(i*2.3+(Date.now()*0.001));
+      bgX.beginPath(); bgX.arc(sx,sy,sr,0,Math.PI*2);
+      bgX.fillStyle=`rgba(255,240,255,${0.6+0.4*twinkle})`; bgX.fill();
     }
-bgX.restore();
+    bgX.restore();
   }
 
   // ── 6. KAYAN YILDIZLAR ──
-if(sp> 0.50){
-constsa=Math.min(1,(sp-0.50)/0.15);
-bgX.save(); bgX.globalAlpha=sa*0.8;
-for(let i=0;i<4;i++){
-constsx=((Math.sin(i*317.1)*0.5+0.5)*W)|0;
-constsy=((Math.sin(i*211.3)*0.5+0.5)*H*0.4)|0;
-constlen=38+i*14;
-constgrad=bgX.createLinearGradient(sx,sy,sx-len*0.82,sy-len*0.57);
-grad.addColorStop(0,'rgba(255,255,255,.9)'); grad.addColorStop(1,'rgba(255,255,255,0)');
-bgX.strokeStyle=grad; bgX.lineWidth=1.5; bgX.lineCap='round';
-bgX.beginPath(); bgX.moveTo(sx,sy); bgX.lineTo(sx-len*0.82,sy-len*0.57); bgX.stroke();
+  if(sp > 0.50){
+    const sa=Math.min(1,(sp-0.50)/0.15);
+    bgX.save(); bgX.globalAlpha=sa*0.8;
+    for(let i=0;i<4;i++){
+      const sx=((Math.sin(i*317.1)*0.5+0.5)*W)|0;
+      const sy=((Math.sin(i*211.3)*0.5+0.5)*H*0.4)|0;
+      const len=38+i*14;
+      const grad=bgX.createLinearGradient(sx,sy,sx-len*0.82,sy-len*0.57);
+      grad.addColorStop(0,'rgba(255,255,255,.9)'); grad.addColorStop(1,'rgba(255,255,255,0)');
+      bgX.strokeStyle=grad; bgX.lineWidth=1.5; bgX.lineCap='round';
+      bgX.beginPath(); bgX.moveTo(sx,sy); bgX.lineTo(sx-len*0.82,sy-len*0.57); bgX.stroke();
     }
-bgX.restore();
+    bgX.restore();
   }
 
   // ── 7. GEZEGENLER ──
-if(sp> 0.72){
-constpa=Math.min(1,(sp-0.72)/0.15);
-bgX.save(); bgX.globalAlpha=pa;
-function planet(px,py,r,c1,c2){
-const gr=bgX.createRadialGradient(px-r*.32,py-r*.32,r*.05,px,py,r);
-gr.addColorStop(0,c2); gr.addColorStop(1,c1);
-bgX.beginPath(); bgX.arc(px,py,r,0,Math.PI*2); bgX.fillStyle=gr; bgX.fill();
-bgX.save(); bgX.globalAlpha*=0.32;
-bgX.beginPath(); bgX.ellipse(px,py,r*1.72,r*.37,-.28,0,Math.PI*2);
-bgX.strokeStyle=c2; bgX.lineWidth=3; bgX.stroke(); bgX.restore();
+  if(sp > 0.72){
+    const pa=Math.min(1,(sp-0.72)/0.15);
+    bgX.save(); bgX.globalAlpha=pa;
+    function planet(px,py,r,c1,c2){
+      const gr=bgX.createRadialGradient(px-r*.32,py-r*.32,r*.05,px,py,r);
+      gr.addColorStop(0,c2); gr.addColorStop(1,c1);
+      bgX.beginPath(); bgX.arc(px,py,r,0,Math.PI*2); bgX.fillStyle=gr; bgX.fill();
+      bgX.save(); bgX.globalAlpha*=0.32;
+      bgX.beginPath(); bgX.ellipse(px,py,r*1.72,r*.37,-.28,0,Math.PI*2);
+      bgX.strokeStyle=c2; bgX.lineWidth=3; bgX.stroke(); bgX.restore();
     }
     planet(W*.83,H*.10,26,'#7b4fa6','#b07ad4');
     planet(W*.14,H*.22,17,'#4a6fa6','#6a9cd4');
     planet(W*.55,H*.06,11,'#a05030','#d07050');
-bgX.restore();
+    bgX.restore();
   }
 
   // ── 8. ARENA MOR IŞILTISI ──
-if(sp> 0.84){
-constaa=Math.min(1,(sp-0.84)/0.12);
-bgX.save(); bgX.globalAlpha=aa;
-constag=bgX.createRadialGradient(W*.5,H*.45,10,W*.5,H*.45,260);
-ag.addColorStop(0,'rgba(180,90,255,.30)'); ag.addColorStop(.5,'rgba(120,40,180,.13)'); ag.addColorStop(1,'rgba(80,20,120,0)');
-bgX.fillStyle=ag; bgX.fillRect(0,0,W,H);
-for(let i=0;i<18;i++){
-constex=((Math.sin(i*217.3)*0.5+0.5)*W)|0;
-const ey=((Math.sin(i*531.1)*0.5+0.5)*H)|0;
-bgX.beginPath(); bgX.arc(ex,ey,1.3+Math.sin(i)*0.7,0,Math.PI*2);
-bgX.fillStyle='rgba(200,150,255,0.55)'; bgX.fill();
+  if(sp > 0.84){
+    const aa=Math.min(1,(sp-0.84)/0.12);
+    bgX.save(); bgX.globalAlpha=aa;
+    const ag=bgX.createRadialGradient(W*.5,H*.45,10,W*.5,H*.45,260);
+    ag.addColorStop(0,'rgba(180,90,255,.30)'); ag.addColorStop(.5,'rgba(120,40,180,.13)'); ag.addColorStop(1,'rgba(80,20,120,0)');
+    bgX.fillStyle=ag; bgX.fillRect(0,0,W,H);
+    for(let i=0;i<18;i++){
+      const ex=((Math.sin(i*217.3)*0.5+0.5)*W)|0;
+      const ey=((Math.sin(i*531.1)*0.5+0.5)*H)|0;
+      bgX.beginPath(); bgX.arc(ex,ey,1.3+Math.sin(i)*0.7,0,Math.PI*2);
+      bgX.fillStyle='rgba(200,150,255,0.55)'; bgX.fill();
     }
-bgX.restore();
+    bgX.restore();
   }
 
   // ── 9. BULUTLAR (gündüz + gün batımı) ──
-if(sp< 0.62){
-constca=sp<0.45?0.78:0.78*(1-(sp-0.45)/0.17);
-functionpuff(cx,cy,sc,tint){
-bgX.save(); bgX.globalAlpha=ca; bgX.fillStyle=tint||'#fff';
-bgX.shadowColor='rgba(200,220,255,0.4)'; bgX.shadowBlur=10;
+  if(sp < 0.62){
+    const ca=sp<0.45?0.78:0.78*(1-(sp-0.45)/0.17);
+    function puff(cx,cy,sc,tint){
+      bgX.save(); bgX.globalAlpha=ca; bgX.fillStyle=tint||'#fff';
+      bgX.shadowColor='rgba(200,220,255,0.4)'; bgX.shadowBlur=10;
       [[0,0,36],[28,7,28],[-26,7,24],[44,-4,20],[-42,-2,18],[14,-15,22]].forEach(([dx,dy,r])=>{
-bgX.beginPath(); bgX.arc(cx+dx*sc,cy+dy*sc,r*sc,0,Math.PI*2); bgX.fill();
+        bgX.beginPath(); bgX.arc(cx+dx*sc,cy+dy*sc,r*sc,0,Math.PI*2); bgX.fill();
       });
-bgX.restore();
+      bgX.restore();
     }
-const t=sp>0.35?'#ffe9d6':'#ffffff';
-puff(W*.10,H*.12,0.75,t); puff(W*.50,H*.08,0.95,t);
-puff(W*.82,H*.18,0.62,t); puff(W*.28,H*.24,0.58,t); puff(W*.68,H*.30,0.72,t);
+    const t=sp>0.35?'#ffe9d6':'#ffffff';
+    puff(W*.10,H*.12,0.75,t); puff(W*.50,H*.08,0.95,t);
+    puff(W*.82,H*.18,0.62,t); puff(W*.28,H*.24,0.58,t); puff(W*.68,H*.30,0.72,t);
   }
 
   // ── 10. PARİS BİNALARI (sadece en altta, sp 0→0.16) ──
-if(sp< 0.19){
-constba=sp<0.10?1:1-(sp-0.10)/0.09;
-bgX.save(); bgX.globalAlpha=ba;
+  if(sp < 0.19){
+    const ba=sp<0.10?1:1-(sp-0.10)/0.09;
+    bgX.save(); bgX.globalAlpha=ba;
     // uzak siluet
-bgX.fillStyle='#3a4a6a'; bgX.globalAlpha=ba*0.32;
-bgX.beginPath(); bgX.moveTo(0,H);
-let bx2=0;
-while(bx2<W){
-const bw2=28+((bx2*7+11)%46), bh2=18+((bx2*13+5)%38);
-bgX.lineTo(bx2,H-bh2); bgX.lineTo(bx2+bw2,H-bh2); bx2+=bw2;
+    bgX.fillStyle='#3a4a6a'; bgX.globalAlpha=ba*0.32;
+    bgX.beginPath(); bgX.moveTo(0,H);
+    let bx2=0;
+    while(bx2<W){
+      const bw2=28+((bx2*7+11)%46), bh2=18+((bx2*13+5)%38);
+      bgX.lineTo(bx2,H-bh2); bgX.lineTo(bx2+bw2,H-bh2); bx2+=bw2;
     }
-bgX.lineTo(W,H); bgX.closePath(); bgX.fill();
+    bgX.lineTo(W,H); bgX.closePath(); bgX.fill();
     // ön binalar
-bgX.globalAlpha=ba;
-functionbldg(bx,bw,bh){
-constby=H-bh;
-bgX.fillStyle=`hsl(${28+(bx%10)},35%,${48+(bx%8)}%)`;
-bgX.fillRect(bx,by,bw,bh);
-bgX.fillStyle='#3a3a45';
-bgX.beginPath();
-bgX.moveTo(bx-2,by); bgX.lineTo(bx+bw*.15,by-bh*.22);
-bgX.lineTo(bx+bw*.85,by-bh*.22); bgX.lineTo(bx+bw+2,by);
-bgX.closePath(); bgX.fill();
-bgX.fillStyle='rgba(255,235,180,0.52)';
-constcols=Math.max(2,(bw/14)|0), rows=Math.max(2,(bh/20)|0);
-for(letrr=0;rr<rows;rr++) for(let cc=0;cc<cols;cc++){
-if((bx+rr+cc)%4!==0) bgX.fillRect(bx+5+cc*(bw-10)/cols, by+8+rr*(bh-16)/rows, (bw-10)/cols*.5, (bh-16)/rows*.45);
+    bgX.globalAlpha=ba;
+    function bldg(bx,bw,bh){
+      const by=H-bh;
+      bgX.fillStyle=`hsl(${28+(bx%10)},35%,${48+(bx%8)}%)`;
+      bgX.fillRect(bx,by,bw,bh);
+      bgX.fillStyle='#3a3a45';
+      bgX.beginPath();
+      bgX.moveTo(bx-2,by); bgX.lineTo(bx+bw*.15,by-bh*.22);
+      bgX.lineTo(bx+bw*.85,by-bh*.22); bgX.lineTo(bx+bw+2,by);
+      bgX.closePath(); bgX.fill();
+      bgX.fillStyle='rgba(255,235,180,0.52)';
+      const cols=Math.max(2,(bw/14)|0), rows=Math.max(2,(bh/20)|0);
+      for(let rr=0;rr<rows;rr++) for(let cc=0;cc<cols;cc++){
+        if((bx+rr+cc)%4!==0) bgX.fillRect(bx+5+cc*(bw-10)/cols, by+8+rr*(bh-16)/rows, (bw-10)/cols*.5, (bh-16)/rows*.45);
       }
     }
-letbxp=0;
-while(bxp<W){ constbw=50+((bxp*11)%55), bh=H*0.26+((bxp*7)%100); bldg(bxp,bw,bh); bxp+=bw+2; }
+    let bxp=0;
+    while(bxp<W){ const bw=50+((bxp*11)%55), bh=H*0.26+((bxp*7)%100); bldg(bxp,bw,bh); bxp+=bw+2; }
     // zemin şeridi
-bgX.fillStyle='#5a5a62'; bgX.fillRect(0,H-20,W,20);
-bgX.fillStyle='#6e6e78'; bgX.fillRect(0,H-20,W,2);
+    bgX.fillStyle='#5a5a62'; bgX.fillRect(0,H-20,W,20);
+    bgX.fillStyle='#6e6e78'; bgX.fillRect(0,H-20,W,2);
     // kaldırım dokusu
-for(let i=0;i<W;i+=10){ bgX.beginPath(); bgX.arc(i+(i*3%7-3),H-10,1.3,0,Math.PI*2); bgX.fillStyle='rgba(0,0,0,0.12)'; bgX.fill(); }
+    for(let i=0;i<W;i+=10){ bgX.beginPath(); bgX.arc(i+(i*3%7-3),H-10,1.3,0,Math.PI*2); bgX.fillStyle='rgba(0,0,0,0.12)'; bgX.fill(); }
     // sokak lambaları
     [0.10,0.30,0.70,0.90].forEach(xp=>{
-const lx=W*xp, ly=H-20;
-bgX.fillStyle='#1a1a1a'; bgX.fillRect(lx-1.5,ly-24,3,24);
-constlg=bgX.createRadialGradient(lx,ly-26,0,lx,ly-26,13);
-lg.addColorStop(0,'rgba(255,220,140,.88)'); lg.addColorStop(1,'rgba(255,220,140,0)');
-bgX.beginPath(); bgX.arc(lx,ly-26,13,0,Math.PI*2); bgX.fillStyle=lg; bgX.fill();
-bgX.beginPath(); bgX.arc(lx,ly-26,2.5,0,Math.PI*2); bgX.fillStyle='#ffe8b0'; bgX.fill();
+      const lx=W*xp, ly=H-20;
+      bgX.fillStyle='#1a1a1a'; bgX.fillRect(lx-1.5,ly-24,3,24);
+      const lg=bgX.createRadialGradient(lx,ly-26,0,lx,ly-26,13);
+      lg.addColorStop(0,'rgba(255,220,140,.88)'); lg.addColorStop(1,'rgba(255,220,140,0)');
+      bgX.beginPath(); bgX.arc(lx,ly-26,13,0,Math.PI*2); bgX.fillStyle=lg; bgX.fill();
+      bgX.beginPath(); bgX.arc(lx,ly-26,2.5,0,Math.PI*2); bgX.fillStyle='#ffe8b0'; bgX.fill();
     });
-bgX.restore();
+    bgX.restore();
   }
 
   // ── 11. ŞİİR YAZILARI ──
-if(typeof POEM_TEXTS !== 'undefined' &&POEM_TEXTS.length){
-constpIdx=Math.min(POEM_TEXTS.length-1, Math.floor(sp*POEM_TEXTS.length));
-constpf=(sp*POEM_TEXTS.length)-pIdx;
-constpa=pf<0.2?pf/0.2:pf>0.8?(1-pf)/0.2:1;
+  if(typeof POEM_TEXTS !== 'undefined' && POEM_TEXTS.length){
+    const pIdx=Math.min(POEM_TEXTS.length-1, Math.floor(sp*POEM_TEXTS.length));
+    const pf=(sp*POEM_TEXTS.length)-pIdx;
+    const pa=pf<0.2?pf/0.2:pf>0.8?(1-pf)/0.2:1;
     // sp>0.45 = gece/uzay → beyaz, sp<0.45 = gündüz → koyu
-constpoemColor = sp> 0.45 ? '#ffffff' : '#1a0a0a';
-bgX.save(); bgX.globalAlpha=pa*0.75; bgX.fillStyle=poemColor;
-bgX.font=`italic ${Math.round(W*0.038)}pxserif`;
-bgX.textAlign='center'; bgX.textBaseline='middle';
-bgX.fillText(POEM_TEXTS[pIdx],W/2,H*0.82);
-bgX.restore();
+    const poemColor = sp > 0.45 ? '#ffffff' : '#1a0a0a';
+    bgX.save(); bgX.globalAlpha=pa*0.75; bgX.fillStyle=poemColor;
+    bgX.font=`italic ${Math.round(W*0.038)}px serif`;
+    bgX.textAlign='center'; bgX.textBaseline='middle';
+    bgX.fillText(POEM_TEXTS[pIdx],W/2,H*0.82);
+    bgX.restore();
   }
 }
 
@@ -984,9 +983,9 @@ const POEM_TEXTS=[
   'Yol ne kadar uzun olursa olsun, sonunda sen varsın.','Her düşüşte yanımdasın.',
   'gözlerim kapalıyken bile seni arıyorum.','Ve işte sonunda birlikteyiz.'
 ];
-functionrenderPoems(){
-  // Poems arenowdrawn on thebgcanvaseachframebased on scrollprogress — no DOM needed
-document.querySelectorAll('.bg-poem').forEach(e=>e.remove());
+function renderPoems(){
+  // Poems are now drawn on the bg canvas each frame based on scroll progress — no DOM needed
+  document.querySelectorAll('.bg-poem').forEach(e=>e.remove());
 }
 
 // ════════════════════════════════════════════════════════════
@@ -1016,49 +1015,49 @@ const HEART_MSGS=[
 
 const QUIZZES=[
   {emoji:'💖',question:'Eğer sana yeniden aşık olmam gerekseydi nereden başlardım ?',options:['Gülüşünden','Gözlerinden','Kalbinden','Hislerimden'],correct:2,feedback:'Çünkü muhteşem bir kalbe sahipsin birtanem'},
-  {emoji:'💗',question:'Sence seni en çok ne zaman özlüyorum ?',options:['Yanımda olmadığın her an','Konuşmadığımızgecelerde','Herakılmageldiğinde','Sesini duymadığım zamanlarda'],correct:0,feedback:'Aslında ben her şıkta bir ayrı özlüyorum seni bebeğim'},
-  {emoji:'🌷',question:'Birgün bütün anılarımız silinseydi hangisi bizi yeniden birbirimize aşık ederdi ?',options:['İlk seni seviyorum denildiği an ','İlk karşılaşmamız','İlkkavgamız','İlk mesajımız'],correct:3,feedback:'Ne kadar silinirse silinsin tek aşkım olacaksın güzelim'},
+  {emoji:'💗',question:'Sence seni en çok ne zaman özlüyorum ?',options:['Yanımda olmadığın her an','Konuşmadığımız gecelerde','Her akılma geldiğinde','Sesini duymadığım zamanlarda'],correct:0,feedback:'Aslında ben her şıkta bir ayrı özlüyorum seni bebeğim'},
+  {emoji:'🌷',question:'Birgün bütün anılarımız silinseydi hangisi bizi yeniden birbirimize aşık ederdi ?',options:['İlk seni seviyorum denildiği an ','İlk karşılaşmamız','İlk kavgamız','İlk mesajımız'],correct:3,feedback:'Ne kadar silinirse silinsin tek aşkım olacaksın güzelim'},
   {emoji:'💝',question:'Sence bir insanın yuvası neresidir ?',options:['Sevdiği kişinin sesi','Sevdiği kişinin kalbi','Sevdiği kişinin gülüşü','Sevdiği kişinin yanı'],correct:1,feedback:'Kalbim sonsuza dek senin yuvan olacak hayatım'},
-  {emoji:'🦋',question:'Bir dilek hakkım olsaydı hangisini isterdim ?',options:['Seninle daha uzun konuşabilmeyi','Bir gün boyunca sarılabilmeyi','Bütün ömrü seninle yaşayabilmeyi','Senihergün mutlu etmeyi'],correct:2,feedback:'Aslında hepsi birden kraliçem'},
+  {emoji:'🦋',question:'Bir dilek hakkım olsaydı hangisini isterdim ?',options:['Seninle daha uzun konuşabilmeyi','Bir gün boyunca sarılabilmeyi','Bütün ömrü seninle yaşayabilmeyi','Seni hergün mutlu etmeyi'],correct:2,feedback:'Aslında hepsi birden kraliçem'},
   {emoji:'💞',question:'Bana göre aşkın en güzel tanımı hangisi ?',options:['Senin adını duyunca gülümsemek','Aynı şeye birlikte gülmek','Aynı hayali birlikte kurmak','Mesafeye rağmen vazgeçmemek'],correct:0,feedback:'Aşk seninle anlamlı zeynebim'},
   {emoji:'✨',question:'Sana tek bir kelime ile seslenecek olsam hangisi olurdu ?',options:['Huzurum','Kalbim','Yavrum','Mucizem'],correct:3,feedback:'Sen benim daima en güzel mucizemsin ömrüm'},
   {emoji:'🌸',question:'Gözelrimin içine bakınça neyi görmeni isterim ?',options:['Sana olan güvenimi','Sana olan sevgimi','Hayallerimizi','Seninle mutlu olan kalbimi'],correct:1,feedback:'Sadece seni sevecem sadece sen kelebeğim'},
-  {emoji:'💕',question:'Birlikte yaşlanırsak sana ne söylerdim ?',options:['Hala çok güzelsin','İyikivazgeçmemişiz','Seni ilk günki gibi seviyorum','Yine olsa seni seçerdim'],correct:2,feedback:'Herzam ilk günki sevgi ile huzurum'},
-  {emoji:'🌹',question:'Sana baktığımda ilk ne görüyorum ?',options:['Ömrümün geri kalanını','Kalbiminhuzurunu','En güzel tesadüfü','dünyanın en güzel gülüşünü'],correct:0,feedback:'Sen bana yaşam oldun sevgilim'},
+  {emoji:'💕',question:'Birlikte yaşlanırsak sana ne söylerdim ?',options:['Hala çok güzelsin','İyiki vazgeçmemişiz','Seni ilk günki gibi seviyorum','Yine olsa seni seçerdim'],correct:2,feedback:'Herzam ilk günki sevgi ile huzurum'},
+  {emoji:'🌹',question:'Sana baktığımda ilk ne görüyorum ?',options:['Ömrümün geri kalanını','Kalbimin huzurunu','En güzel tesadüfü','dünyanın en güzel gülüşünü'],correct:0,feedback:'Sen bana yaşam oldun sevgilim'},
 ];
 
 // ════════════════════════════════════════════════════════════
 // PROCEDURAL LEVEL GENERATION — 300 steps
 // ════════════════════════════════════════════════════════════
-// Eachstep'smaxhorizontalreach is boundedsojump is alwayspossible
-// (withcurrent PLAT_W, STEP_GAP andphysics, horizontalreach ≈ 160px)
-letsteps = [];
+// Each step's max horizontal reach is bounded so jump is always possible
+// (with current PLAT_W, STEP_GAP and physics, horizontal reach ≈ 160px)
+let steps = [];
 let LAST_STEP_X = VW/2, LAST_STEP_Y = 0;
-const GROUND_Y = WORLD_H - 60; // top surface of theground platform
-const ARENA_STEPS_REMOVED = 5; // last N stepsreplacedbysolid arena floor
-const CLIMB_STEPS = NUM_STEPS - ARENA_STEPS_REMOVED; // actualclimbablesteps
+const GROUND_Y = WORLD_H - 60; // top surface of the ground platform
+const ARENA_STEPS_REMOVED = 5; // last N steps replaced by solid arena floor
+const CLIMB_STEPS = NUM_STEPS - ARENA_STEPS_REMOVED; // actual climbable steps
 let ARENA_Y = 0; // top surface of the arena floor (set in buildSteps)
 
-functionbuildSteps(){
-steps = [];
-letprevX = VW*0.5;
-for(let i=0;i<CLIMB_STEPS;i++){
-const y = GROUND_Y - (i+1)*STEP_GAP; // step 0 is one STEP_GAP abovetheground
-    // horizontalrandomwalk, boundedreach
-let dx = (Math.random()-0.5)*220;
-letnx = prevX + dx;
-nx = Math.max(VW*0.12, Math.min(VW*0.88, nx));
-prevX = nx;
+function buildSteps(){
+  steps = [];
+  let prevX = VW*0.5;
+  for(let i=0;i<CLIMB_STEPS;i++){
+    const y = GROUND_Y - (i+1)*STEP_GAP; // step 0 is one STEP_GAP above the ground
+    // horizontal random walk, bounded reach
+    let dx = (Math.random()-0.5)*220;
+    let nx = prevX + dx;
+    nx = Math.max(VW*0.12, Math.min(VW*0.88, nx));
+    prevX = nx;
 
-    // typeassignment: quizroughlyevery 20 steps (10 total), withslightrandomness
-lettype='normal';
-if(i>0 && i % 20 === 0) type='quiz';
+    // type assignment: quiz roughly every 20 steps (10 total), with slight randomness
+    let type='normal';
+    if(i>0 && i % 20 === 0) type='quiz';
 
-steps.push({ idx:i, x:nx-PLAT_W/2, y, type, qIdx: type==='quiz' ? Math.floor(i/20)%QUIZZES.length : null, locked: type==='quiz', id:'p'+i });
+    steps.push({ idx:i, x:nx-PLAT_W/2, y, type, qIdx: type==='quiz' ? Math.floor(i/20)%QUIZZES.length : null, locked: type==='quiz', id:'p'+i });
 
-if(i===CLIMB_STEPS-1){
-      // The arena floorsitsonemore STEP_GAP abovethelastclimbable step,
-      // reachableby a normal jump, andspans a widesafe platform.
+    if(i===CLIMB_STEPS-1){
+      // The arena floor sits one more STEP_GAP above the last climbable step,
+      // reachable by a normal jump, and spans a wide safe platform.
       ARENA_Y = y - STEP_GAP;
       LAST_STEP_X = VW/2;
       LAST_STEP_Y = ARENA_Y;
@@ -1066,75 +1065,75 @@ if(i===CLIMB_STEPS-1){
   }
 }
 
-// Floatingheartballoons — independent of steps, scatteredroughlyevery 10 steps (20 total)
-letfloatingHearts = [];
-functionbuildHearts(){
-floatingHearts = [];
-const HEART_SPACING = 10; // stepsbetweenhearts
-constcount = Math.floor(CLIMB_STEPS / HEART_SPACING);
-for(let i=0;i<count;i++){
-conststepRef = Math.min(CLIMB_STEPS-1, i*HEART_SPACING + 1 + Math.floor(Math.random()*4 - 2));
-constsafeStepRef = Math.max(0, stepRef);
-constbaseY = steps[safeStepRef] ? steps[safeStepRef].y : GROUND_Y - safeStepRef*STEP_GAP;
-const y = baseY - 55 - Math.random()*40;
-const x = VW*(0.15+Math.random()*0.7);
-floatingHearts.push({ x, y, collected:false, msgIdx: i%HEART_MSGS.length, id:'h'+i });
+// Floating heart balloons — independent of steps, scattered roughly every 10 steps (20 total)
+let floatingHearts = [];
+function buildHearts(){
+  floatingHearts = [];
+  const HEART_SPACING = 10; // steps between hearts
+  const count = Math.floor(CLIMB_STEPS / HEART_SPACING);
+  for(let i=0;i<count;i++){
+    const stepRef = Math.min(CLIMB_STEPS-1, i*HEART_SPACING + 1 + Math.floor(Math.random()*4 - 2));
+    const safeStepRef = Math.max(0, stepRef);
+    const baseY = steps[safeStepRef] ? steps[safeStepRef].y : GROUND_Y - safeStepRef*STEP_GAP;
+    const y = baseY - 55 - Math.random()*40;
+    const x = VW*(0.15+Math.random()*0.7);
+    floatingHearts.push({ x, y, collected:false, msgIdx: i%HEART_MSGS.length, id:'h'+i });
   }
 }
 
-// Fireballs — fallfromabove, spawnperiodicallyonceplayerpasses a heightthreshold
-letfireballs = []; // {x,y,vy,size}
-letfireballSpawnTimer = 0;
+// Fireballs — fall from above, spawn periodically once player passes a height threshold
+let fireballs = []; // {x,y,vy,size}
+let fireballSpawnTimer = 0;
 const FIREBALL_INTERVAL_MIN = 1400; // ms
 const FIREBALL_INTERVAL_MAX = 2600;
-letnextFireballIn = 2000;
+let nextFireballIn = 2000;
 
 // ════════════════════════════════════════════════════════════
 // STATE
 // ════════════════════════════════════════════════════════════
-letpx=VW/2-PLAYER_W/2, py=0, vx=0, vy=0, onGround=false;
-letcamY=0, heartsCollected=0, lives=MAX_LIVES;
-letgameStarted=false, popupOpen=false, quizOpen=false, deathOpen=false, gameWon=false, infoOpen=false;
-letcageFreed=false;
-letjoystickAngle=null; // null = not touching, else radians
-letjoystickActive=false;
-letcurrentQuizPlat=null;
-letkeys={};
-letlastT=0;
-letwalkFrame=0, walkTimer=0, facingRight=true;
-letinvulnerableUntil=0;
+let px=VW/2-PLAYER_W/2, py=0, vx=0, vy=0, onGround=false;
+let camY=0, heartsCollected=0, lives=MAX_LIVES;
+let gameStarted=false, popupOpen=false, quizOpen=false, deathOpen=false, gameWon=false, infoOpen=false;
+let cageFreed=false;
+let joystickAngle=null; // null = not touching, else radians
+let joystickActive=false;
+let currentQuizPlat=null;
+let keys={};
+let lastT=0;
+let walkFrame=0, walkTimer=0, facingRight=true;
+let invulnerableUntil=0;
 
 // ════════════════════════════════════════════════════════════
 // PLAYER SVG
 // ════════════════════════════════════════════════════════════
-functiondrawPlayerSVG(moving, jumping, right){
-const t=walkFrame;
-constlegAngle = moving&& !jumping ? Math.sin(t)*26 : 0;
-constarmAngle = moving&& !jumping ? Math.sin(t+Math.PI)*20 : (jumping?-32:0);
-constflip = right?1:-1;
-consthipY=34, lHipX=16, rHipX=24, shY=19, lShX=13, rShX=27;
-constlLeg=legAngle*flip, rLeg=-legAngle*flip, lArm=armAngle*flip, rArm=-armAngle*flip;
-functionlimbEnd(ox,oy,angle,len){ constrad=angle*Math.PI/180; return [ox+Math.sin(rad)*len, oy+Math.cos(rad)*len]; }
-const [lKneeX,lKneeY]=limbEnd(lHipX,hipY,lLeg,13);
-const [lFootX,lFootY]=limbEnd(lKneeX,lKneeY,lLeg*0.5,13);
-const [rKneeX,rKneeY]=limbEnd(rHipX,hipY,rLeg,13);
-const [rFootX,rFootY]=limbEnd(rKneeX,rKneeY,rLeg*0.5,13);
-const [lElbX,lElbY]=limbEnd(lShX,shY,lArm,10);
-const [lHandX,lHandY]=limbEnd(lElbX,lElbY,lArm*0.7,9);
-const [rElbX,rElbY]=limbEnd(rShX,shY,rArm,10);
-const [rHandX,rHandY]=limbEnd(rElbX,rElbY,rArm*0.7,9);
-constsw='stroke-width="3" stroke-linecap="round"';
-  // dressswaybased on movement
-constsway = moving&& !jumping ? Math.sin(t)*4*flip : 0;
-return `
+function drawPlayerSVG(moving, jumping, right){
+  const t=walkFrame;
+  const legAngle = moving && !jumping ? Math.sin(t)*26 : 0;
+  const armAngle = moving && !jumping ? Math.sin(t+Math.PI)*20 : (jumping?-32:0);
+  const flip = right?1:-1;
+  const hipY=34, lHipX=16, rHipX=24, shY=19, lShX=13, rShX=27;
+  const lLeg=legAngle*flip, rLeg=-legAngle*flip, lArm=armAngle*flip, rArm=-armAngle*flip;
+  function limbEnd(ox,oy,angle,len){ const rad=angle*Math.PI/180; return [ox+Math.sin(rad)*len, oy+Math.cos(rad)*len]; }
+  const [lKneeX,lKneeY]=limbEnd(lHipX,hipY,lLeg,13);
+  const [lFootX,lFootY]=limbEnd(lKneeX,lKneeY,lLeg*0.5,13);
+  const [rKneeX,rKneeY]=limbEnd(rHipX,hipY,rLeg,13);
+  const [rFootX,rFootY]=limbEnd(rKneeX,rKneeY,rLeg*0.5,13);
+  const [lElbX,lElbY]=limbEnd(lShX,shY,lArm,10);
+  const [lHandX,lHandY]=limbEnd(lElbX,lElbY,lArm*0.7,9);
+  const [rElbX,rElbY]=limbEnd(rShX,shY,rArm,10);
+  const [rHandX,rHandY]=limbEnd(rElbX,rElbY,rArm*0.7,9);
+  const sw='stroke-width="3" stroke-linecap="round"';
+  // dress sway based on movement
+  const sway = moving && !jumping ? Math.sin(t)*4*flip : 0;
+  return `
 <line x1="${rShX}" y1="${shY}" x2="${rElbX}" y2="${rElbY}" stroke="#b8447a" ${sw} stroke-opacity=".7"/>
 <line x1="${rElbX}" y1="${rElbY}" x2="${rHandX}" y2="${rHandY}" stroke="#ffcba4" ${sw} stroke-opacity=".7"/>
 <line x1="${rHipX}" y1="${hipY+8}" x2="${rKneeX}" y2="${rKneeY+6}" stroke="#ffcba4" ${sw} stroke-opacity=".7"/>
 <line x1="${rKneeX}" y1="${rKneeY+6}" x2="${rFootX}" y2="${rFootY+4}" stroke="#ffcba4" ${sw} stroke-opacity=".7"/>
-<!-- dressskirt (flareswithmovement) -->
+<!-- dress skirt (flares with movement) -->
 <path d="M13 ${hipY} Q20 ${hipY-3} 27 ${hipY} L${29+sway} ${hipY+18} Q20 ${hipY+22} ${11-sway} ${hipY+18} Z" fill="#ff4fa3"/>
 <path d="M13 ${hipY} Q20 ${hipY-3} 27 ${hipY} L${29+sway} ${hipY+18} Q20 ${hipY+22} ${11-sway} ${hipY+18} Z" fill="url(#dressGrad)" opacity="0.5"/>
-<!-- legspeekingfromskirt -->
+<!-- legs peeking from skirt -->
 <line x1="${lHipX}" y1="${hipY+8}" x2="${lKneeX}" y2="${lKneeY+6}" stroke="#ffcba4" ${sw}/>
 <line x1="${lKneeX}" y1="${lKneeY+6}" x2="${lFootX}" y2="${lFootY+4}" stroke="#ffcba4" ${sw}/>
 <ellipse cx="${lFootX}" cy="${lFootY+4}" rx="4.5" ry="2.8" fill="#7a1f4d"/>
@@ -1142,12 +1141,12 @@ return `
 <!-- bodice -->
 <rect x="14" y="14" width="12" height="${hipY-14+2}" rx="4" fill="#ff4fa3" opacity=".95"/>
 <rect x="14" y="14" width="12" height="6" rx="3" fill="#ffd9ec" opacity=".5"/>
-<!-- frontarm -->
+<!-- front arm -->
 <line x1="${lShX}" y1="${shY}" x2="${lElbX}" y2="${lElbY}" stroke="#ff4fa3" ${sw}/>
 <line x1="${lElbX}" y1="${lElbY}" x2="${lHandX}" y2="${lHandY}" stroke="#ffcba4" ${sw}/>
 <!-- head -->
 <circle cx="20" cy="9" r="7.5" fill="#ffcba4" stroke="#cc9966" stroke-width="1.1"/>
-<!-- longhair -->
+<!-- long hair -->
 <path d="M12.5 6 Q11 2 20 1.5 Q29 2 27.5 6 Q28 14 25 ${20+sway*0.5} Q22 16 20 16 Q18 16 15 ${20-sway*0.5} Q12 14 12.5 6 Z" fill="#5c2a0d"/>
 <ellipse cx="20" cy="4.5" rx="7.5" ry="4" fill="#6b3310"/>
 <!-- eye -->
@@ -1158,572 +1157,572 @@ return `
 <path d="M17 12 Q20 14.5 23 12" fill="none" stroke="#c0537a" stroke-width="1.1" stroke-linecap="round"/>
 <!-- blush -->
 <circle cx="${right?16:24}" cy="11" r="1.6" fill="#ff9ec4" opacity=".5"/>
-<defs><linearGradientid="dressGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#ff4fa3" stop-opacity="0"/></linearGradient></defs>
+<defs><linearGradient id="dressGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#ff4fa3" stop-opacity="0"/></linearGradient></defs>
   `;
 }
-functionupdatePlayerSVG(moving,jumping,right){ document.getElementById('player-svg').innerHTML = drawPlayerSVG(moving,jumping,right); }
+function updatePlayerSVG(moving,jumping,right){ document.getElementById('player-svg').innerHTML = drawPlayerSVG(moving,jumping,right); }
 
 // ════════════════════════════════════════════════════════════
-// VIEWPORT CULLING RENDER — onlyrenderplatforms/heartsnearcamera
+// VIEWPORT CULLING RENDER — only render platforms/hearts near camera
 // ════════════════════════════════════════════════════════════
-constworld = document.getElementById('world');
-constplatEls = newMap();   // id -> DOM el
-constheartEls = newMap();
+const world = document.getElementById('world');
+const platEls = new Map();   // id -> DOM el
+const heartEls = new Map();
 
-const CULL_MARGIN = 400; // pxabove/belowviewporttokeeprendered
+const CULL_MARGIN = 400; // px above/below viewport to keep rendered
 
-functionensureGroundEl(){
-if(document.getElementById('ground-el')) return;
-const el=document.createElement('div');
-el.id='ground-el';
+function ensureGroundEl(){
+  if(document.getElementById('ground-el')) return;
+  const el=document.createElement('div');
+  el.id='ground-el';
   el.style.cssText=`position:absolute;left:0;top:${GROUND_Y}px;width:${VW}px;height:80px;
-background:linear-gradient(180deg, rgba(30,80,15,.95), rgba(15,40,8,.98));
-    border-top:3px solidrgba(120,220,90,.6);
+    background:linear-gradient(180deg, rgba(30,80,15,.95), rgba(15,40,8,.98));
+    border-top:3px solid rgba(120,220,90,.6);
     box-shadow:0 -6px 20px rgba(100,200,80,.25);
     z-index:9;`;
-world.appendChild(el);
+  world.appendChild(el);
 }
 
-functionensureArenaEl(){
-if(document.getElementById('arena-el')) return;
-const el=document.createElement('div');
-el.id='arena-el';
+function ensureArenaEl(){
+  if(document.getElementById('arena-el')) return;
+  const el=document.createElement('div');
+  el.id='arena-el';
   el.style.cssText=`position:absolute;left:0;top:${ARENA_Y}px;width:${VW}px;height:90px;
-background:linear-gradient(180deg, rgba(60,30,70,.95), rgba(25,10,35,.98));
-    border-top:3px solidrgba(200,150,255,.5);
+    background:linear-gradient(180deg, rgba(60,30,70,.95), rgba(25,10,35,.98));
+    border-top:3px solid rgba(200,150,255,.5);
     box-shadow:0 -8px 28px rgba(180,100,255,.3);
     z-index:9;`;
-world.appendChild(el);
+  world.appendChild(el);
 }
 
-functionsyncPlatformsDOM(){
-ensureGroundEl();
-ensureArenaEl();
-document.getElementById('ground-el').style.transform = `translateY(${-camY}px)`;
-document.getElementById('arena-el').style.transform = `translateY(${-camY}px)`;
-const top = camY - CULL_MARGIN;
-const bot = camY + VH + CULL_MARGIN;
-  // addvisible
-for(const p of steps){
-constvisible = p.y+PLAT_H>= top &&p.y<= bot;
-if(visible&& !platEls.has(p.id)){
-const el=document.createElement('div');
-el.className='platform '+(p.locked?'quiz':'normal');
+function syncPlatformsDOM(){
+  ensureGroundEl();
+  ensureArenaEl();
+  document.getElementById('ground-el').style.transform = `translateY(${-camY}px)`;
+  document.getElementById('arena-el').style.transform = `translateY(${-camY}px)`;
+  const top = camY - CULL_MARGIN;
+  const bot = camY + VH + CULL_MARGIN;
+  // add visible
+  for(const p of steps){
+    const visible = p.y+PLAT_H >= top && p.y <= bot;
+    if(visible && !platEls.has(p.id)){
+      const el=document.createElement('div');
+      el.className='platform '+(p.locked?'quiz':'normal');
       el.style.cssText=`left:${p.x}px;top:${p.y}px;width:${PLAT_W}px;height:${PLAT_H}px;transform:translateY(${-camY}px);`;
-el.id='plat_'+p.id;
-if(p.locked){ const em=document.createElement('div'); em.className='platform-emoji'; em.textContent='🔮'; el.appendChild(em); }
-world.appendChild(el);
-platEls.set(p.id, el);
-    } else if(!visible&&platEls.has(p.id)){
-platEls.get(p.id).remove();
-platEls.delete(p.id);
+      el.id='plat_'+p.id;
+      if(p.locked){ const em=document.createElement('div'); em.className='platform-emoji'; em.textContent='🔮'; el.appendChild(em); }
+      world.appendChild(el);
+      platEls.set(p.id, el);
+    } else if(!visible && platEls.has(p.id)){
+      platEls.get(p.id).remove();
+      platEls.delete(p.id);
     } else if(visible){
-platEls.get(p.id).style.transform = `translateY(${-camY}px)`;
+      platEls.get(p.id).style.transform = `translateY(${-camY}px)`;
     }
   }
 }
 
-functionsyncHeartsDOM(){
-const top = camY - CULL_MARGIN;
-const bot = camY + VH + CULL_MARGIN;
-for(const h of floatingHearts){
-if(h.collected){ if(heartEls.has(h.id)){ heartEls.get(h.id).remove(); heartEls.delete(h.id);} continue; }
-constvisible = h.y>= top &&h.y<= bot;
-if(visible&& !heartEls.has(h.id)){
-const el=document.createElement('div');
-el.className='floating-heart';
+function syncHeartsDOM(){
+  const top = camY - CULL_MARGIN;
+  const bot = camY + VH + CULL_MARGIN;
+  for(const h of floatingHearts){
+    if(h.collected){ if(heartEls.has(h.id)){ heartEls.get(h.id).remove(); heartEls.delete(h.id);} continue; }
+    const visible = h.y >= top && h.y <= bot;
+    if(visible && !heartEls.has(h.id)){
+      const el=document.createElement('div');
+      el.className='floating-heart';
       el.style.cssText=`left:${h.x-15}px;top:${h.y}px;transform:translateY(${-camY}px);`;
-el.id='fh_'+h.id;
-el.innerHTML = `<div class="balloon-emoji">💗</div><div class="balloon-string"></div>`;
-world.appendChild(el);
-heartEls.set(h.id, el);
-    } else if(!visible&&heartEls.has(h.id)){
-heartEls.get(h.id).remove(); heartEls.delete(h.id);
+      el.id='fh_'+h.id;
+      el.innerHTML = `<div class="balloon-emoji">💗</div><div class="balloon-string"></div>`;
+      world.appendChild(el);
+      heartEls.set(h.id, el);
+    } else if(!visible && heartEls.has(h.id)){
+      heartEls.get(h.id).remove(); heartEls.delete(h.id);
     } else if(visible){
-heartEls.get(h.id).style.transform = `translateY(${-camY}px)`;
+      heartEls.get(h.id).style.transform = `translateY(${-camY}px)`;
     }
   }
 }
 
-functionpositionBoyAndDragon(){
-const dragon = document.getElementById('dragon-char');
-  // Dragon guarding — will be moveddynamically in updateDragonBattle
-dragon.style.left=(VW*0.5-50)+'px';
-dragon.style.top=(ARENA_Y-90)+'px';
-  // Boy'scage: CSS fixedtobottom-rightcorner (no JS positioningneeded)
+function positionBoyAndDragon(){
+  const dragon = document.getElementById('dragon-char');
+  // Dragon guarding — will be moved dynamically in updateDragonBattle
+  dragon.style.left=(VW*0.5-50)+'px';
+  dragon.style.top=(ARENA_Y-90)+'px';
+  // Boy's cage: CSS fixed to bottom-right corner (no JS positioning needed)
 }
 
 // ════════════════════════════════════════════════════════════
 // CAMERA
 // ════════════════════════════════════════════════════════════
-functionupdateCamera(){
-consttarget = py - VH*.52;
-camY += (target-camY)*.12;
-camY = Math.max(0, Math.min(camY, WORLD_H-VH));
-constty=`translateY(${-camY}px)`;
-  // boy-char is CSS fixed — notransformneeded
+function updateCamera(){
+  const target = py - VH*.52;
+  camY += (target-camY)*.12;
+  camY = Math.max(0, Math.min(camY, WORLD_H-VH));
+  const ty=`translateY(${-camY}px)`;
+  // boy-char is CSS fixed — no transform needed
   // dragon-char is positioned in updateDragonBattle
-constpct = 1-(py/WORLD_H);
+  const pct = 1-(py/WORLD_H);
   document.getElementById('progress-bar-fill').style.height=Math.max(0,Math.min(100,pct*100))+'%';
 }
 
 // ════════════════════════════════════════════════════════════
 // FIREBALLS
 // ════════════════════════════════════════════════════════════
-functionspawnFireball(){
-  // spawnsomewhereabovecurrentcameraview, fallsdownthroughview
-const x = VW*(0.1+Math.random()*0.8);
-const y = camY - 80 - Math.random()*120;
-fireballs.push({ x, y, vy: 3.2+Math.random()*2.2, size: 26+Math.random()*10 });
+function spawnFireball(){
+  // spawn somewhere above current camera view, falls down through view
+  const x = VW*(0.1+Math.random()*0.8);
+  const y = camY - 80 - Math.random()*120;
+  fireballs.push({ x, y, vy: 3.2+Math.random()*2.2, size: 26+Math.random()*10 });
 }
 
-functionupdateFireballs(dt){
-  // Fullypausefireballswhileanypopup/dialog is open — nospawn, nomovement, nocollision
-if(popupOpen||quizOpen||deathOpen||infoOpen||diaryOpen) return;
+function updateFireballs(dt){
+  // Fully pause fireballs while any popup/dialog is open — no spawn, no movement, no collision
+  if(popupOpen||quizOpen||deathOpen||infoOpen||diaryOpen) return;
 
-fireballSpawnTimer += dt;
-if(fireballSpawnTimer>nextFireballIn&&gameStarted&& !gameWon){
-fireballSpawnTimer = 0;
-nextFireballIn = FIREBALL_INTERVAL_MIN + Math.random()*(FIREBALL_INTERVAL_MAX-FIREBALL_INTERVAL_MIN);
-    // only start spawningafterplayer has climbed a bit
-if(py< WORLD_H - VH*1.3) spawnFireball();
+  fireballSpawnTimer += dt;
+  if(fireballSpawnTimer > nextFireballIn && gameStarted && !gameWon){
+    fireballSpawnTimer = 0;
+    nextFireballIn = FIREBALL_INTERVAL_MIN + Math.random()*(FIREBALL_INTERVAL_MAX-FIREBALL_INTERVAL_MIN);
+    // only start spawning after player has climbed a bit
+    if(py < WORLD_H - VH*1.3) spawnFireball();
   }
-for(let i=fireballs.length-1;i>=0;i--){
-const f=fireballs[i];
-f.y += f.vy;
-    // removeifbelowview + margin
-if(f.y> camY+VH+150){ fireballs.splice(i,1); continue; }
-    // collisionwithplayer (onlyif not invulnerable)
-if(performance.now() >invulnerableUntil){
-constdist = Math.hypot((px+PLAYER_W/2)-f.x, (py+PLAYER_H/2)-f.y);
-if(dist< (f.size/2 + PLAYER_W/2 - 6)){
-fireballs.splice(i,1);
-onPlayerHit();
-continue;
+  for(let i=fireballs.length-1;i>=0;i--){
+    const f=fireballs[i];
+    f.y += f.vy;
+    // remove if below view + margin
+    if(f.y > camY+VH+150){ fireballs.splice(i,1); continue; }
+    // collision with player (only if not invulnerable)
+    if(performance.now() > invulnerableUntil){
+      const dist = Math.hypot((px+PLAYER_W/2)-f.x, (py+PLAYER_H/2)-f.y);
+      if(dist < (f.size/2 + PLAYER_W/2 - 6)){
+        fireballs.splice(i,1);
+        onPlayerHit();
+        continue;
       }
     }
   }
 }
 
-functiondrawFireballsFx(){
-fx.clearRect(0,0,VW,VH);
-fireballs.forEach(f=>{
-constsy = f.y - camY;
-if(sy<-60||sy>VH+60) return;
-    // glowtrail
-constgrad = fx.createRadialGradient(f.x,sy,0,f.x,sy,f.size*1.4);
-grad.addColorStop(0,'rgba(255,200,80,0.55)');
-grad.addColorStop(0.5,'rgba(255,100,20,0.25)');
-grad.addColorStop(1,'rgba(255,50,0,0)');
-fx.beginPath(); fx.arc(f.x,sy,f.size*1.4,0,Math.PI*2); fx.fillStyle=grad; fx.fill();
+function drawFireballsFx(){
+  fx.clearRect(0,0,VW,VH);
+  fireballs.forEach(f=>{
+    const sy = f.y - camY;
+    if(sy<-60||sy>VH+60) return;
+    // glow trail
+    const grad = fx.createRadialGradient(f.x,sy,0,f.x,sy,f.size*1.4);
+    grad.addColorStop(0,'rgba(255,200,80,0.55)');
+    grad.addColorStop(0.5,'rgba(255,100,20,0.25)');
+    grad.addColorStop(1,'rgba(255,50,0,0)');
+    fx.beginPath(); fx.arc(f.x,sy,f.size*1.4,0,Math.PI*2); fx.fillStyle=grad; fx.fill();
     // core
-fx.save();
-fx.font = f.size+'pxserif';
-fx.textAlign='center'; fx.textBaseline='middle';
-fx.shadowColor='rgba(255,80,0,0.9)'; fx.shadowBlur=14;
-fx.fillText('🔥', f.x, sy);
-fx.restore();
+    fx.save();
+    fx.font = f.size+'px serif';
+    fx.textAlign='center'; fx.textBaseline='middle';
+    fx.shadowColor='rgba(255,80,0,0.9)'; fx.shadowBlur=14;
+    fx.fillText('🔥', f.x, sy);
+    fx.restore();
   });
 }
 
 // ════════════════════════════════════════════════════════════
 // DRAGON BOSS BATTLE STATE
 // ════════════════════════════════════════════════════════════
-letdragonActive = false;     // becomestrueonceplayerreachesthe arena
-letdragonHP = 12;
+let dragonActive = false;     // becomes true once player reaches the arena
+let dragonHP = 12;
 const DRAGON_MAX_HP = 12;
-letdragonDefeated = false;
-letdragonBreathTimer = 0;
-letdragonBreaths = [];       // {x,y,vx,size} — horizontal fire breathprojectiles
+let dragonDefeated = false;
+let dragonBreathTimer = 0;
+let dragonBreaths = [];       // {x,y,vx,size} — horizontal fire breath projectiles
 const DRAGON_BREATH_INTERVAL_MIN = 2200;
 const DRAGON_BREATH_INTERVAL_MAX = 3500;
-letnextDragonBreathIn = 1800;
-letplayerHearts = [];        // {x,y,vx} — heartprojectilesthrownbyplayer at dragon
-letattackCooldown = 0;
+let nextDragonBreathIn = 1800;
+let playerHearts = [];        // {x,y,vx} — heart projectiles thrown by player at dragon
+let attackCooldown = 0;
 const ATTACK_COOLDOWN_MS = 450;
 
-functionactivateDragon(){
-if(dragonActive || dragonDefeated) return;
-dragonActive = true;
-fireballs = [];
+function activateDragon(){
+  if(dragonActive || dragonDefeated) return;
+  dragonActive = true;
+  fireballs = [];
   // Can yenile
-lives = MAX_LIVES;
-updateLivesDisplay();
+  lives = MAX_LIVES;
+  updateLivesDisplay();
   // Kafesi göster
-document.getElementById('boy-char').style.display = 'flex';
+  document.getElementById('boy-char').style.display = 'flex';
   // Ejderha aktif
-document.getElementById('dragon-char').classList.add('active');
-document.getElementById('attack-hint').classList.add('show');
+  document.getElementById('dragon-char').classList.add('active');
+  document.getElementById('attack-hint').classList.add('show');
   // Normal kontrolleri gizle, joystick + arena butonlarını göster
-document.getElementById('mobile-controls').style.display = 'none';
-document.getElementById('twin-stick-ui').classList.add('show');
+  document.getElementById('mobile-controls').style.display = 'none';
+  document.getElementById('twin-stick-ui').classList.add('show');
   // Info butonunu gizle (kalp butonu ile çakışıyor)
-document.getElementById('info-btn').style.display = 'none';
+  document.getElementById('info-btn').style.display = 'none';
 }
 
-functionupdateDragonHPBar(){
-constpct = Math.max(0, dragonHP/DRAGON_MAX_HP*100);
-document.getElementById('dragon-hp-fill').style.width = pct+'%';
+function updateDragonHPBar(){
+  const pct = Math.max(0, dragonHP/DRAGON_MAX_HP*100);
+  document.getElementById('dragon-hp-fill').style.width = pct+'%';
 }
 
-functionthrowHeart(){
-if(!dragonActive || dragonDefeated) return;
-if(performance.now() <attackCooldown) return;
-attackCooldown = performance.now() + ATTACK_COOLDOWN_MS;
-lethvx = 0, hvy = 0;
-if(joystickAngle !== null){
+function throwHeart(){
+  if(!dragonActive || dragonDefeated) return;
+  if(performance.now() < attackCooldown) return;
+  attackCooldown = performance.now() + ATTACK_COOLDOWN_MS;
+  let hvx = 0, hvy = 0;
+  if(joystickAngle !== null){
     // Joystick yönüne göre (en doğru yöntem)
-hvx = Math.cos(joystickAngle) * 8;
-hvy = Math.sin(joystickAngle) * 8;
+    hvx = Math.cos(joystickAngle) * 8;
+    hvy = Math.sin(joystickAngle) * 8;
   } else {
     // Klavye: ok tuşlarına göre yön hesapla
-constgoL = keys['ArrowLeft']  || keys['a'];
-constgoR = keys['ArrowRight'] || keys['d'];
-constgoU = keys['ArrowUp']    || keys['w'];
-constgoD = keys['s'];
-const dx = goR ? 1 : goL ? -1 : facingRight ? 1 : -1;
-constdy = goU ? -1 : goD ? 1 : 0;
-constlen = Math.hypot(dx, dy) || 1;
-hvx = (dx/len) * 8;
-hvy = (dy/len) * 8;
+    const goL = keys['ArrowLeft']  || keys['a'];
+    const goR = keys['ArrowRight'] || keys['d'];
+    const goU = keys['ArrowUp']    || keys['w'];
+    const goD = keys['s'];
+    const dx = goR ? 1 : goL ? -1 : facingRight ? 1 : -1;
+    const dy = goU ? -1 : goD ? 1 : 0;
+    const len = Math.hypot(dx, dy) || 1;
+    hvx = (dx/len) * 8;
+    hvy = (dy/len) * 8;
   }
   // Ejderhaya doğru otomatik yönlendir (yardımcı mod)
-if(hvx===0 &&hvy===0){
-constangle = Math.atan2(dragonFlyY-(py+PLAYER_H/2), dragonFlyX-(px+PLAYER_W/2));
-hvx = Math.cos(angle)*8; hvy = Math.sin(angle)*8;
+  if(hvx===0 && hvy===0){
+    const angle = Math.atan2(dragonFlyY-(py+PLAYER_H/2), dragonFlyX-(px+PLAYER_W/2));
+    hvx = Math.cos(angle)*8; hvy = Math.sin(angle)*8;
   }
-playerHearts.push({ x: px+PLAYER_W/2, y: py+PLAYER_H*0.4, vx: hvx, vy: hvy });
+  playerHearts.push({ x: px+PLAYER_W/2, y: py+PLAYER_H*0.4, vx: hvx, vy: hvy });
 }
 
-// Dragon flyingposition (movesaroundthe arena)
-letdragonFlyX = VW*0.5, dragonFlyY = 0, dragonVelX = 0, dragonVelY = 0;
-functioninitDragonPos(){ dragonFlyX=VW*0.5; dragonFlyY=(ARENA_Y||0)-90; dragonVelX=(Math.random()<0.5?1:-1)*2.5; dragonVelY=(Math.random()<0.5?1:-1)*1.8; }
+// Dragon flying position (moves around the arena)
+let dragonFlyX = VW*0.5, dragonFlyY = 0, dragonVelX = 0, dragonVelY = 0;
+function initDragonPos(){ dragonFlyX=VW*0.5; dragonFlyY=(ARENA_Y||0)-90; dragonVelX=(Math.random()<0.5?1:-1)*2.5; dragonVelY=(Math.random()<0.5?1:-1)*1.8; }
 
-functionupdateDragonBattle(dt){
-if(!dragonActive || dragonDefeated) return;
-if(popupOpen||quizOpen||deathOpen||infoOpen||diaryOpen) return;
+function updateDragonBattle(dt){
+  if(!dragonActive || dragonDefeated) return;
+  if(popupOpen||quizOpen||deathOpen||infoOpen||diaryOpen) return;
 
-  // Dragon freelyfliesaroundthe arena area
-dragonFlyX += dragonVelX;
-dragonFlyY += dragonVelY;
-  // Bounceoffscreenedgesand top, floor = ARENA_Y - 30
+  // Dragon freely flies around the arena area
+  dragonFlyX += dragonVelX;
+  dragonFlyY += dragonVelY;
+  // Bounce off screen edges and top, floor = ARENA_Y - 30
   // Ejderha her zaman ekran (viewport) içinde kalsın
-constdfMinX = 60, dfMaxX = VW-60;
-constdfMinY = camY + 50;          // ekranın üst kenarından 50px aşağısı
-constdfMaxY = camY + VH - 80;     // ekranın alt kenarından 80px yukarısı
-if(dragonFlyX<dfMinX){ dragonFlyX=dfMinX; dragonVelX= Math.abs(dragonVelX); }
-if(dragonFlyX>dfMaxX){ dragonFlyX=dfMaxX; dragonVelX=-Math.abs(dragonVelX); }
-if(dragonFlyY<dfMinY){ dragonFlyY=dfMinY; dragonVelY= Math.abs(dragonVelY); }
-if(dragonFlyY>dfMaxY){ dragonFlyY=dfMaxY; dragonVelY=-Math.abs(dragonVelY); }
-  // Occasionaldirectionchange
-if(Math.random()<0.008){ dragonVelX=(Math.random()-0.5)*5; }
-if(Math.random()<0.008){ dragonVelY=(Math.random()-0.5)*3.5; }
+  const dfMinX = 60, dfMaxX = VW-60;
+  const dfMinY = camY + 50;          // ekranın üst kenarından 50px aşağısı
+  const dfMaxY = camY + VH - 80;     // ekranın alt kenarından 80px yukarısı
+  if(dragonFlyX < dfMinX){ dragonFlyX=dfMinX; dragonVelX= Math.abs(dragonVelX); }
+  if(dragonFlyX > dfMaxX){ dragonFlyX=dfMaxX; dragonVelX=-Math.abs(dragonVelX); }
+  if(dragonFlyY < dfMinY){ dragonFlyY=dfMinY; dragonVelY= Math.abs(dragonVelY); }
+  if(dragonFlyY > dfMaxY){ dragonFlyY=dfMaxY; dragonVelY=-Math.abs(dragonVelY); }
+  // Occasional direction change
+  if(Math.random()<0.008){ dragonVelX=(Math.random()-0.5)*5; }
+  if(Math.random()<0.008){ dragonVelY=(Math.random()-0.5)*3.5; }
   // Update DOM position
-constdchar=document.getElementById('dragon-char');
-dchar.style.left=(dragonFlyX-50)+'px';
-dchar.style.top=(dragonFlyY)+'px';
-dchar.style.transform=`translateY(${-camY}px)`;
+  const dchar=document.getElementById('dragon-char');
+  dchar.style.left=(dragonFlyX-50)+'px';
+  dchar.style.top=(dragonFlyY)+'px';
+  dchar.style.transform=`translateY(${-camY}px)`;
 
   // Dragon fire breath — aimed at player
-dragonBreathTimer += dt;
-if(dragonBreathTimer>nextDragonBreathIn){
-dragonBreathTimer = 0;
-nextDragonBreathIn = DRAGON_BREATH_INTERVAL_MIN + Math.random()*(DRAGON_BREATH_INTERVAL_MAX-DRAGON_BREATH_INTERVAL_MIN);
+  dragonBreathTimer += dt;
+  if(dragonBreathTimer > nextDragonBreathIn){
+    dragonBreathTimer = 0;
+    nextDragonBreathIn = DRAGON_BREATH_INTERVAL_MIN + Math.random()*(DRAGON_BREATH_INTERVAL_MAX-DRAGON_BREATH_INTERVAL_MIN);
     // Oyuncunun mevcut yönüne göre ama biraz sapmali ateş — tam hedefli değil
-constaimAngle = Math.atan2((py+PLAYER_H/2)-dragonFlyY, (px+PLAYER_W/2)-dragonFlyX);
-const spread = (Math.random()-0.5) * 0.6; // ±0.3 radyan sapma
-constfireAngle = aimAngle + spread;
-constspd = 2.8 + Math.random()*1.2; // daha yavaş
-dragonBreaths.push({ x: dragonFlyX, y: dragonFlyY, vx: Math.cos(fireAngle)*spd, vy: Math.sin(fireAngle)*spd, size: 22 });
+    const aimAngle = Math.atan2((py+PLAYER_H/2)-dragonFlyY, (px+PLAYER_W/2)-dragonFlyX);
+    const spread = (Math.random()-0.5) * 0.6; // ±0.3 radyan sapma
+    const fireAngle = aimAngle + spread;
+    const spd = 2.8 + Math.random()*1.2; // daha yavaş
+    dragonBreaths.push({ x: dragonFlyX, y: dragonFlyY, vx: Math.cos(fireAngle)*spd, vy: Math.sin(fireAngle)*spd, size: 22 });
   }
 
   // Move dragon breaths
-for(let i=dragonBreaths.length-1;i>=0;i--){
-const b=dragonBreaths[i];
-if(!b||b.x===undefined) { dragonBreaths.splice(i,1); continue; }
-b.x += b.vx; b.y += (b.vy||0);
-if(b.x<-80||b.x>VW+80||b.y<-80||b.y>WORLD_H+80){ dragonBreaths.splice(i,1); continue; }
-if(performance.now() >invulnerableUntil){
-constdist=Math.hypot((px+PLAYER_W/2)-b.x,(py+PLAYER_H/2)-b.y);
-if(dist< (b.size/2+PLAYER_W/2-6)){ dragonBreaths.splice(i,1); onPlayerHit(); continue; }
+  for(let i=dragonBreaths.length-1;i>=0;i--){
+    const b=dragonBreaths[i];
+    if(!b||b.x===undefined) { dragonBreaths.splice(i,1); continue; }
+    b.x += b.vx; b.y += (b.vy||0);
+    if(b.x<-80||b.x>VW+80||b.y<-80||b.y>WORLD_H+80){ dragonBreaths.splice(i,1); continue; }
+    if(performance.now() > invulnerableUntil){
+      const dist=Math.hypot((px+PLAYER_W/2)-b.x,(py+PLAYER_H/2)-b.y);
+      if(dist < (b.size/2+PLAYER_W/2-6)){ dragonBreaths.splice(i,1); onPlayerHit(); continue; }
     }
   }
 
-  // Moveplayerhearts
-for(let i=playerHearts.length-1;i>=0;i--){
-const h=playerHearts[i];
-if(!h||h.x===undefined) { playerHearts.splice(i,1); continue; }
-h.x += h.vx; h.y += (h.vy||0);
-if(h.x<-80||h.x>VW+80||h.y<-80||h.y>WORLD_H+80){ playerHearts.splice(i,1); continue; }
-constdist=Math.hypot(h.x-dragonFlyX,(h.y)-dragonFlyY);
-if(dist< 52){
-playerHearts.splice(i,1);
-dragonHP--;
-updateDragonHPBar();
-constdsvg=document.getElementById('dragon-svg');
-dsvg.classList.remove('hit'); voiddsvg.offsetWidth; dsvg.classList.add('hit');
-spawnParticles(dragonFlyX, dragonFlyY-camY, false);
-if(dragonHP<=0) defeatDragon();
+  // Move player hearts
+  for(let i=playerHearts.length-1;i>=0;i--){
+    const h=playerHearts[i];
+    if(!h||h.x===undefined) { playerHearts.splice(i,1); continue; }
+    h.x += h.vx; h.y += (h.vy||0);
+    if(h.x<-80||h.x>VW+80||h.y<-80||h.y>WORLD_H+80){ playerHearts.splice(i,1); continue; }
+    const dist=Math.hypot(h.x-dragonFlyX,(h.y)-dragonFlyY);
+    if(dist < 52){
+      playerHearts.splice(i,1);
+      dragonHP--;
+      updateDragonHPBar();
+      const dsvg=document.getElementById('dragon-svg');
+      dsvg.classList.remove('hit'); void dsvg.offsetWidth; dsvg.classList.add('hit');
+      spawnParticles(dragonFlyX, dragonFlyY-camY, false);
+      if(dragonHP<=0) defeatDragon();
     }
   }
 
-  // After dragon defeated: checkifplayerreachesthecage
-if(dragonDefeated&&cageFreed&& !gameWon){
-constboyEl=document.getElementById('boy-char');
-constbx=parseFloat(boyEl.style.left||0)+26;
-constby=parseFloat(boyEl.style.top||0)+35;
+  // After dragon defeated: check if player reaches the cage
+  if(dragonDefeated && cageFreed && !gameWon){
+    const boyEl=document.getElementById('boy-char');
+    const bx=parseFloat(boyEl.style.left||0)+26;
+    const by=parseFloat(boyEl.style.top||0)+35;
   }
 }
 
-functiondefeatDragon(){
-dragonDefeated = true;
-dragonActive = false;
-dragonBreaths = [];
-playerHearts = [];
-fireballs = []; // ejderha öldü, havadaki ateş toplarını da temizle
-document.getElementById('attack-hint').classList.remove('show');
-document.getElementById('mob-attack').style.display = 'none';
+function defeatDragon(){
+  dragonDefeated = true;
+  dragonActive = false;
+  dragonBreaths = [];
+  playerHearts = [];
+  fireballs = []; // ejderha öldü, havadaki ateş toplarını da temizle
+  document.getElementById('attack-hint').classList.remove('show');
+  document.getElementById('mob-attack').style.display = 'none';
   document.getElementById('twin-stick-ui').classList.remove('show');
-document.getElementById('mobile-controls').style.display = '';
-document.getElementById('info-btn').style.display = '';
-constdchar = document.getElementById('dragon-char');
-dchar.style.transition = 'opacity 1s, transform 1s';
-dchar.style.opacity = '0';
-dchar.style.transform += ' scale(0.3)';
-spawnParticles(VW*0.5, VH*0.4, false);
+  document.getElementById('mobile-controls').style.display = '';
+  document.getElementById('info-btn').style.display = '';
+  const dchar = document.getElementById('dragon-char');
+  dchar.style.transition = 'opacity 1s, transform 1s';
+  dchar.style.opacity = '0';
+  dchar.style.transform += ' scale(0.3)';
+  spawnParticles(VW*0.5, VH*0.4, false);
   // Kafes görünür ama oyun bitmez — oyuncu kafese yaklaşmalı
-cageFreed = true;
-document.getElementById('boy-char').classList.add('freed');
+  cageFreed = true;
+  document.getElementById('boy-char').classList.add('freed');
 }
 
-functiondrawDragonFx(){
-dragonBreaths.forEach(b=>{
-constsy = b.y - camY;
-if(sy<-80||sy>VH+80) return;
-constgrad = fx.createRadialGradient(b.x,sy,0,b.x,sy,b.size*1.5);
-grad.addColorStop(0,'rgba(120,255,150,0.5)');
-grad.addColorStop(0.5,'rgba(60,200,100,0.25)');
-grad.addColorStop(1,'rgba(30,150,60,0)');
-fx.beginPath(); fx.arc(b.x,sy,b.size*1.5,0,Math.PI*2); fx.fillStyle=grad; fx.fill();
-fx.save();
-fx.font = b.size+'pxserif';
-fx.textAlign='center'; fx.textBaseline='middle';
-fx.shadowColor='rgba(60,200,100,0.9)'; fx.shadowBlur=12;
-fx.fillText('🔥', b.x, sy);
-fx.restore();
+function drawDragonFx(){
+  dragonBreaths.forEach(b=>{
+    const sy = b.y - camY;
+    if(sy<-80||sy>VH+80) return;
+    const grad = fx.createRadialGradient(b.x,sy,0,b.x,sy,b.size*1.5);
+    grad.addColorStop(0,'rgba(120,255,150,0.5)');
+    grad.addColorStop(0.5,'rgba(60,200,100,0.25)');
+    grad.addColorStop(1,'rgba(30,150,60,0)');
+    fx.beginPath(); fx.arc(b.x,sy,b.size*1.5,0,Math.PI*2); fx.fillStyle=grad; fx.fill();
+    fx.save();
+    fx.font = b.size+'px serif';
+    fx.textAlign='center'; fx.textBaseline='middle';
+    fx.shadowColor='rgba(60,200,100,0.9)'; fx.shadowBlur=12;
+    fx.fillText('🔥', b.x, sy);
+    fx.restore();
   });
-playerHearts.forEach(h=>{
-constsy = h.y - camY;
-if(sy<-80||sy>VH+80) return;
-fx.save();
-fx.font = '22px serif';
-fx.textAlign='center'; fx.textBaseline='middle';
-fx.shadowColor='rgba(255,20,147,0.9)'; fx.shadowBlur=10;
-fx.fillText('💗', h.x, sy);
-fx.restore();
+  playerHearts.forEach(h=>{
+    const sy = h.y - camY;
+    if(sy<-80||sy>VH+80) return;
+    fx.save();
+    fx.font = '22px serif';
+    fx.textAlign='center'; fx.textBaseline='middle';
+    fx.shadowColor='rgba(255,20,147,0.9)'; fx.shadowBlur=10;
+    fx.fillText('💗', h.x, sy);
+    fx.restore();
   });
-  // flying dragon position marker (drawn on fxcanvasforvisibility)
-if(dragonActive&& !dragonDefeated){
-constdsy = dragonFlyY - camY;
-if(dsy> -100 &&dsy< VH+100){
-fx.save();
-fx.globalAlpha = 0.18;
-const dg = fx.createRadialGradient(dragonFlyX,dsy,0,dragonFlyX,dsy,55);
-dg.addColorStop(0,'rgba(60,220,100,.6)'); dg.addColorStop(1,'rgba(60,220,100,0)');
-fx.beginPath(); fx.arc(dragonFlyX,dsy,55,0,Math.PI*2); fx.fillStyle=dg; fx.fill();
-fx.restore();
+  // flying dragon position marker (drawn on fx canvas for visibility)
+  if(dragonActive && !dragonDefeated){
+    const dsy = dragonFlyY - camY;
+    if(dsy > -100 && dsy < VH+100){
+      fx.save();
+      fx.globalAlpha = 0.18;
+      const dg = fx.createRadialGradient(dragonFlyX,dsy,0,dragonFlyX,dsy,55);
+      dg.addColorStop(0,'rgba(60,220,100,.6)'); dg.addColorStop(1,'rgba(60,220,100,0)');
+      fx.beginPath(); fx.arc(dragonFlyX,dsy,55,0,Math.PI*2); fx.fillStyle=dg; fx.fill();
+      fx.restore();
     }
   }
 }
 
-functionupdatePlayer(dt){
-if(popupOpen||quizOpen||deathOpen||infoOpen||diaryOpen) return;
+function updatePlayer(dt){
+  if(popupOpen||quizOpen||deathOpen||infoOpen||diaryOpen) return;
 
-constmovL = keys['ArrowLeft']||keys['a'];
-constmovR = keys['ArrowRight']||keys['d'];
-constwantJump = keys['ArrowUp']||keys[' ']||keys['w'];
+  const movL = keys['ArrowLeft']||keys['a'];
+  const movR = keys['ArrowRight']||keys['d'];
+  const wantJump = keys['ArrowUp']||keys[' ']||keys['w'];
 
-if(movL){ vx=-MOVE_SPD; facingRight=false; }
+  if(movL){ vx=-MOVE_SPD; facingRight=false; }
   else if(movR){ vx=MOVE_SPD; facingRight=true; }
   else vx*=.65;
 
-if(wantJump&&onGround){ vy=JUMP_VEL; onGround=false; }
+  if(wantJump && onGround){ vy=JUMP_VEL; onGround=false; }
 
-vy += GRAVITY;
-px += vx; py += vy;
-px = Math.max(0, Math.min(VW-PLAYER_W, px));
+  vy += GRAVITY;
+  px += vx; py += vy;
+  px = Math.max(0, Math.min(VW-PLAYER_W, px));
 
-constmoving = Math.abs(vx)>0.5;
-if(moving&&onGround){ walkTimer+=dt; if(walkTimer>60){ walkTimer=0; walkFrame+=0.35; } }
+  const moving = Math.abs(vx)>0.5;
+  if(moving && onGround){ walkTimer+=dt; if(walkTimer>60){ walkTimer=0; walkFrame+=0.35; } }
   else if(!onGround){ walkFrame+=0.08; }
-updatePlayerSVG(moving, !onGround, facingRight);
+  updatePlayerSVG(moving, !onGround, facingRight);
 
-  // Collisionagainststeps (onlythosenearcurrentpyforperf)
-onGround=false;
+  // Collision against steps (only those near current py for perf)
+  onGround=false;
 
-  // Groundcollision (alwayschecked — simpleinfinite-widthfloor)
+  // Ground collision (always checked — simple infinite-width floor)
   {
-constprevBot = py+PLAYER_H-vy;
-constcurBot  = py+PLAYER_H;
-if(prevBot<=GROUND_Y+4 &&curBot>=GROUND_Y &&vy>=0){
-py = GROUND_Y - PLAYER_H; vy=0; onGround=true;
+    const prevBot = py+PLAYER_H-vy;
+    const curBot  = py+PLAYER_H;
+    if(prevBot<=GROUND_Y+4 && curBot>=GROUND_Y && vy>=0){
+      py = GROUND_Y - PLAYER_H; vy=0; onGround=true;
     }
   }
 
-  // Arena floorcollision (solid platform nearthe top, wherethe dragon fighthappens)
+  // Arena floor collision (solid platform near the top, where the dragon fight happens)
   {
-constprevBot = py+PLAYER_H-vy;
-constcurBot  = py+PLAYER_H;
-if(prevBot<=ARENA_Y+4 &&curBot>=ARENA_Y &&vy>=0){
-py = ARENA_Y - PLAYER_H; vy=0; onGround=true;
-activateDragon();
+    const prevBot = py+PLAYER_H-vy;
+    const curBot  = py+PLAYER_H;
+    if(prevBot<=ARENA_Y+4 && curBot>=ARENA_Y && vy>=0){
+      py = ARENA_Y - PLAYER_H; vy=0; onGround=true;
+      activateDragon();
     }
   }
 
-constidxGuess = Math.floor((GROUND_Y - py)/STEP_GAP);
-constlo = Math.max(0, idxGuess-3), hi = Math.min(steps.length-1, idxGuess+3);
-for(let i=lo;i<=hi;i++){
-const p = steps[i]; if(!p) continue;
-constprevBot = py+PLAYER_H-vy;
-constcurBot  = py+PLAYER_H;
-constplL=p.x, plR=p.x+PLAT_W, plT=p.y;
-constpL=px+5, pR=px+PLAYER_W-5;
-if(pR>plL&&pL<plR&&prevBot<=plT+4 &&curBot>=plT&&vy>=0){
-if(p.locked){
-py=plT-PLAYER_H; vy=0; onGround=true;
-if(!quizOpen) triggerQuiz(p);
+  const idxGuess = Math.floor((GROUND_Y - py)/STEP_GAP);
+  const lo = Math.max(0, idxGuess-3), hi = Math.min(steps.length-1, idxGuess+3);
+  for(let i=lo;i<=hi;i++){
+    const p = steps[i]; if(!p) continue;
+    const prevBot = py+PLAYER_H-vy;
+    const curBot  = py+PLAYER_H;
+    const plL=p.x, plR=p.x+PLAT_W, plT=p.y;
+    const pL=px+5, pR=px+PLAYER_W-5;
+    if(pR>plL && pL<plR && prevBot<=plT+4 && curBot>=plT && vy>=0){
+      if(p.locked){
+        py=plT-PLAYER_H; vy=0; onGround=true;
+        if(!quizOpen) triggerQuiz(p);
       } else {
-py=plT-PLAYER_H; vy=0; onGround=true;
+        py=plT-PLAYER_H; vy=0; onGround=true;
       }
     }
   }
 
-  // Fall offbottom of world (belowground)
-if(py>WORLD_H+250){
-onPlayerHit(true);
+  // Fall off bottom of world (below ground)
+  if(py>WORLD_H+250){
+    onPlayerHit(true);
   }
 
-  // Heartproximity — collect on charactertouch
-for(const h of floatingHearts){
-if(h.collected) continue;
-constdist=Math.hypot(px+PLAYER_W/2-h.x, py+PLAYER_H/2-h.y);
-if(dist<42) collectHeart(h);
+  // Heart proximity — collect on character touch
+  for(const h of floatingHearts){
+    if(h.collected) continue;
+    const dist=Math.hypot(px+PLAYER_W/2-h.x, py+PLAYER_H/2-h.y);
+    if(dist<42) collectHeart(h);
   }
 
   // Win: dragon yenildi ve kafese yaklaş
-if(cageFreed&& !gameWon){
+  if(cageFreed && !gameWon){
     // Kafes sabit sağ alt köşede (fixed CSS), ekran koordinatlarında
-constcageScreenX = VW - 24 - 26; // right:24px + yarı genişlik
-constcageScreenY = VH - 90 - 35; // bottom:90px + yarı yükseklik
+    const cageScreenX = VW - 24 - 26; // right:24px + yarı genişlik
+    const cageScreenY = VH - 90 - 35; // bottom:90px + yarı yükseklik
     // Oyuncunun ekran koordinatları
-constplayerScreenX = px + PLAYER_W/2;
-constplayerScreenY = py - camY + PLAYER_H/2;
-constdist = Math.hypot(playerScreenX - cageScreenX, playerScreenY - cageScreenY);
-if(dist< 80) triggerWin();
+    const playerScreenX = px + PLAYER_W/2;
+    const playerScreenY = py - camY + PLAYER_H/2;
+    const dist = Math.hypot(playerScreenX - cageScreenX, playerScreenY - cageScreenY);
+    if(dist < 80) triggerWin();
   }
 
-document.getElementById('player').style.left=px+'px';
-document.getElementById('player').style.top=(py-camY)+'px';
-  // playerrendered in viewportcoordsdirectly (not transformed), sosubtractcamY
+  document.getElementById('player').style.left=px+'px';
+  document.getElementById('player').style.top=(py-camY)+'px';
+  // player rendered in viewport coords directly (not transformed), so subtract camY
 }
 
 // ════════════════════════════════════════════════════════════
-// HIT / DEATH (fireballorfall)
+// HIT / DEATH (fireball or fall)
 // ════════════════════════════════════════════════════════════
-functiononPlayerHit(isFall){
-if(performance.now() <invulnerableUntil) return;
-lives--;
-updateLivesDisplay();
-spawnParticles(px+PLAYER_W/2, (py-camY), true);
-if(lives<=0){
-lives = MAX_LIVES;
-resetToStart();
-constfallMsg = 'Düştüm... Ama senin için bin kere daha kalkarım. Sana ulaşmak her şeye değer, güzelim 💗';
-constfireMsg = 'Üzülme sevgilim ne olursa olsun bana ulaşacağını biliyorum sen efsanesin benim güzel prensesim 💗';
-showDeath(isFall ? '😵' : '🔥', isFall?'Düştüm...':'Oyyy kıyamam sevgilimeee!', isFall?fallMsg:fireMsg);
+function onPlayerHit(isFall){
+  if(performance.now() < invulnerableUntil) return;
+  lives--;
+  updateLivesDisplay();
+  spawnParticles(px+PLAYER_W/2, (py-camY), true);
+  if(lives<=0){
+    lives = MAX_LIVES;
+    resetToStart();
+    const fallMsg = 'Düştüm... Ama senin için bin kere daha kalkarım. Sana ulaşmak her şeye değer, güzelim 💗';
+    const fireMsg = 'Yandım biraz... Ama senin sevgin her ateşten güçlü. Tekrar başlıyorum, çünkü sen buna değersin 🔥💗';
+    showDeath(isFall ? '😵' : '🔥', isFall?'Düştüm...':'Ateş Dokundu!', isFall?fallMsg:fireMsg);
   } else {
-if(isFall){
-      // for a fall hit (not fireball), alsosnapbacktogroundso it doesn'tkeep re-triggering
-px=VW/2-PLAYER_W/2; py=GROUND_Y-PLAYER_H; vx=0;
+    if(isFall){
+      // for a fall hit (not fireball), also snap back to ground so it doesn't keep re-triggering
+      px=VW/2-PLAYER_W/2; py=GROUND_Y-PLAYER_H; vx=0;
     }
-invulnerableUntil = performance.now()+1500;
-vy = -6;
+    invulnerableUntil = performance.now()+1500;
+    vy = -6;
   }
 }
 
-functionresetToStart(){
-px=VW/2-PLAYER_W/2; py=GROUND_Y-PLAYER_H;
-vx=0; vy=0; fireballs=[];
-camY = Math.max(0, Math.min(WORLD_H-VH, py - VH*.52));
-invulnerableUntil = performance.now()+1500;
+function resetToStart(){
+  px=VW/2-PLAYER_W/2; py=GROUND_Y-PLAYER_H;
+  vx=0; vy=0; fireballs=[];
+  camY = Math.max(0, Math.min(WORLD_H-VH, py - VH*.52));
+  invulnerableUntil = performance.now()+1500;
 
   // Arena state'i sıfırla
-dragonActive=false; dragonDefeated=false; cageFreed=false;
-dragonHP=DRAGON_MAX_HP; dragonBreaths=[]; playerHearts=[];
-dragonBreathTimer=0; nextDragonBreathIn=2800;
-initDragonPos();
+  dragonActive=false; dragonDefeated=false; cageFreed=false;
+  dragonHP=DRAGON_MAX_HP; dragonBreaths=[]; playerHearts=[];
+  dragonBreathTimer=0; nextDragonBreathIn=2800;
+  initDragonPos();
 
   // Dragon DOM sıfırla
-constdchar=document.getElementById('dragon-char');
-dchar.classList.remove('active');
-dchar.style.opacity=''; dchar.style.transition=''; dchar.style.transform='';
+  const dchar=document.getElementById('dragon-char');
+  dchar.classList.remove('active');
+  dchar.style.opacity=''; dchar.style.transition=''; dchar.style.transform='';
 
   // Kafes gizle
-document.getElementById('boy-char').classList.remove('freed');
-document.getElementById('boy-char').style.display='none';
+  document.getElementById('boy-char').classList.remove('freed');
+  document.getElementById('boy-char').style.display='none';
 
   // Twin-stick gizle, normal kontrolleri geri getir
   document.getElementById('twin-stick-ui').classList.remove('show');
-document.getElementById('mobile-controls').style.display='';
-document.getElementById('info-btn').style.display='';
-document.getElementById('attack-hint').classList.remove('show');
+  document.getElementById('mobile-controls').style.display='';
+  document.getElementById('info-btn').style.display='';
+  document.getElementById('attack-hint').classList.remove('show');
 
   // Dragon HP bar sıfırla
-updateDragonHPBar();
+  updateDragonHPBar();
 }
 
-functionupdateLivesDisplay(){
-let s=''; for(let i=0;i<MAX_LIVES;i++) s += i<lives ? '💙' : '🖤';
-document.getElementById('lives-display').textContent=s;
+function updateLivesDisplay(){
+  let s=''; for(let i=0;i<MAX_LIVES;i++) s += i<lives ? '💙' : '🖤';
+  document.getElementById('lives-display').textContent=s;
 }
 
-functionshowDeath(emoji,title,text){
-deathOpen=true;
-document.getElementById('death-emoji').textContent=emoji;
-document.getElementById('death-title').textContent=title;
-document.getElementById('death-text').textContent=text;
-document.getElementById('death-popup').classList.add('show');
+function showDeath(emoji,title,text){
+  deathOpen=true;
+  document.getElementById('death-emoji').textContent=emoji;
+  document.getElementById('death-title').textContent=title;
+  document.getElementById('death-text').textContent=text;
+  document.getElementById('death-popup').classList.add('show');
 }
-functioncloseDeath(){
-deathOpen=false;
-document.getElementById('death-popup').classList.remove('show');
+function closeDeath(){
+  deathOpen=false;
+  document.getElementById('death-popup').classList.remove('show');
 }
 
 // ════════════════════════════════════════════════════════════
 // HEARTS
 // ════════════════════════════════════════════════════════════
-functioncollectHeart(h){
-if(h.collected) return;
-h.collected=true; heartsCollected++;
+function collectHeart(h){
+  if(h.collected) return;
+  h.collected=true; heartsCollected++;
   document.getElementById('heart-count').textContent=heartsCollected;
-const el=heartEls.get(h.id);
-if(el){ el.style.transition='transform .3s,opacity .3s'; el.style.opacity='0'; setTimeout(()=>{el.remove(); heartEls.delete(h.id);},300); }
-spawnParticles(h.x, h.y-camY);
-constmsg=HEART_MSGS[h.msgIdx%HEART_MSGS.length];
-showPopup(msg.emoji, msg.title, msg.text);
-addToDiaryHearts(msg.emoji, msg.title, msg.text);
+  const el=heartEls.get(h.id);
+  if(el){ el.style.transition='transform .3s,opacity .3s'; el.style.opacity='0'; setTimeout(()=>{el.remove(); heartEls.delete(h.id);},300); }
+  spawnParticles(h.x, h.y-camY);
+  const msg=HEART_MSGS[h.msgIdx%HEART_MSGS.length];
+  showPopup(msg.emoji, msg.title, msg.text);
+  addToDiaryHearts(msg.emoji, msg.title, msg.text);
 }
 
-functionspawnParticles(x,y,fire){
-const palette = fire ? ['🔥','💥','✨'] : ['💗','💖','✨','💫','🌸'];
-for(let i=0;i<8;i++){
-const p=document.createElement('div'); p.className='particle';
-constang=(i/8)*Math.PI*2, d=60+Math.random()*55;
-p.style.setProperty('--dx',Math.cos(ang)*d+'px');
-p.style.setProperty('--dy',Math.sin(ang)*d+'px');
-p.style.left=x+'px'; p.style.top=y+'px';
-p.textContent=palette[Math.floor(Math.random()*palette.length)];
-document.body.appendChild(p); setTimeout(()=>p.remove(),1400);
+function spawnParticles(x,y,fire){
+  const palette = fire ? ['🔥','💥','✨'] : ['💗','💖','✨','💫','🌸'];
+  for(let i=0;i<8;i++){
+    const p=document.createElement('div'); p.className='particle';
+    const ang=(i/8)*Math.PI*2, d=60+Math.random()*55;
+    p.style.setProperty('--dx',Math.cos(ang)*d+'px');
+    p.style.setProperty('--dy',Math.sin(ang)*d+'px');
+    p.style.left=x+'px'; p.style.top=y+'px';
+    p.textContent=palette[Math.floor(Math.random()*palette.length)];
+    document.body.appendChild(p); setTimeout(()=>p.remove(),1400);
   }
 }
 
@@ -1731,180 +1730,180 @@ document.body.appendChild(p); setTimeout(()=>p.remove(),1400);
 // ════════════════════════════════════════════════════════════
 // DIARY (günlük)
 // ════════════════════════════════════════════════════════════
-letdiaryOpen = false;
-letcurrentDiaryTab = 'hearts';
-letdiaryHearts = [];   // {emoji, title, text}
-letdiaryQuizzes = [];  // {emoji, question, answer}
-letdiaryNewCount = 0;
+let diaryOpen = false;
+let currentDiaryTab = 'hearts';
+let diaryHearts = [];   // {emoji, title, text}
+let diaryQuizzes = [];  // {emoji, question, answer}
+let diaryNewCount = 0;
 
-functionopenDiary(){
-diaryOpen = true;
-document.getElementById('diary-overlay').classList.add('show');
+function openDiary(){
+  diaryOpen = true;
+  document.getElementById('diary-overlay').classList.add('show');
   // Badge'i sıfırla
-diaryNewCount = 0;
-constbadge = document.getElementById('diary-badge');
-badge.classList.remove('show');
-badge.textContent = '';
+  diaryNewCount = 0;
+  const badge = document.getElementById('diary-badge');
+  badge.classList.remove('show');
+  badge.textContent = '';
 }
-functioncloseDiary(){
-diaryOpen = false;
+function closeDiary(){
+  diaryOpen = false;
   document.getElementById('diary-overlay').classList.remove('show');
 }
 
-functionswitchTab(tab){
-currentDiaryTab = tab;
-document.getElementById('tab-hearts').classList.toggle('active', tab==='hearts');
+function switchTab(tab){
+  currentDiaryTab = tab;
+  document.getElementById('tab-hearts').classList.toggle('active', tab==='hearts');
   document.getElementById('tab-quizzes').classList.toggle('active', tab==='quizzes');
-renderDiary();
+  renderDiary();
 }
 
-functionrenderDiary(){
-const body = document.getElementById('diary-body');
-body.innerHTML = '';
+function renderDiary(){
+  const body = document.getElementById('diary-body');
+  body.innerHTML = '';
 
-if(currentDiaryTab === 'hearts'){
-if(diaryHearts.length === 0){
-body.innerHTML = '<div class="diary-empty">Henüz kalp toplanmadı...<br>Yolda seni bekleyen kalpler var 💗</div>';
-return;
+  if(currentDiaryTab === 'hearts'){
+    if(diaryHearts.length === 0){
+      body.innerHTML = '<div class="diary-empty">Henüz kalp toplanmadı...<br>Yolda seni bekleyen kalpler var 💗</div>';
+      return;
     }
-diaryHearts.forEach((m,i)=>{
-const el = document.createElement('div');
-el.className = 'diary-entry';
-el.innerHTML = `
+    diaryHearts.forEach((m,i)=>{
+      const el = document.createElement('div');
+      el.className = 'diary-entry';
+      el.innerHTML = `
 <div class="diary-entry-emoji">${m.emoji}</div>
 <div class="diary-entry-content">
 <div class="diary-entry-title">${m.title}</div>
 <div class="diary-entry-text">${m.text}</div>
 </div>`;
-body.appendChild(el);
+      body.appendChild(el);
     });
   } else {
-if(diaryQuizzes.length === 0){
-body.innerHTML = '<div class="diary-empty">Henüz soru cevaplanmadı...<br>Kilitli basamaklar seni bekliyor 🔮</div>';
-return;
+    if(diaryQuizzes.length === 0){
+      body.innerHTML = '<div class="diary-empty">Henüz soru cevaplanmadı...<br>Kilitli basamaklar seni bekliyor 🔮</div>';
+      return;
     }
-diaryQuizzes.forEach((q,i)=>{
-const el = document.createElement('div');
-el.className = 'diary-entry';
-el.innerHTML = `
+    diaryQuizzes.forEach((q,i)=>{
+      const el = document.createElement('div');
+      el.className = 'diary-entry';
+      el.innerHTML = `
 <div class="diary-entry-emoji">${q.emoji}</div>
 <div class="diary-entry-content">
 <div class="diary-entry-title">${q.question}</div>
 <div class="diary-entry-text">✅ ${q.answer}<br><em style="color:rgba(255,180,220,.6);font-size:11px">${q.feedback}</em></div>
 </div>`;
-body.appendChild(el);
+      body.appendChild(el);
     });
   }
 }
 
-functionaddToDiaryHearts(emoji, title, text){
-diaryHearts.push({emoji, title, text});
-bumpDiaryBadge();
-if(diaryOpen&&currentDiaryTab==='hearts') renderDiary();
+function addToDiaryHearts(emoji, title, text){
+  diaryHearts.push({emoji, title, text});
+  bumpDiaryBadge();
+  if(diaryOpen && currentDiaryTab==='hearts') renderDiary();
 }
 
-functionaddToDiaryQuizzes(emoji, question, answer, feedback){
-diaryQuizzes.push({emoji, question, answer, feedback});
-bumpDiaryBadge();
-if(diaryOpen&&currentDiaryTab==='quizzes') renderDiary();
+function addToDiaryQuizzes(emoji, question, answer, feedback){
+  diaryQuizzes.push({emoji, question, answer, feedback});
+  bumpDiaryBadge();
+  if(diaryOpen && currentDiaryTab==='quizzes') renderDiary();
 }
 
-functionbumpDiaryBadge(){
-if(diaryOpen) return;
-diaryNewCount++;
-constbadge = document.getElementById('diary-badge');
-badge.textContent = diaryNewCount> 9 ? '9+' : diaryNewCount;
-badge.classList.add('show');
+function bumpDiaryBadge(){
+  if(diaryOpen) return;
+  diaryNewCount++;
+  const badge = document.getElementById('diary-badge');
+  badge.textContent = diaryNewCount > 9 ? '9+' : diaryNewCount;
+  badge.classList.add('show');
 }
 
-functionresetDiary(){
-diaryHearts = []; diaryQuizzes = []; diaryNewCount = 0;
-document.getElementById('diary-badge').classList.remove('show');
-document.getElementById('diary-badge').textContent = '';
-if(diaryOpen) renderDiary();
+function resetDiary(){
+  diaryHearts = []; diaryQuizzes = []; diaryNewCount = 0;
+  document.getElementById('diary-badge').classList.remove('show');
+  document.getElementById('diary-badge').textContent = '';
+  if(diaryOpen) renderDiary();
 }
 // ════════════════════════════════════════════════════════════
 // POPUPS
 // ════════════════════════════════════════════════════════════
-functionshowPopup(em,title,text){
-popupOpen=true;
-document.getElementById('popup-emoji').textContent=em;
-document.getElementById('popup-title').textContent=title;
-document.getElementById('popup-text').textContent=text;
-document.getElementById('popup').classList.add('show');
+function showPopup(em,title,text){
+  popupOpen=true;
+  document.getElementById('popup-emoji').textContent=em;
+  document.getElementById('popup-title').textContent=title;
+  document.getElementById('popup-text').textContent=text;
+  document.getElementById('popup').classList.add('show');
 }
-functionclosePopup(){ popupOpen=false; document.getElementById('popup').classList.remove('show'); invulnerableUntil = performance.now()+800; }
+function closePopup(){ popupOpen=false; document.getElementById('popup').classList.remove('show'); invulnerableUntil = performance.now()+800; }
 
-functionopenInfo(){
-infoOpen=true;
-document.getElementById('info-overlay').classList.add('show');
+function openInfo(){
+  infoOpen=true;
+  document.getElementById('info-overlay').classList.add('show');
 }
-functioncloseInfo(){
-infoOpen=false;
+function closeInfo(){
+  infoOpen=false;
   document.getElementById('info-overlay').classList.remove('show');
-invulnerableUntil = performance.now()+800;
+  invulnerableUntil = performance.now()+800;
 }
 
-functiontriggerQuiz(plat){
-quizOpen=true; currentQuizPlat=plat;
-const q=QUIZZES[plat.qIdx%QUIZZES.length];
+function triggerQuiz(plat){
+  quizOpen=true; currentQuizPlat=plat;
+  const q=QUIZZES[plat.qIdx%QUIZZES.length];
   document.getElementById('quiz-question-emoji').textContent=q.emoji;
-document.getElementById('quiz-question').textContent=q.question;
-document.getElementById('quiz-feedback').textContent='';
+  document.getElementById('quiz-question').textContent=q.question;
+  document.getElementById('quiz-feedback').textContent='';
   document.getElementById('quiz-continue-btn').style.display='none';
-const od=document.getElementById('quiz-options'); od.innerHTML='';
-q.options.forEach((opt,i)=>{
-const b=document.createElement('button'); b.className='quiz-option'; b.textContent=opt;
-b.onclick=()=>answerQuiz(i,q,b); od.appendChild(b);
+  const od=document.getElementById('quiz-options'); od.innerHTML='';
+  q.options.forEach((opt,i)=>{
+    const b=document.createElement('button'); b.className='quiz-option'; b.textContent=opt;
+    b.onclick=()=>answerQuiz(i,q,b); od.appendChild(b);
   });
-document.getElementById('quiz-popup').classList.add('show');
+  document.getElementById('quiz-popup').classList.add('show');
 }
 
-functionanswerQuiz(idx,q,btn){
+function answerQuiz(idx,q,btn){
   document.querySelectorAll('.quiz-option').forEach(b=>b.onclick=null);
-if(idx===q.correct){
-btn.classList.add('correct');
-document.getElementById('quiz-feedback').textContent=q.feedback;
-document.getElementById('quiz-feedback').style.color='#90ffcc';
+  if(idx===q.correct){
+    btn.classList.add('correct');
+    document.getElementById('quiz-feedback').textContent=q.feedback;
+    document.getElementById('quiz-feedback').style.color='#90ffcc';
     document.getElementById('quiz-continue-btn').style.display='inline-block';
   } else {
-btn.classList.add('wrong');
-document.getElementById('quiz-feedback').textContent='Yanlış bebeğim acele etme 😘';
-document.getElementById('quiz-feedback').style.color='#ff9999';
-setTimeout(()=>triggerQuiz(currentQuizPlat),1400);
+    btn.classList.add('wrong');
+    document.getElementById('quiz-feedback').textContent='Yanlış bebeğim acele etme 😘';
+    document.getElementById('quiz-feedback').style.color='#ff9999';
+    setTimeout(()=>triggerQuiz(currentQuizPlat),1400);
   }
 }
 
-functionquizSuccess(){
-document.getElementById('quiz-popup').classList.remove('show');
-quizOpen=false;
-invulnerableUntil = performance.now()+800;
-if(currentQuizPlat){
-currentQuizPlat.locked=false;
-const el=platEls.get(currentQuizPlat.id);
-if(el){ el.className='platform normal'; el.innerHTML=''; }
+function quizSuccess(){
+  document.getElementById('quiz-popup').classList.remove('show');
+  quizOpen=false;
+  invulnerableUntil = performance.now()+800;
+  if(currentQuizPlat){
+    currentQuizPlat.locked=false;
+    const el=platEls.get(currentQuizPlat.id);
+    if(el){ el.className='platform normal'; el.innerHTML=''; }
     // Günlüğe ekle
-const q = QUIZZES[currentQuizPlat.qIdx%QUIZZES.length];
-constcorrectAnswer = q.options[q.correct];
-addToDiaryQuizzes(q.emoji, q.question, correctAnswer, q.feedback);
+    const q = QUIZZES[currentQuizPlat.qIdx%QUIZZES.length];
+    const correctAnswer = q.options[q.correct];
+    addToDiaryQuizzes(q.emoji, q.question, correctAnswer, q.feedback);
   }
-spawnParticles(VW/2,VH/2);
+  spawnParticles(VW/2,VH/2);
 }
 
 // ════════════════════════════════════════════════════════════
 // WIN
 // ════════════════════════════════════════════════════════════
-functiontriggerWin(){
-gameWon=true;
-setTimeout(()=>{
-document.getElementById('final-scene').classList.add('show');
-for(let i=0;i<35;i++) setTimeout(()=>{
-const h=document.createElement('div');
-      h.style.cssText=`position:fixed;font-size:${18+Math.random()*26}px;left:${Math.random()*100}vw;top:-40px;z-index:310;animation:particleFly 2s ease-outforwards;pointer-events:none;`;
-h.style.setProperty('--dx',(Math.random()-.5)*100+'px');
-h.style.setProperty('--dy',(90+Math.random()*200)+'px');
+function triggerWin(){
+  gameWon=true;
+  setTimeout(()=>{
+    document.getElementById('final-scene').classList.add('show');
+    for(let i=0;i<35;i++) setTimeout(()=>{
+      const h=document.createElement('div');
+      h.style.cssText=`position:fixed;font-size:${18+Math.random()*26}px;left:${Math.random()*100}vw;top:-40px;z-index:310;animation:particleFly 2s ease-out forwards;pointer-events:none;`;
+      h.style.setProperty('--dx',(Math.random()-.5)*100+'px');
+      h.style.setProperty('--dy',(90+Math.random()*200)+'px');
       h.textContent=['💗','💖','💕','✨','🌹','💫'][Math.floor(Math.random()*6)];
-document.body.appendChild(h); setTimeout(()=>h.remove(),2000);
+      document.body.appendChild(h); setTimeout(()=>h.remove(),2000);
     },i*110);
   },600);
 }
@@ -1913,15 +1912,15 @@ document.body.appendChild(h); setTimeout(()=>h.remove(),2000);
 // INPUT
 // ════════════════════════════════════════════════════════════
 document.addEventListener('keydown',e=>{
-keys[e.key]=true;
-if(e.key===' ')e.preventDefault();
-if(e.key==='x'||e.key==='X'||e.key==='Enter'){ throwHeart(); }
+  keys[e.key]=true;
+  if(e.key===' ')e.preventDefault();
+  if(e.key==='x'||e.key==='X'||e.key==='Enter'){ throwHeart(); }
 });
 document.addEventListener('keyup',e=>{ keys[e.key]=false; });
-functionmobPress(dir,val){
-if(dir==='left') keys['ArrowLeft']=val;
-if(dir==='right') keys['ArrowRight']=val;
-if(dir==='jump') keys[' ']=val;
+function mobPress(dir,val){
+  if(dir==='left') keys['ArrowLeft']=val;
+  if(dir==='right') keys['ArrowRight']=val;
+  if(dir==='jump') keys[' ']=val;
 }
 ['touchstart','mousedown'].forEach(ev=>{
   document.getElementById('mob-left').addEventListener(ev,e=>{e.preventDefault();mobPress('left',true);});
@@ -1936,69 +1935,69 @@ if(dir==='jump') keys[' ']=val;
 });
 
 // ─── TWIN-STICK CONTROLS ─────────────────────────────────
-(functionsetupTwinStick(){
-functionmakeStick(baseId, knobId, onMove, onEnd){
-constbase = document.getElementById(baseId);
-constknob = document.getElementById(knobId);
-if(!base||!knob) return;
-const MAX_R = 33;
-lettouching = false;
+(function setupTwinStick(){
+  function makeStick(baseId, knobId, onMove, onEnd){
+    const base = document.getElementById(baseId);
+    const knob = document.getElementById(knobId);
+    if(!base||!knob) return;
+    const MAX_R = 33;
+    let touching = false;
 
-functionmove(clientX, clientY){
-constrect = base.getBoundingClientRect();
-const cx = rect.left + rect.width/2;
-constcy = rect.top  + rect.height/2;
-const dx = clientX - cx;
-constdy = clientY - cy;
-constdist = Math.hypot(dx, dy);
-constclamped = Math.min(dist, MAX_R);
-constangle = Math.atan2(dy, dx);
-constkx = Math.cos(angle)*clamped;
-constky = Math.sin(angle)*clamped;
-knob.style.left = (rect.width/2  - 22 + kx) + 'px';
-knob.style.top  = (rect.height/2 - 22 + ky) + 'px';
-onMove(angle, clamped, dist);
+    function move(clientX, clientY){
+      const rect = base.getBoundingClientRect();
+      const cx = rect.left + rect.width/2;
+      const cy = rect.top  + rect.height/2;
+      const dx = clientX - cx;
+      const dy = clientY - cy;
+      const dist = Math.hypot(dx, dy);
+      const clamped = Math.min(dist, MAX_R);
+      const angle = Math.atan2(dy, dx);
+      const kx = Math.cos(angle)*clamped;
+      const ky = Math.sin(angle)*clamped;
+      knob.style.left = (rect.width/2  - 22 + kx) + 'px';
+      knob.style.top  = (rect.height/2 - 22 + ky) + 'px';
+      onMove(angle, clamped, dist);
     }
-functionend(){
-touching = false;
-knob.style.left = (110/2-22)+'px';
-knob.style.top  = (110/2-22)+'px';
-onEnd();
+    function end(){
+      touching = false;
+      knob.style.left = (110/2-22)+'px';
+      knob.style.top  = (110/2-22)+'px';
+      onEnd();
     }
 
-base.addEventListener('touchstart', e=>{ e.preventDefault(); touching=true; move(e.touches[0].clientX, e.touches[0].clientY); },{passive:false});
-base.addEventListener('touchmove',  e=>{ e.preventDefault(); if(touching) move(e.touches[0].clientX, e.touches[0].clientY); },{passive:false});
-base.addEventListener('touchend',   e=>{ e.preventDefault(); end(); },{passive:false});
-base.addEventListener('mousedown',  e=>{ touching=true; move(e.clientX,e.clientY); });
-base.addEventListener('mousemove',  e=>{ if(touching) move(e.clientX,e.clientY); });
-base.addEventListener('mouseup',    ()=>end());
+    base.addEventListener('touchstart', e=>{ e.preventDefault(); touching=true; move(e.touches[0].clientX, e.touches[0].clientY); },{passive:false});
+    base.addEventListener('touchmove',  e=>{ e.preventDefault(); if(touching) move(e.touches[0].clientX, e.touches[0].clientY); },{passive:false});
+    base.addEventListener('touchend',   e=>{ e.preventDefault(); end(); },{passive:false});
+    base.addEventListener('mousedown',  e=>{ touching=true; move(e.clientX,e.clientY); });
+    base.addEventListener('mousemove',  e=>{ if(touching) move(e.clientX,e.clientY); });
+    base.addEventListener('mouseup',    ()=>end());
   }
 
   // Sol joystick → hareket
-makeStick('left-stick-base','left-stick-knob',
+  makeStick('left-stick-base','left-stick-knob',
     (angle, clamped, dist)=>{
-constax = Math.cos(angle)*clamped;
-keys['ArrowLeft']  = ax< -8;
-keys['ArrowRight'] = ax> 8;
+      const ax = Math.cos(angle)*clamped;
+      keys['ArrowLeft']  = ax < -8;
+      keys['ArrowRight'] = ax > 8;
     },
     ()=>{
-keys['ArrowLeft'] = false;
-keys['ArrowRight'] = false;
+      keys['ArrowLeft'] = false;
+      keys['ArrowRight'] = false;
     }
   );
 
   // Sağ joystick → kalp yönü + otomatik fırlat
-letrightAngle = null;
-letlastThrow = 0;
-makeStick('right-stick-base','right-stick-knob',
+  let rightAngle = null;
+  let lastThrow = 0;
+  makeStick('right-stick-base','right-stick-knob',
     (angle, clamped, dist)=>{
-if(dist> 12){
-joystickAngle = angle;
+      if(dist > 12){
+        joystickAngle = angle;
         // Parmak tutulduğu sürece sürekli fırlat (cooldown var)
-constnow = performance.now();
-if(now - lastThrow> ATTACK_COOLDOWN_MS){
-lastThrow = now;
-throwHeart();
+        const now = performance.now();
+        if(now - lastThrow > ATTACK_COOLDOWN_MS){
+          lastThrow = now;
+          throwHeart();
         }
       }
     },
@@ -2006,22 +2005,23 @@ throwHeart();
   );
 
   // Zıplama butonu
-constjumpBtn = document.getElementById('jump-btn');
-if(jumpBtn){
-jumpBtn.addEventListener('touchstart', e=>{ e.preventDefault(); keys[' ']=true; },{passive:false});
-jumpBtn.addEventListener('touchend',   e=>{ e.preventDefault(); keys[' ']=false; },{passive:false});
-jumpBtn.addEventListener('mousedown',  ()=>keys[' ']=true);
-jumpBtn.addEventListener('mouseup',    ()=>keys[' ']=false);
+  const jumpBtn = document.getElementById('jump-btn');
+  if(jumpBtn){
+    jumpBtn.addEventListener('touchstart', e=>{ e.preventDefault(); keys[' ']=true; },{passive:false});
+    jumpBtn.addEventListener('touchend',   e=>{ e.preventDefault(); keys[' ']=false; },{passive:false});
+    jumpBtn.addEventListener('mousedown',  ()=>keys[' ']=true);
+    jumpBtn.addEventListener('mouseup',    ()=>keys[' ']=false);
   }
 })();
 
 // ════════════════════════════════════════════════════════════
 // STEP COUNTER UI
 // ════════════════════════════════════════════════════════════
-functionupdateStepCounter(){
-constidxGuess = Math.max(0, Math.min(CLIMB_STEPS, Math.round((GROUND_Y - py)/STEP_GAP)));
-document.getElementById('step-num').textContent = idxGuess;
+function updateStepCounter(){
+  const idxGuess = Math.max(0, Math.min(CLIMB_STEPS, Math.round((GROUND_Y - py)/STEP_GAP)));
+  document.getElementById('step-num').textContent = idxGuess;
 }
+
 // ════════════════════════════════════════════════════════════
 // INIT & LOOP
 // ════════════════════════════════════════════════════════════
@@ -2030,11 +2030,11 @@ buildSteps();
 buildHearts();
 document.getElementById('step-total').textContent = CLIMB_STEPS;
 resetDiary();
-px=VW/2-PLAYER_W/2; py=GROUND_Y-PLAYER_H;
-vx=0; vy=0; camY=0; heartsCollected=0; lives=MAX_LIVES; gameWon=false;
-fireballs=[]; fireballSpawnTimer=0; nextFireballIn=2000;
-dragonActive=false; dragonDefeated=false; cageFreed=false; dragonHP=DRAGON_MAX_HP; dragonBreaths=[]; playerHearts=[];
-dragonBreathTimer=0; nextDragonBreathIn=2800; attackCooldown=0;
+  px=VW/2-PLAYER_W/2; py=GROUND_Y-PLAYER_H;
+  vx=0; vy=0; camY=0; heartsCollected=0; lives=MAX_LIVES; gameWon=false;
+  fireballs=[]; fireballSpawnTimer=0; nextFireballIn=2000;
+  dragonActive=false; dragonDefeated=false; cageFreed=false; dragonHP=DRAGON_MAX_HP; dragonBreaths=[]; playerHearts=[];
+  dragonBreathTimer=0; nextDragonBreathIn=2800; attackCooldown=0;
 document.getElementById('dragon-char').classList.remove('active');
 document.getElementById('attack-hint').classList.remove('show');
 document.getElementById('boy-char').classList.remove('freed');
@@ -2042,37 +2042,37 @@ document.getElementById('boy-char').style.display = 'none'; // başta gizli
 document.getElementById('info-btn').style.display = ''; // başta görünür
 document.getElementById('twin-stick-ui').classList.remove('show');
 document.getElementById('mobile-controls').style.display = '';
-constdchar = document.getElementById('dragon-char');
-dchar.style.opacity=''; dchar.style.transition='';
+const dchar = document.getElementById('dragon-char');
+  dchar.style.opacity=''; dchar.style.transition='';
 updateDragonHPBar();
-invulnerableUntil = performance.now()+1200;
+  invulnerableUntil = performance.now()+1200;
 document.getElementById('heart-count').textContent='0';
 document.getElementById('progress-bar-fill').style.height='0%';
 updateLivesDisplay();
-platEls.forEach(el=>el.remove()); platEls.clear();
-heartEls.forEach(el=>el.remove()); heartEls.clear();
+  platEls.forEach(el=>el.remove()); platEls.clear();
+  heartEls.forEach(el=>el.remove()); heartEls.clear();
 renderPoems();
 positionBoyAndDragon();
 initDragonPos();
-cageFreed=false;
-joystickAngle=null; joystickActive=false;
+  cageFreed=false;
+  joystickAngle=null; joystickActive=false;
 updatePlayerSVG(false,false,true);
 }
 
 functiongameLoop(ts){
-constdt=ts-lastT; lastT=ts;
+const dt=ts-lastT; lastT=ts;
 drawBgCanvas(camY);
 drawStars(dt);
-if(gameStarted&& !gameWon){
+if(gameStarted && !gameWon){
 updatePlayer(dt);
 updateCamera();
-if(!dragonActive&& !dragonDefeated) updateFireballs(dt);
+if(!dragonActive && !dragonDefeated) updateFireballs(dt);
 updateDragonBattle(dt);
 syncPlatformsDOM();
 syncHeartsDOM();
 updateStepCounter();
   }
-fx.clearRect(0,0,VW,VH);
+  fx.clearRect(0,0,VW,VH);
 if(!gameWon){
 drawFireballsFx();
 drawDragonFx();
@@ -2082,17 +2082,17 @@ requestAnimationFrame(gameLoop);
 
 functionstartGame(){
 document.getElementById('title-screen').classList.add('hidden');
-gameStarted=true; initGame();
+  gameStarted=true; initGame();
 }
 
 
-// Storyscreen: kaydırma sonunda hint'i gizle
+// Story screen: kaydırma sonunda hint'i gizle
 (function(){
-constbox = document.getElementById('story-scroll-box');
-consthint = document.getElementById('story-scroll-hint');
+const box = document.getElementById('story-scroll-box');
+const hint = document.getElementById('story-scroll-hint');
 if(!box||!hint) return;
-box.addEventListener('scroll', function(){
-constatBottom = box.scrollTop + box.clientHeight>= box.scrollHeight - 20;
+  box.addEventListener('scroll', function(){
+const atBottom = box.scrollTop + box.clientHeight>= box.scrollHeight - 20;
 if(atBottom){ hint.style.opacity='0'; hint.style.transition='opacity .5s'; }
 else { hint.style.opacity=''; hint.style.transition=''; }
   });
