@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+hf<!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
@@ -678,13 +678,12 @@
 function showTitleScreen(){} // artık kullanılmıyor
 
 function storyToGame(){
-  document.getElementById('story-screen').classList.add('hidden');
+  // Story screen'i DOM'dan tamamen kaldır — hiçbir event engellemesin
+  const ss = document.getElementById('story-screen');
+  if(ss) ss.remove();
   gameStarted=true;
   initGame();
-  // Odağı oyuna ver — klavye ve dokunmatik çalışsın
   document.body.focus();
-  // Mobil butonları aktif et
-  document.getElementById('mobile-controls').style.display = '';
 }
 window.addEventListener('error', function(e){
   try{
