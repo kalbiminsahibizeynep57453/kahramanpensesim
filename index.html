@@ -410,6 +410,12 @@
   #info-hint { text-align:center; color:rgba(255,200,230,.45); font-size:11px; margin-top:18px; font-style:italic; }
   .ctrl-key { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.18); border-radius:7px; color:rgba(255,200,230,.65); font-size:12px; padding:5px 12px; }
   #mobile-controls { position:fixed; bottom:18px; left:50%; transform:translateX(-50%); z-index:100; display:none; gap:18px; }
+  /* Tarayıcı alt çubuğunun arkasını kapat */
+  #controls-bg {
+    position:fixed; bottom:0; left:0; right:0; height:110px;
+    background:linear-gradient(to bottom, rgba(10,0,21,0) 0%, rgba(10,0,21,0.95) 40%, #0a0015 100%);
+    z-index:99; pointer-events:none;
+  }
 
 
   /* ── TWIN-STICK ARENA CONTROLS ── */
@@ -593,6 +599,8 @@
     <div id="diary-close-hint">Seni Çok Seviyorum</div>
   </div>
 </div>
+
+<div id="controls-bg"></div>
 
 <div id="heart-counter">
   <span style="font-size:20px">❤️</span>
@@ -1295,7 +1303,9 @@ function positionBoyAndDragon(){
 function updateCamera(){
   const target = py - VH*.52;
   camY += (target-camY)*.12;
-  camY = Math.max(0, Math.min(camY, WORLD_H-VH));
+  // Kamerayı sınırla: zemin her zaman ekranda görünsün
+  const maxCam = GROUND_Y - VH * 0.85; // zemini ekranın alt %15'inde tut
+  camY = Math.max(0, Math.min(camY, maxCam));
   const ty=`translateY(${-camY}px)`;
   // boy-char is CSS fixed — no transform needed
   // dragon-char is positioned in updateDragonBattle
