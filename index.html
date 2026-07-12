@@ -8,7 +8,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; }
   :root { --pink:#ff69b4; --rose:#ff1493; --gold:#ffd700; --lavender:#e8b4f8; }
-  html, body { overflow:hidden; height:100%; width:100%; position:fixed; inset:0; touch-action:none; }
+  html, body { overflow:hidden; height:100%; width:100%; position:fixed; inset:0; }
   * { -webkit-tap-highlight-color: transparent; }
   body { background:#0a0015; font-family:'Lato',sans-serif; }
 
@@ -110,7 +110,6 @@ position:fixed; inset:0; z-index:500;
 background:radial-gradient(ellipse at 30% 40%, #1a0035 0%, #05000f 60%, #000005 100%);
 display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
 overflow:hidden; padding:16px 16px 110px;
-touch-action:none;
 transition:opacity 1.2s;
   }
   #story-screen.hidden { opacity:0; pointer-events:none; display:none; }
@@ -138,7 +137,7 @@ position:relative; z-index:1;
   }
 
   #story-icon {
-    font-size:42px; margin-bottom:10px;
+    font-size:44px; margin-bottom:12px;
 animation:storyIconFloat 3s ease-in-outinfinite;
 filter:drop-shadow(0 0 20px rgba(255,100,200,.8));
   }
@@ -158,8 +157,8 @@ text-align:center; line-height:1.3;
   }
 
   #story-scroll-box {
-    width:100%; max-height:45vh; overflow-y:auto;
-    padding:14px 16px; margin-bottom:10px;
+    width:100%; max-height:42vh; overflow-y:auto;
+    padding:16px 18px; margin-bottom:16px;
 background:rgba(255,255,255,.04);
     border:1px solidrgba(255,105,180,.25);
     border-radius:16px;
@@ -192,23 +191,21 @@ color:rgba(255,105,180,.4); font-size:13px; letter-spacing:5px;
   }
 
   #story-next-btn {
-position:fixed; bottom:28px; left:50%;
-transform:translateX(-50%);
-    z-index:9999;
 background:linear-gradient(135deg,#8b0059,var(--rose),#ff69b4);
     background-size:200% 200%; animation:btnShimmer 3s easeinfinite;
 color:#fff; border:none; border-radius:40px;
-    padding:16px 48px; font-size:17px;
+    padding:15px 44px; font-size:16px;
 font-family:'PlayfairDisplay',serif;
 cursor:pointer; letter-spacing:1px;
-    box-shadow:0 0 30px rgba(255,20,147,.6);
-    -webkit-tap-highlight-color:transparent;
+    box-shadow:0 0 30px rgba(255,20,147,.5);
 touch-action:manipulation;
+    -webkit-tap-highlight-color:transparent;
+    margin-top:12px;
   }
   @keyframes btnShimmer {
     0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%}
   }
-  #story-next-btn:active { opacity:0.8; }
+  #story-next-btn:active { opacity:0.85; }
 
   #story-scroll-hint {
     font-size:11px; color:rgba(255,200,230,.3);
@@ -468,13 +465,12 @@ font-family:'PlayfairDisplay',serif; font-style:italic;
 </div>
 
 <div id="story-scroll-hint">↓ aşağı kaydır</div>
-
-</div>
-
-</div>
-
-<!-- Buton tamamen bağımsız, body'nin direkt çocuğu -->
+<div id="story-divider">✦✦✦</div>
 <buttonid="story-next-btn" onclick="storyToGame()">Hadi Başlayalım ✨</button>
+
+</div>
+
+</div>
 
 <div id="title-screen">
 <div id="title-hearts"></div>
@@ -686,12 +682,25 @@ font-family:'PlayfairDisplay',serif; font-style:italic;
 
 functionshowTitleScreen(){} // artık kullanılmıyor
 
-// Butona hem onclick hem touchend bağla — GitHubPages'deonclick bazen çalışmıyor
 document.addEventListener('DOMContentLoaded', function(){
+  // GitHubPages'de sayfa scroll'unu tamamen engelle
+document.body.addEventListener('touchmove', function(e){
+    // Sadece story-scroll-box içindeki scroll'a izin ver
+let el = e.target;
+letallowScroll = false;
+while(el && el !== document.body){
+if(el.id === 'story-scroll-box'){ allowScroll = true; break; }
+      el = el.parentElement;
+    }
+if(!allowScroll) e.preventDefault();
+  }, {passive:false});
+
+  // Butona touchend ekle
 constbtn = document.getElementById('story-next-btn');
 if(btn){
 btn.addEventListener('touchend', function(e){
 e.preventDefault();
+e.stopPropagation();
 storyToGame();
     }, {passive:false});
   }
