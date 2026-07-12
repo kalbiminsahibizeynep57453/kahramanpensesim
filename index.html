@@ -2,7 +2,7 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Sana Ulaşmak İçin Her Basamağı Çıkarım 💫</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap');
@@ -2054,29 +2054,6 @@ document.getElementById('step-num').textContent = idxGuess;
 // ════════════════════════════════════════════════════════════
 // INIT & LOOP
 // ════════════════════════════════════════════════════════════
-functioninitGame(){
-buildSteps();
-buildHearts();
-document.getElementById('step-total').textContent = CLIMB_STEPS;
-resetDiary();
-px=VW/2-PLAYER_W/2; py=GROUND_Y-PLAYER_H;
-vx=0; vy=0; camY=0; heartsCollected=0; lives=MAX_LIVES; gameWon=false;
-fireballs=[]; fireballSpawnTimer=0; nextFireballIn=2000;
-dragonActive=false; dragonDefeated=false; cageFreed=false; dragonHP=DRAGON_MAX_HP; dragonBreaths=[]; playerHearts=[];
-dragonBreathTimer=0; nextDragonBreathIn=2800; attackCooldown=0;
-document.getElementById('dragon-char').classList.remove('active');
-document.getElementById('attack-hint').classList.remove('show');
-document.getElementById('boy-char').classList.remove('freed');
-document.getElementById('boy-char').style.display = 'none'; // başta gizli
-document.getElementById('info-btn').style.display = ''; // başta görünür
-document.getElementById('twin-stick-ui').classList.remove('show');
-document.getElementById('mobile-controls').style.display = '';
-constdchar = document.getElementById('dragon-char');
-dchar.style.opacity=''; dchar.style.transition='';
-updateDragonHPBar();
-invulnerableUntil = performance.now()+1200;
-document.getElementById('heart-count').textContent='0';
-document.getElementById('progress-bar-fill').style.height='0%';
 updateLivesDisplay();
 platEls.forEach(el=>el.remove()); platEls.clear();
 heartEls.forEach(el=>el.remove()); heartEls.clear();
