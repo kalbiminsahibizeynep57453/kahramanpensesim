@@ -8,11 +8,11 @@
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; }
   :root { --pink:#ff69b4; --rose:#ff1493; --gold:#ffd700; --lavender:#e8b4f8; }
-  html, body { overflow:hidden; height:100dvh; width:100%; position:fixed; inset:0; background:#3a3a42; }
+  html, body { overflow:hidden; height:100%; width:100%; position:fixed; inset:0; background:#0a0015; }
   * { -webkit-tap-highlight-color: transparent; }
   body { background:#0a0015; font-family:'Lato',sans-serif; }
 
-  #world { position:relative; width:100%; height:100dvh; overflow:hidden; }
+  #world { position:relative; width:100%; height:100%; overflow:hidden; }
   #stars-canvas, #bg-canvas, #fx-canvas { position:absolute; left:0; top:0; z-index:0; pointer-events:none; }
   #fx-canvas { z-index:2; }
 
@@ -410,13 +410,7 @@
   #info-hint { text-align:center; color:rgba(255,200,230,.45); font-size:11px; margin-top:18px; font-style:italic; }
   .ctrl-key { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.18); border-radius:7px; color:rgba(255,200,230,.65); font-size:12px; padding:5px 12px; }
   #mobile-controls { position:fixed; bottom:18px; left:50%; transform:translateX(-50%); z-index:100; display:none; gap:18px; }
-  /* Mobil adres çubuğu boşluğunu kapat */
-  #bottom-fill {
-    position:fixed; bottom:0; left:0; right:0;
-    height:120px; z-index:5;
-    background:linear-gradient(180deg, transparent 0%, #3a3a42 40%);
-    pointer-events:none;
-  }
+
 
   /* ── TWIN-STICK ARENA CONTROLS ── */
   #twin-stick-ui { position:fixed; bottom:0; left:0; right:0; height:140px; z-index:150; display:none; pointer-events:none; }
@@ -487,7 +481,6 @@
   <button id="start-btn" onclick="startGame()"></button>
 </div>
 
-<div id="bottom-fill"></div>
 <div id="world">
   <canvas id="stars-canvas"></canvas>
   <canvas id="bg-canvas"></canvas>
@@ -1077,7 +1070,7 @@ const QUIZZES=[
 // (with current PLAT_W, STEP_GAP and physics, horizontal reach ≈ 160px)
 let steps = [];
 let LAST_STEP_X = VW/2, LAST_STEP_Y = 0;
-const GROUND_Y = WORLD_H - 20; // top surface of the ground platform
+const GROUND_Y = WORLD_H - 60; // top surface of the ground platform
 const ARENA_STEPS_REMOVED = 5; // last N steps replaced by solid arena floor
 const CLIMB_STEPS = NUM_STEPS - ARENA_STEPS_REMOVED; // actual climbable steps
 let ARENA_Y = 0; // top surface of the arena floor (set in buildSteps)
@@ -1219,10 +1212,10 @@ function ensureGroundEl(){
   if(document.getElementById('ground-el')) return;
   const el=document.createElement('div');
   el.id='ground-el';
-  el.style.cssText=`position:absolute;left:0;top:${GROUND_Y}px;width:${VW}px;height:${WORLD_H-GROUND_Y+200}px;
-    background:linear-gradient(180deg, #5a5a62 0%, #3a3a42 30%, #2a2a32 100%);
-    border-top:3px solid rgba(150,150,170,.7);
-    box-shadow:0 -4px 16px rgba(0,0,0,.5);
+  el.style.cssText=`position:absolute;left:0;top:${GROUND_Y}px;width:${VW}px;height:80px;
+    background:linear-gradient(180deg, rgba(30,80,15,.95), rgba(15,40,8,.98));
+    border-top:3px solid rgba(120,220,90,.6);
+    box-shadow:0 -6px 20px rgba(100,200,80,.25);
     z-index:9;`;
   world.appendChild(el);
 }
