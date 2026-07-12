@@ -8,7 +8,8 @@
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; }
   :root { --pink:#ff69b4; --rose:#ff1493; --gold:#ffd700; --lavender:#e8b4f8; }
-  html, body { overflow:hidden; height:100%; width:100%; position:fixed; inset:0; }
+  html, body { overflow:hidden; height:100%; width:100%; position:fixed; inset:0; touch-action:none; }
+  * { -webkit-tap-highlight-color: transparent; }
   body { background:#0a0015; font-family:'Lato',sans-serif; }
 
   #world { position:relative; width:100%; height:100%; overflow:hidden; }
@@ -108,7 +109,8 @@ background:rgba(10,0,21,.85); border:1px solidrgba(255,80,80,.4);
 position:fixed; inset:0; z-index:500;
 background:radial-gradient(ellipse at 30% 40%, #1a0035 0%, #05000f 60%, #000005 100%);
 display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
-overflow-y:auto; padding:20px 0 30px;
+overflow:hidden; padding:16px 16px 110px;
+touch-action:none;
 transition:opacity 1.2s;
   }
   #story-screen.hidden { opacity:0; pointer-events:none; display:none; }
@@ -156,13 +158,14 @@ text-align:center; line-height:1.3;
   }
 
   #story-scroll-box {
-    width:100%; max-height:35vh; overflow-y:auto;
-    padding:14px 16px; margin-bottom:14px;
+    width:100%; max-height:45vh; overflow-y:auto;
+    padding:14px 16px; margin-bottom:10px;
 background:rgba(255,255,255,.04);
     border:1px solidrgba(255,105,180,.25);
     border-radius:16px;
 box-shadow:inset 0 0 30px rgba(180,50,255,.05);
 scrollbar-width:thin; scrollbar-color:rgba(255,105,180,.3) transparent;
+touch-action:pan-y; -webkit-overflow-scrolling:touch;
   }
   #story-scroll-box::-webkit-scrollbar { width:4px; }
   #story-scroll-box::-webkit-scrollbar-thumb { background:rgba(255,105,180,.35); border-radius:2px; }
@@ -468,9 +471,10 @@ font-family:'PlayfairDisplay',serif; font-style:italic;
 
 </div>
 
-<!-- Buton story-screen içinde ama scroll'un dışında, fixed -->
-<buttonid="story-next-btn" onclick="storyToGame()">Hadi Başlayalım ✨</button>
 </div>
+
+<!-- Buton tamamen bağımsız, body'nin direkt çocuğu -->
+<buttonid="story-next-btn" onclick="storyToGame()">Hadi Başlayalım ✨</button>
 
 <div id="title-screen">
 <div id="title-hearts"></div>
@@ -682,13 +686,25 @@ font-family:'PlayfairDisplay',serif; font-style:italic;
 
 functionshowTitleScreen(){} // artık kullanılmıyor
 
+// Butona hem onclick hem touchend bağla — GitHubPages'deonclick bazen çalışmıyor
+document.addEventListener('DOMContentLoaded', function(){
+constbtn = document.getElementById('story-next-btn');
+if(btn){
+btn.addEventListener('touchend', function(e){
+e.preventDefault();
+storyToGame();
+    }, {passive:false});
+  }
+});
+
 functionstoryToGame(){
-  // Storyscreen'iDOM'dan tamamen kaldır — hiçbir event engellemesin
+  // Storyscreen ve butonu DOM'dan tamamen kaldır
 constss = document.getElementById('story-screen');
 if(ss) ss.remove();
+constbtn = document.getElementById('story-next-btn');
+if(btn) btn.remove();
 gameStarted=true;
 initGame();
-document.body.focus();
 }
 window.addEventListener('error', function(e){
 try{
