@@ -8,11 +8,11 @@
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap');
   * { margin:0; padding:0; box-sizing:border-box; }
   :root { --pink:#ff69b4; --rose:#ff1493; --gold:#ffd700; --lavender:#e8b4f8; }
-  html, body { overflow:hidden; height:100%; min-height: -webkit-fill-available; width:100%; position:fixed; inset:0; background:#0a0015; }
+  html, body { overflow:hidden; height:100%; width:100%; position:fixed; inset:0; }
   * { -webkit-tap-highlight-color: transparent; }
   body { background:#0a0015; font-family:'Lato',sans-serif; }
 
-  #world { position:relative; width:100%; height:100%; min-height: -webkit-fill-available; overflow:hidden; }
+  #world { position:relative; width:100%; height:100%; overflow:hidden; }
   #stars-canvas, #bg-canvas, #fx-canvas { position:absolute; left:0; top:0; z-index:0; pointer-events:none; }
   #fx-canvas { z-index:2; }
 
@@ -275,7 +275,7 @@
     color:var(--pink); border-bottom:2px solid var(--pink);
   }
 
-  #diary-body { flex:1; overflow-y:auto; padding:16px 20px 20px; }
+  #diary-body { flex:1; overflow-y:auto; padding:16px 20px 20px; -webkit-overflow-scrolling:touch; touch-action:pan-y; min-height:0; }
 
   .diary-entry {
     display:flex; gap:12px; align-items:flex-start;
@@ -410,13 +410,6 @@
   #info-hint { text-align:center; color:rgba(255,200,230,.45); font-size:11px; margin-top:18px; font-style:italic; }
   .ctrl-key { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.18); border-radius:7px; color:rgba(255,200,230,.65); font-size:12px; padding:5px 12px; }
   #mobile-controls { position:fixed; bottom:18px; left:50%; transform:translateX(-50%); z-index:100; display:none; gap:18px; }
-  /* Tarayıcı alt çubuğunun arkasını kapat */
-  #controls-bg {
-    position:fixed; bottom:0; left:0; right:0; height:110px;
-    background:linear-gradient(to bottom, rgba(10,0,21,0) 0%, rgba(10,0,21,0.95) 40%, #0a0015 100%);
-    z-index:99; pointer-events:none;
-  }
-
 
   /* ── TWIN-STICK ARENA CONTROLS ── */
   #twin-stick-ui { position:fixed; bottom:0; left:0; right:0; height:140px; z-index:150; display:none; pointer-events:none; }
@@ -600,8 +593,6 @@
   </div>
 </div>
 
-<div id="controls-bg"></div>
-
 <div id="heart-counter">
   <span style="font-size:20px">❤️</span>
   <span id="heart-count">0</span>
@@ -694,11 +685,11 @@ function showTitleScreen(){} // artık kullanılmıyor
 document.addEventListener('DOMContentLoaded', function(){
   // GitHub Pages'de sayfa scroll'unu tamamen engelle
   document.body.addEventListener('touchmove', function(e){
-    // Sadece story-scroll-box içindeki scroll'a izin ver
+    // Sadece story-scroll-box ve diary-body içindeki scroll'a izin ver
     let el = e.target;
     let allowScroll = false;
     while(el && el !== document.body){
-      if(el.id === 'story-scroll-box'){ allowScroll = true; break; }
+      if(el.id === 'story-scroll-box' || el.id === 'diary-body'){ allowScroll = true; break; }
       el = el.parentElement;
     }
     if(!allowScroll) e.preventDefault();
@@ -716,20 +707,13 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 function storyToGame(){
-  try {
-    const ss = document.getElementById('story-screen');
-    if(ss) ss.remove();
-    const btn = document.getElementById('story-next-btn');
-    if(btn) btn.remove();
-    gameStarted=true;
-    initGame();
-  } catch(err) {
-    // Hatayı ekranda göster
-    const box = document.createElement('div');
-    box.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;z-index:99999;background:#000;color:#ff4444;padding:20px;font-size:14px;font-family:monospace;overflow:auto;white-space:pre-wrap;';
-    box.textContent = 'HATA:\n' + err.message + '\n\n' + err.stack;
-    document.body.appendChild(box);
-  }
+  // Story screen ve butonu DOM'dan tamamen kaldır
+  const ss = document.getElementById('story-screen');
+  if(ss) ss.remove();
+  const btn = document.getElementById('story-next-btn');
+  if(btn) btn.remove();
+  gameStarted=true;
+  initGame();
 }
 window.addEventListener('error', function(e){
   try{
@@ -779,7 +763,7 @@ function drawStars(dt){
 // ════════════════════════════════════════════════════════════
 const fc = document.getElementById('fx-canvas');
 const fx = fc.getContext('2d');
-fc.width = VW; fc.height = window.innerHeight;
+fc.width = VW; fc.height = VH;
 
 // ════════════════════════════════════════════════════════════
 // BIG SCENE CANVAS — forest -> sky -> clouds -> space
@@ -1120,7 +1104,7 @@ function buildHearts(){
     const stepRef = Math.min(CLIMB_STEPS-1, i*HEART_SPACING + 1 + Math.floor(Math.random()*4 - 2));
     const safeStepRef = Math.max(0, stepRef);
     const baseY = steps[safeStepRef] ? steps[safeStepRef].y : GROUND_Y - safeStepRef*STEP_GAP;
-    const y = baseY - 55 - Math.random()*40;
+    const y = baseY - 10 - Math.random()*8;
     const x = VW*(0.15+Math.random()*0.7);
     floatingHearts.push({ x, y, collected:false, msgIdx: i%HEART_MSGS.length, id:'h'+i });
   }
@@ -1129,8 +1113,8 @@ function buildHearts(){
 // Fireballs — fall from above, spawn periodically once player passes a height threshold
 let fireballs = []; // {x,y,vy,size}
 let fireballSpawnTimer = 0;
-const FIREBALL_INTERVAL_MIN = 1400; // ms
-const FIREBALL_INTERVAL_MAX = 2600;
+const FIREBALL_INTERVAL_MIN = 2800; // ms
+const FIREBALL_INTERVAL_MAX = 4200;
 let nextFireballIn = 2000;
 
 // ════════════════════════════════════════════════════════════
@@ -1303,9 +1287,7 @@ function positionBoyAndDragon(){
 function updateCamera(){
   const target = py - VH*.52;
   camY += (target-camY)*.12;
-  // Kamerayı sınırla: zemin her zaman ekranda görünsün
-  const maxCam = GROUND_Y - VH * 0.85; // zemini ekranın alt %15'inde tut
-  camY = Math.max(0, Math.min(camY, maxCam));
+  camY = Math.max(0, Math.min(camY, WORLD_H-VH));
   const ty=`translateY(${-camY}px)`;
   // boy-char is CSS fixed — no transform needed
   // dragon-char is positioned in updateDragonBattle
@@ -1320,7 +1302,7 @@ function spawnFireball(){
   // spawn somewhere above current camera view, falls down through view
   const x = VW*(0.1+Math.random()*0.8);
   const y = camY - 80 - Math.random()*120;
-  fireballs.push({ x, y, vy: 3.2+Math.random()*2.2, size: 26+Math.random()*10 });
+  fireballs.push({ x, y, vy: 1.8+Math.random()*1.2, size: 26+Math.random()*10 });
 }
 
 function updateFireballs(dt){
@@ -1685,7 +1667,7 @@ function onPlayerHit(isFall){
     lives = MAX_LIVES;
     resetToStart();
     const fallMsg = 'Düştüm... Ama senin için bin kere daha kalkarım. Sana ulaşmak her şeye değer, güzelim 💗';
-    const fireMsg = 'Yandım biraz... Ama senin sevgin her ateşten güçlü. Tekrar başlıyorum, çünkü sen buna değersin 🔥💗';
+    const fireMsg = 'Oyy kıyamam ha sanaaa 🥺 Üzülme aşkım, çok güçlü bir kadınsın, başaracağını biliyorum 💗';
     showDeath(isFall ? '😵' : '🔥', isFall?'Düştüm...':'Ateş Dokundu!', isFall?fallMsg:fireMsg);
   } else {
     if(isFall){
@@ -2144,16 +2126,6 @@ function startGame(){
     else { hint.style.opacity=''; hint.style.transition=''; }
   });
 })();
-
-// Ekran boyutu değişince canvas'ları güncelle
-function resizeCanvases(){
-  sc.width = window.innerWidth;
-  sc.height = window.innerHeight;
-  fc.width = window.innerWidth;
-  fc.height = window.innerHeight;
-}
-window.addEventListener('resize', resizeCanvases);
-window.addEventListener('orientationchange', resizeCanvases);
 
 requestAnimationFrame(ts=>{ lastT=ts; gameLoop(ts); });
 </script>
