@@ -1287,7 +1287,9 @@ function positionBoyAndDragon(){
 function updateCamera(){
   const target = py - VH*.52;
   camY += (target-camY)*.12;
-  camY = Math.max(0, Math.min(camY, WORLD_H-VH));
+  // Zemin her zaman ekranda görünsün — kamera çok aşağı gitmesin
+  const maxCam = GROUND_Y - VH * 0.93;
+  camY = Math.max(0, Math.min(camY, maxCam));
   const ty=`translateY(${-camY}px)`;
   // boy-char is CSS fixed — no transform needed
   // dragon-char is positioned in updateDragonBattle
